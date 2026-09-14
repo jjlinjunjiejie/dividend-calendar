@@ -15,9 +15,9 @@ Apple Calendar subscription feed for the following portfolio positions:
 | VOO | 700.4031 |
 <!-- POSITIONS:END -->
 
-The calendar uses official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO. Events are grouped by payable date and the event title is the combined estimated pre-tax cash amount, for example `$2,975`.
+The calendar uses official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO. Events are grouped by payable date and the event title is the combined estimated pre-tax cash amount, shown as plain integer digits with no dollar sign or thousands separator, for example `2975`.
 
-Displayed dividend cash amounts are truncated to whole USD amounts and are not rounded. Per-share dividend values, prices, yields, and market values keep their existing precision.
+Displayed dividend cash amounts are truncated to whole USD amounts and are not rounded. Calendar event titles omit the `$` symbol and commas. Per-share dividend values, prices, yields, and market values keep their existing precision.
 
 The positions table above is generated from `positions.json` whenever the calendar update runs, so position changes are reflected in this README automatically.
 
