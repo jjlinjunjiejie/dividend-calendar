@@ -15,9 +15,11 @@ Apple Calendar subscription feed for the following portfolio positions:
 | VOO | 700.4031 |
 <!-- POSITIONS:END -->
 
-The calendar uses official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO. Events are grouped by payable date and the event title is the combined estimated pre-tax cash amount, shown as plain integer digits with no dollar sign or thousands separator, for example `2975`.
+The calendar uses official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO. Events are grouped by payable date. If multiple holdings pay on the same date, their dividends are combined into one calendar event.
 
-Displayed dividend cash amounts are truncated to whole USD amounts and are not rounded. Calendar event titles omit the `$` symbol and commas. Per-share dividend values, prices, yields, and market values keep their existing precision.
+Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as plain integer digits with no dollar sign or thousands separator. The memo shows each ticker, the current share count, and its after-tax dividend amount.
+
+Calendar titles are truncated to whole USD amounts without rounding. Memo share counts and dividend amounts are truncated to one decimal place without rounding. Memo dividend amounts keep the `$` symbol and thousands separators.
 
 The positions table above is generated from `positions.json` whenever the calendar update runs, so position changes are reflected in this README automatically.
 
@@ -33,4 +35,4 @@ HTTPS feed URL:
 
 GitHub Actions checks for updated distribution data every 6 hours. When dividend data or positions change, `dividends.ics` is rebuilt and generated README position data is committed automatically. Apple Calendar controls its own refresh timing, so changes may not appear instantly.
 
-Amounts are estimates before tax and may differ from actual brokerage cash received because of taxes, broker processing, or position changes.
+Displayed amounts assume a fixed 10% withholding rate and may differ from actual brokerage cash received because of broker processing, tax treatment, or position changes.
