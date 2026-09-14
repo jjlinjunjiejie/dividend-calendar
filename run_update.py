@@ -81,6 +81,7 @@ def compact_description(line: str, positions: dict[str, Any]) -> str:
         amount = truncate_one_decimal(after_withholding(amounts[ticker]))
         details.append(f"{ticker}｜持股 {shares} 股｜股息 ${amount:,.1f}")
 
+    details.append("备注：预扣税率 10%")
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
 
