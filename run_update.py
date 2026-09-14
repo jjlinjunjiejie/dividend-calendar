@@ -65,7 +65,7 @@ def compact_description(line: str, positions: dict[str, Any]) -> str:
     for ticker in tickers:
         shares = shares_label(positions[ticker]["shares"])
         amount = int(amounts[ticker])
-        details.append(f"{ticker} {shares}股 股息 {amount}")
+        details.append(f"{ticker} {shares}股 股息 ${amount:,}")
 
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
