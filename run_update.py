@@ -21,9 +21,15 @@ AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
 
 def whole_dollar(match: Match[str]) -> str:
     """Format a positive dollar amount by truncating, never rounding."""
-    raw = match.group("amount").replace("\\,", "")
+    raw = match.group("amount").replace("\\,", "").replace(",", "")
     value = int(Decimal(raw))
     return f"${value:,}".replace(",", "\\,")
+
+
+def calendar_title_amount(match: Match[str]) -> str:
+    """Format a calendar title amount as plain integer digits only."""
+    raw = match.group("amount").replace("\\,", "").replace(",", "")
+    return str(int(Decimal(raw)))
 
 
 def truncate_dividend_amounts(calendar_text: str) -> str:
@@ -38,7 +44,7 @@ def truncate_dividend_amounts(calendar_text: str) -> str:
     output: list[str] = []
     for line in logical_lines:
         if line.startswith("SUMMARY:"):
-            line = re.sub(AMOUNT_PATTERN, whole_dollar, line, count=1)
+            line = re.sub(AMOUNT_PATTERN, calendar_title_amount, line, count=1)
         elif line.startswith("DESCRIPTION:"):
             line = re.sub(
                 rf"(?<=税前股息总额: ){AMOUNT_PATTERN}", whole_dollar, line
