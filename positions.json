@@ -7,7 +7,7 @@
     "IBHI": {"shares": 846.3668, "portfolio_id": 326462, "source": "ishares", "maturity_year": 2029},
     "IBHJ": {"shares": 760.3254, "portfolio_id": 332287, "source": "ishares", "maturity_year": 2030},
     "IBHK": {"shares": 1232.3071, "portfolio_id": 337468, "source": "ishares", "maturity_year": 2031},
-    "QQQ": {"shares": 600.6061, "source": "yahoo", "frequency": 4},
-    "VOO": {"shares": 700.4031, "source": "yahoo", "frequency": 4}
+    "QQQ": {"shares": 600.6061, "source": "stockanalysis", "frequency": 4},
+    "VOO": {"shares": 700.4031, "source": "stockanalysis", "frequency": 4}
   }
 }
