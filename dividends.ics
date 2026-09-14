@@ -4,16 +4,1296 @@ PRODID:-//Dividend Calendar//iShares Portfolio//CN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:ETF 股息
-X-WR-CALDESC:IBHF/IBHG/IBHH/IBHI/IBHJ/IBHK 持仓税前股息；按 iShares 官方数据自动更新
+X-WR-CALDESC:IBHF/IBHG/IBHH/IBHI/IBHJ/IBHK 持仓税前股息；按 iShar
+ es 官方数据自动更新
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
+BEGIN:VEVENT
+UID:dividend-20201223@dividend-calendar
+DTSTAMP:20201223T000000Z
+DTSTART;VALUE=DATE:20201223
+DTEND;VALUE=DATE:20201224
+SUMMARY:$19.91
+DESCRIPTION:税前股息总额: $19.91\n\nIBHF: 127.3954股 × $0.156293 
+ = $19.91\n  除息 2020-12-17 · 登记 2020-12-17 · 支付 2020-12-23\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210205@dividend-calendar
+DTSTAMP:20210205T000000Z
+DTSTART;VALUE=DATE:20210205
+DTEND;VALUE=DATE:20210206
+SUMMARY:$12.44
+DESCRIPTION:税前股息总额: $12.44\n\nIBHF: 127.3954股 × $0.097674 
+ = $12.44\n  除息 2021-02-01 · 登记 2021-02-02 · 支付 2021-02-05\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210305@dividend-calendar
+DTSTAMP:20210305T000000Z
+DTSTART;VALUE=DATE:20210305
+DTEND;VALUE=DATE:20210306
+SUMMARY:$11.81
+DESCRIPTION:税前股息总额: $11.81\n\nIBHF: 127.3954股 × $0.092739 
+ = $11.81\n  除息 2021-03-01 · 登记 2021-03-02 · 支付 2021-03-05\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210408@dividend-calendar
+DTSTAMP:20210408T000000Z
+DTSTART;VALUE=DATE:20210408
+DTEND;VALUE=DATE:20210409
+SUMMARY:$12.34
+DESCRIPTION:税前股息总额: $12.34\n\nIBHF: 127.3954股 × $0.096874 
+ = $12.34\n  除息 2021-04-01 · 登记 2021-04-05 · 支付 2021-04-08\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210507@dividend-calendar
+DTSTAMP:20210507T000000Z
+DTSTART;VALUE=DATE:20210507
+DTEND;VALUE=DATE:20210508
+SUMMARY:$13.32
+DESCRIPTION:税前股息总额: $13.32\n\nIBHF: 127.3954股 × $0.104526 
+ = $13.32\n  除息 2021-05-03 · 登记 2021-05-04 · 支付 2021-05-07\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210607@dividend-calendar
+DTSTAMP:20210607T000000Z
+DTSTART;VALUE=DATE:20210607
+DTEND;VALUE=DATE:20210608
+SUMMARY:$12.47
+DESCRIPTION:税前股息总额: $12.47\n\nIBHF: 127.3954股 × $0.097868 
+ = $12.47\n  除息 2021-06-01 · 登记 2021-06-02 · 支付 2021-06-07\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210708@dividend-calendar
+DTSTAMP:20210708T000000Z
+DTSTART;VALUE=DATE:20210708
+DTEND;VALUE=DATE:20210709
+SUMMARY:$12.28
+DESCRIPTION:税前股息总额: $12.28\n\nIBHF: 127.3954股 × $0.096383 
+ = $12.28\n  除息 2021-07-01 · 登记 2021-07-02 · 支付 2021-07-08\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210806@dividend-calendar
+DTSTAMP:20210806T000000Z
+DTSTART;VALUE=DATE:20210806
+DTEND;VALUE=DATE:20210807
+SUMMARY:$11.69
+DESCRIPTION:税前股息总额: $11.69\n\nIBHF: 127.3954股 × $0.091745 
+ = $11.69\n  除息 2021-08-02 · 登记 2021-08-03 · 支付 2021-08-06\
+ n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20210908@dividend-calendar
+DTSTAMP:20210908T000000Z
+DTSTART;VALUE=DATE:20210908
+DTEND;VALUE=DATE:20210909
+SUMMARY:$2\,070.33
+DESCRIPTION:税前股息总额: $2\,070.33\n\nIBHF: 127.3954股 × $0.095
+ 555 = $12.17\n  除息 2021-09-01 · 登记 2021-09-02 · 支付 2021-09
+ -08\nIBHG: 21\,809.3968股 × $0.094370 = $2\,058.15\n  除息 2021-09-0
+ 1 · 登记 2021-09-02 · 支付 2021-09-08\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20211007@dividend-calendar
+DTSTAMP:20211007T000000Z
+DTSTART;VALUE=DATE:20211007
+DTEND;VALUE=DATE:20211008
+SUMMARY:$2\,022.08
+DESCRIPTION:税前股息总额: $2\,022.08\n\nIBHF: 127.3954股 × $0.099
+ 602 = $12.69\n  除息 2021-10-01 · 登记 2021-10-04 · 支付 2021-10
+ -07\nIBHG: 21\,809.3968股 × $0.092134 = $2\,009.39\n  除息 2021-10-0
+ 1 · 登记 2021-10-04 · 支付 2021-10-07\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20211105@dividend-calendar
+DTSTAMP:20211105T000000Z
+DTSTART;VALUE=DATE:20211105
+DTEND;VALUE=DATE:20211106
+SUMMARY:$2\,001.85
+DESCRIPTION:税前股息总额: $2\,001.85\n\nIBHF: 127.3954股 × $0.095
+ 928 = $12.22\n  除息 2021-11-01 · 登记 2021-11-02 · 支付 2021-11
+ -05\nIBHG: 21\,809.3968股 × $0.091228 = $1\,989.63\n  除息 2021-11-0
+ 1 · 登记 2021-11-02 · 支付 2021-11-05\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20211207@dividend-calendar
+DTSTAMP:20211207T000000Z
+DTSTART;VALUE=DATE:20211207
+DTEND;VALUE=DATE:20211208
+SUMMARY:$2\,022.41
+DESCRIPTION:税前股息总额: $2\,022.41\n\nIBHF: 127.3954股 × $0.094
+ 313 = $12.02\n  除息 2021-12-01 · 登记 2021-12-02 · 支付 2021-12
+ -07\nIBHG: 21\,809.3968股 × $0.092180 = $2\,010.39\n  除息 2021-12-0
+ 1 · 登记 2021-12-02 · 支付 2021-12-07\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20211222@dividend-calendar
+DTSTAMP:20211222T000000Z
+DTSTART;VALUE=DATE:20211222
+DTEND;VALUE=DATE:20211223
+SUMMARY:$3\,456.43
+DESCRIPTION:税前股息总额: $3\,456.43\n\nIBHF: 127.3954股 × $0.090
+ 837 = $11.57\n  除息 2021-12-16 · 登记 2021-12-17 · 支付 2021-12
+ -22\nIBHG: 21\,809.3968股 × $0.157953 = $3\,444.86\n  除息 2021-12-1
+ 6 · 登记 2021-12-17 · 支付 2021-12-22\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220207@dividend-calendar
+DTSTAMP:20220207T000000Z
+DTSTART;VALUE=DATE:20220207
+DTEND;VALUE=DATE:20220208
+SUMMARY:$1\,906.62
+DESCRIPTION:税前股息总额: $1\,906.62\n\nIBHF: 127.3954股 × $0.102
+ 902 = $13.11\n  除息 2022-02-01 · 登记 2022-02-02 · 支付 2022-02
+ -07\nIBHG: 21\,809.3968股 × $0.086821 = $1\,893.51\n  除息 2022-02-0
+ 1 · 登记 2022-02-02 · 支付 2022-02-07\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220307@dividend-calendar
+DTSTAMP:20220307T000000Z
+DTSTART;VALUE=DATE:20220307
+DTEND;VALUE=DATE:20220308
+SUMMARY:$2\,051.42
+DESCRIPTION:税前股息总额: $2\,051.42\n\nIBHF: 127.3954股 × $0.101
+ 749 = $12.96\n  除息 2022-03-01 · 登记 2022-03-02 · 支付 2022-03
+ -07\nIBHG: 21\,809.3968股 × $0.093467 = $2\,038.46\n  除息 2022-03-0
+ 1 · 登记 2022-03-02 · 支付 2022-03-07\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220407@dividend-calendar
+DTSTAMP:20220407T000000Z
+DTSTART;VALUE=DATE:20220407
+DTEND;VALUE=DATE:20220408
+SUMMARY:$1\,964.92
+DESCRIPTION:税前股息总额: $1\,964.92\n\nIBHF: 127.3954股 × $0.107
+ 015 = $13.63\n  除息 2022-04-01 · 登记 2022-04-04 · 支付 2022-04
+ -07\nIBHG: 21\,809.3968股 × $0.089470 = $1\,951.29\n  除息 2022-04-0
+ 1 · 登记 2022-04-04 · 支付 2022-04-07\n\n数据源: iShares / Blac
+ kRock 官方 fundDownload API\n金额为税前估算，实际到账可
+ 能因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220506@dividend-calendar
+DTSTAMP:20220506T000000Z
+DTSTART;VALUE=DATE:20220506
+DTEND;VALUE=DATE:20220507
+SUMMARY:$2\,971.72
+DESCRIPTION:税前股息总额: $2\,971.72\n\nIBHF: 127.3954股 × $0.104
+ 307 = $13.29\n  除息 2022-05-02 · 登记 2022-05-03 · 支付 2022-05
+ -06\nIBHG: 21\,809.3968股 × $0.105116 = $2\,292.52\n  除息 2022-05-0
+ 2 · 登记 2022-05-03 · 支付 2022-05-06\nIBHH: 2\,559.3648股 × $0.
+ 200434 = $512.98\n  除息 2022-05-02 · 登记 2022-05-03 · 支付 202
+ 2-05-06\nIBHI: 846.3668股 × $0.180686 = $152.93\n  除息 2022-05-02 
+ · 登记 2022-05-03 · 支付 2022-05-06\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220607@dividend-calendar
+DTSTAMP:20220607T000000Z
+DTSTART;VALUE=DATE:20220607
+DTEND;VALUE=DATE:20220608
+SUMMARY:$2\,605.69
+DESCRIPTION:税前股息总额: $2\,605.69\n\nIBHF: 127.3954股 × $0.103
+ 866 = $13.23\n  除息 2022-06-01 · 登记 2022-06-02 · 支付 2022-06
+ -07\nIBHG: 21\,809.3968股 × $0.100453 = $2\,190.82\n  除息 2022-06-0
+ 1 · 登记 2022-06-02 · 支付 2022-06-07\nIBHH: 2\,559.3648股 × $0.
+ 118471 = $303.21\n  除息 2022-06-01 · 登记 2022-06-02 · 支付 202
+ 2-06-07\nIBHI: 846.3668股 × $0.116293 = $98.43\n  除息 2022-06-01 ·
+  登记 2022-06-02 · 支付 2022-06-07\n\n数据源: iShares / BlackRoc
+ k 官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220708@dividend-calendar
+DTSTAMP:20220708T000000Z
+DTSTART;VALUE=DATE:20220708
+DTEND;VALUE=DATE:20220709
+SUMMARY:$2\,156.88
+DESCRIPTION:税前股息总额: $2\,156.88\n\nIBHF: 127.3954股 × $0.106
+ 916 = $13.62\n  除息 2022-07-01 · 登记 2022-07-05 · 支付 2022-07
+ -08\nIBHG: 21\,809.3968股 × $0.081711 = $1\,782.07\n  除息 2022-07-0
+ 1 · 登记 2022-07-05 · 支付 2022-07-08\nIBHH: 2\,559.3648股 × $0.
+ 101488 = $259.74\n  除息 2022-07-01 · 登记 2022-07-05 · 支付 202
+ 2-07-08\nIBHI: 846.3668股 × $0.119866 = $101.45\n  除息 2022-07-01 
+ · 登记 2022-07-05 · 支付 2022-07-08\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220805@dividend-calendar
+DTSTAMP:20220805T000000Z
+DTSTART;VALUE=DATE:20220805
+DTEND;VALUE=DATE:20220806
+SUMMARY:$2\,566.11
+DESCRIPTION:税前股息总额: $2\,566.11\n\nIBHF: 127.3954股 × $0.113
+ 357 = $14.44\n  除息 2022-08-01 · 登记 2022-08-02 · 支付 2022-08
+ -05\nIBHG: 21\,809.3968股 × $0.097616 = $2\,128.95\n  除息 2022-08-0
+ 1 · 登记 2022-08-02 · 支付 2022-08-05\nIBHH: 2\,559.3648股 × $0.
+ 125554 = $321.34\n  除息 2022-08-01 · 登记 2022-08-02 · 支付 202
+ 2-08-05\nIBHI: 846.3668股 × $0.119784 = $101.38\n  除息 2022-08-01 
+ · 登记 2022-08-02 · 支付 2022-08-05\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20220908@dividend-calendar
+DTSTAMP:20220908T000000Z
+DTSTART;VALUE=DATE:20220908
+DTEND;VALUE=DATE:20220909
+SUMMARY:$2\,880.13
+DESCRIPTION:税前股息总额: $2\,880.13\n\nIBHF: 127.3954股 × $0.117
+ 491 = $14.97\n  除息 2022-09-01 · 登记 2022-09-02 · 支付 2022-09
+ -08\nIBHG: 21\,809.3968股 × $0.111828 = $2\,438.90\n  除息 2022-09-0
+ 1 · 登记 2022-09-02 · 支付 2022-09-08\nIBHH: 2\,559.3648股 × $0.
+ 127989 = $327.57\n  除息 2022-09-01 · 登记 2022-09-02 · 支付 202
+ 2-09-08\nIBHI: 846.3668股 × $0.116606 = $98.69\n  除息 2022-09-01 ·
+  登记 2022-09-02 · 支付 2022-09-08\n\n数据源: iShares / BlackRoc
+ k 官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20221007@dividend-calendar
+DTSTAMP:20221007T000000Z
+DTSTART;VALUE=DATE:20221007
+DTEND;VALUE=DATE:20221008
+SUMMARY:$2\,504.55
+DESCRIPTION:税前股息总额: $2\,504.55\n\nIBHF: 127.3954股 × $0.120
+ 612 = $15.37\n  除息 2022-10-03 · 登记 2022-10-04 · 支付 2022-10
+ -07\nIBHG: 21\,809.3968股 × $0.094301 = $2\,056.65\n  除息 2022-10-0
+ 3 · 登记 2022-10-04 · 支付 2022-10-07\nIBHH: 2\,559.3648股 × $0.
+ 129082 = $330.37\n  除息 2022-10-03 · 登记 2022-10-04 · 支付 202
+ 2-10-07\nIBHI: 846.3668股 × $0.120714 = $102.17\n  除息 2022-10-03 
+ · 登记 2022-10-04 · 支付 2022-10-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20221107@dividend-calendar
+DTSTAMP:20221107T000000Z
+DTSTART;VALUE=DATE:20221107
+DTEND;VALUE=DATE:20221108
+SUMMARY:$2\,879.01
+DESCRIPTION:税前股息总额: $2\,879.01\n\nIBHF: 127.3954股 × $0.118
+ 912 = $15.15\n  除息 2022-11-01 · 登记 2022-11-02 · 支付 2022-11
+ -07\nIBHG: 21\,809.3968股 × $0.112323 = $2\,449.70\n  除息 2022-11-0
+ 1 · 登记 2022-11-02 · 支付 2022-11-07\nIBHH: 2\,559.3648股 × $0.
+ 122394 = $313.25\n  除息 2022-11-01 · 登记 2022-11-02 · 支付 202
+ 2-11-07\nIBHI: 846.3668股 × $0.119228 = $100.91\n  除息 2022-11-01 
+ · 登记 2022-11-02 · 支付 2022-11-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20221207@dividend-calendar
+DTSTAMP:20221207T000000Z
+DTSTART;VALUE=DATE:20221207
+DTEND;VALUE=DATE:20221208
+SUMMARY:$2\,930.51
+DESCRIPTION:税前股息总额: $2\,930.51\n\nIBHF: 127.3954股 × $0.113
+ 386 = $14.44\n  除息 2022-12-01 · 登记 2022-12-02 · 支付 2022-12
+ -07\nIBHG: 21\,809.3968股 × $0.113863 = $2\,483.28\n  除息 2022-12-0
+ 1 · 登记 2022-12-02 · 支付 2022-12-07\nIBHH: 2\,559.3648股 × $0.
+ 128817 = $329.69\n  除息 2022-12-01 · 登记 2022-12-02 · 支付 202
+ 2-12-07\nIBHI: 846.3668股 × $0.121805 = $103.09\n  除息 2022-12-01 
+ · 登记 2022-12-02 · 支付 2022-12-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20221221@dividend-calendar
+DTSTAMP:20221221T000000Z
+DTSTART;VALUE=DATE:20221221
+DTEND;VALUE=DATE:20221222
+SUMMARY:$2\,953.34
+DESCRIPTION:税前股息总额: $2\,953.34\n\nIBHF: 127.3954股 × $0.132
+ 611 = $16.89\n  除息 2022-12-15 · 登记 2022-12-16 · 支付 2022-12
+ -21\nIBHG: 21\,809.3968股 × $0.114455 = $2\,496.19\n  除息 2022-12-1
+ 5 · 登记 2022-12-16 · 支付 2022-12-21\nIBHH: 2\,559.3648股 × $0.
+ 130706 = $334.52\n  除息 2022-12-15 · 登记 2022-12-16 · 支付 202
+ 2-12-21\nIBHI: 846.3668股 × $0.124916 = $105.72\n  除息 2022-12-15 
+ · 登记 2022-12-16 · 支付 2022-12-21\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230207@dividend-calendar
+DTSTAMP:20230207T000000Z
+DTSTART;VALUE=DATE:20230207
+DTEND;VALUE=DATE:20230208
+SUMMARY:$2\,887.10
+DESCRIPTION:税前股息总额: $2\,887.10\n\nIBHF: 127.3954股 × $0.132
+ 630 = $16.90\n  除息 2023-02-01 · 登记 2023-02-02 · 支付 2023-02
+ -07\nIBHG: 21\,809.3968股 × $0.111627 = $2\,434.52\n  除息 2023-02-0
+ 1 · 登记 2023-02-02 · 支付 2023-02-07\nIBHH: 2\,559.3648股 × $0.
+ 131409 = $336.32\n  除息 2023-02-01 · 登记 2023-02-02 · 支付 202
+ 3-02-07\nIBHI: 846.3668股 × $0.117402 = $99.37\n  除息 2023-02-01 ·
+  登记 2023-02-02 · 支付 2023-02-07\n\n数据源: iShares / BlackRoc
+ k 官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230307@dividend-calendar
+DTSTAMP:20230307T000000Z
+DTSTART;VALUE=DATE:20230307
+DTEND;VALUE=DATE:20230308
+SUMMARY:$2\,908.90
+DESCRIPTION:税前股息总额: $2\,908.90\n\nIBHF: 127.3954股 × $0.131
+ 296 = $16.73\n  除息 2023-03-01 · 登记 2023-03-02 · 支付 2023-03
+ -07\nIBHG: 21\,809.3968股 × $0.112729 = $2\,458.55\n  除息 2023-03-0
+ 1 · 登记 2023-03-02 · 支付 2023-03-07\nIBHH: 2\,559.3648股 × $0.
+ 128819 = $329.69\n  除息 2023-03-01 · 登记 2023-03-02 · 支付 202
+ 3-03-07\nIBHI: 846.3668股 × $0.122792 = $103.93\n  除息 2023-03-01 
+ · 登记 2023-03-02 · 支付 2023-03-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230407@dividend-calendar
+DTSTAMP:20230407T000000Z
+DTSTART;VALUE=DATE:20230407
+DTEND;VALUE=DATE:20230408
+SUMMARY:$3\,093.73
+DESCRIPTION:税前股息总额: $3\,093.73\n\nIBHF: 127.3954股 × $0.142
+ 343 = $18.13\n  除息 2023-04-03 · 登记 2023-04-04 · 支付 2023-04
+ -07\nIBHG: 21\,809.3968股 × $0.119511 = $2\,606.46\n  除息 2023-04-0
+ 3 · 登记 2023-04-04 · 支付 2023-04-07\nIBHH: 2\,559.3648股 × $0.
+ 134754 = $344.88\n  除息 2023-04-03 · 登记 2023-04-04 · 支付 202
+ 3-04-07\nIBHI: 846.3668股 × $0.146807 = $124.25\n  除息 2023-04-03 
+ · 登记 2023-04-04 · 支付 2023-04-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230505@dividend-calendar
+DTSTAMP:20230505T000000Z
+DTSTART;VALUE=DATE:20230505
+DTEND;VALUE=DATE:20230506
+SUMMARY:$3\,291.32
+DESCRIPTION:税前股息总额: $3\,291.32\n\nIBHF: 127.3954股 × $0.144
+ 432 = $18.40\n  除息 2023-05-01 · 登记 2023-05-02 · 支付 2023-05
+ -05\nIBHG: 21\,809.3968股 × $0.128718 = $2\,807.26\n  除息 2023-05-0
+ 1 · 登记 2023-05-02 · 支付 2023-05-05\nIBHH: 2\,559.3648股 × $0.
+ 133381 = $341.37\n  除息 2023-05-01 · 登记 2023-05-02 · 支付 202
+ 3-05-05\nIBHI: 846.3668股 × $0.146844 = $124.28\n  除息 2023-05-01 
+ · 登记 2023-05-02 · 支付 2023-05-05\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230607@dividend-calendar
+DTSTAMP:20230607T000000Z
+DTSTART;VALUE=DATE:20230607
+DTEND;VALUE=DATE:20230608
+SUMMARY:$3\,177.74
+DESCRIPTION:税前股息总额: $3\,177.74\n\nIBHF: 127.3954股 × $0.143
+ 641 = $18.30\n  除息 2023-06-01 · 登记 2023-06-02 · 支付 2023-06
+ -07\nIBHG: 21\,809.3968股 × $0.125802 = $2\,743.67\n  除息 2023-06-0
+ 1 · 登记 2023-06-02 · 支付 2023-06-07\nIBHH: 2\,559.3648股 × $0.
+ 121413 = $310.74\n  除息 2023-06-01 · 登记 2023-06-02 · 支付 202
+ 3-06-07\nIBHI: 846.3668股 × $0.124106 = $105.04\n  除息 2023-06-01 
+ · 登记 2023-06-02 · 支付 2023-06-07\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230710@dividend-calendar
+DTSTAMP:20230710T000000Z
+DTSTART;VALUE=DATE:20230710
+DTEND;VALUE=DATE:20230711
+SUMMARY:$3\,233.13
+DESCRIPTION:税前股息总额: $3\,233.13\n\nIBHF: 127.3954股 × $0.142
+ 772 = $18.19\n  除息 2023-07-03 · 登记 2023-07-05 · 支付 2023-07
+ -10\nIBHG: 21\,809.3968股 × $0.126984 = $2\,769.44\n  除息 2023-07-0
+ 3 · 登记 2023-07-05 · 支付 2023-07-10\nIBHH: 2\,559.3648股 × $0.
+ 133441 = $341.52\n  除息 2023-07-03 · 登记 2023-07-05 · 支付 202
+ 3-07-10\nIBHI: 846.3668股 × $0.122842 = $103.97\n  除息 2023-07-03 
+ · 登记 2023-07-05 · 支付 2023-07-10\n\n数据源: iShares / BlackR
+ ock 官方 fundDownload API\n金额为税前估算，实际到账可能
+ 因税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230807@dividend-calendar
+DTSTAMP:20230807T000000Z
+DTSTART;VALUE=DATE:20230807
+DTEND;VALUE=DATE:20230808
+SUMMARY:$3\,417.45
+DESCRIPTION:税前股息总额: $3\,417.45\n\nIBHF: 127.3954股 × $0.138
+ 215 = $17.61\n  除息 2023-08-01 · 登记 2023-08-02 · 支付 2023-08
+ -07\nIBHG: 21\,809.3968股 × $0.128518 = $2\,802.90\n  除息 2023-08-0
+ 1 · 登记 2023-08-02 · 支付 2023-08-07\nIBHH: 2\,559.3648股 × $0.
+ 136029 = $348.15\n  除息 2023-08-01 · 登记 2023-08-02 · 支付 202
+ 3-08-07\nIBHI: 846.3668股 × $0.122870 = $103.99\n  除息 2023-08-01 
+ · 登记 2023-08-02 · 支付 2023-08-07\nIBHJ: 760.3254股 × $0.19044
+ 5 = $144.80\n  除息 2023-08-01 · 登记 2023-08-02 · 支付 2023-08-
+ 07\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20230908@dividend-calendar
+DTSTAMP:20230908T000000Z
+DTSTART;VALUE=DATE:20230908
+DTEND;VALUE=DATE:20230909
+SUMMARY:$3\,248.01
+DESCRIPTION:税前股息总额: $3\,248.01\n\nIBHF: 127.3954股 × $0.141
+ 398 = $18.01\n  除息 2023-09-01 · 登记 2023-09-05 · 支付 2023-09
+ -08\nIBHG: 21\,809.3968股 × $0.122356 = $2\,668.51\n  除息 2023-09-0
+ 1 · 登记 2023-09-05 · 支付 2023-09-08\nIBHH: 2\,559.3648股 × $0.
+ 135079 = $345.72\n  除息 2023-09-01 · 登记 2023-09-05 · 支付 202
+ 3-09-08\nIBHI: 846.3668股 × $0.118292 = $100.12\n  除息 2023-09-01 
+ · 登记 2023-09-05 · 支付 2023-09-08\nIBHJ: 760.3254股 × $0.15210
+ 7 = $115.65\n  除息 2023-09-01 · 登记 2023-09-05 · 支付 2023-09-
+ 08\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20231006@dividend-calendar
+DTSTAMP:20231006T000000Z
+DTSTART;VALUE=DATE:20231006
+DTEND;VALUE=DATE:20231007
+SUMMARY:$3\,148.19
+DESCRIPTION:税前股息总额: $3\,148.19\n\nIBHF: 127.3954股 × $0.137
+ 027 = $17.46\n  除息 2023-10-02 · 登记 2023-10-03 · 支付 2023-10
+ -06\nIBHG: 21\,809.3968股 × $0.117369 = $2\,559.75\n  除息 2023-10-0
+ 2 · 登记 2023-10-03 · 支付 2023-10-06\nIBHH: 2\,559.3648股 × $0.
+ 135908 = $347.84\n  除息 2023-10-02 · 登记 2023-10-03 · 支付 202
+ 3-10-06\nIBHI: 846.3668股 × $0.128151 = $108.46\n  除息 2023-10-02 
+ · 登记 2023-10-03 · 支付 2023-10-06\nIBHJ: 760.3254股 × $0.15083
+ 1 = $114.68\n  除息 2023-10-02 · 登记 2023-10-03 · 支付 2023-10-
+ 06\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20231107@dividend-calendar
+DTSTAMP:20231107T000000Z
+DTSTART;VALUE=DATE:20231107
+DTEND;VALUE=DATE:20231108
+SUMMARY:$3\,205.38
+DESCRIPTION:税前股息总额: $3\,205.38\n\nIBHF: 127.3954股 × $0.145
+ 165 = $18.49\n  除息 2023-11-01 · 登记 2023-11-02 · 支付 2023-11
+ -07\nIBHG: 21\,809.3968股 × $0.120598 = $2\,630.17\n  除息 2023-11-0
+ 1 · 登记 2023-11-02 · 支付 2023-11-07\nIBHH: 2\,559.3648股 × $0.
+ 135923 = $347.88\n  除息 2023-11-01 · 登记 2023-11-02 · 支付 202
+ 3-11-07\nIBHI: 846.3668股 × $0.109092 = $92.33\n  除息 2023-11-01 ·
+  登记 2023-11-02 · 支付 2023-11-07\nIBHJ: 760.3254股 × $0.153241 
+ = $116.51\n  除息 2023-11-01 · 登记 2023-11-02 · 支付 2023-11-07
+ \n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20231207@dividend-calendar
+DTSTAMP:20231207T000000Z
+DTSTART;VALUE=DATE:20231207
+DTEND;VALUE=DATE:20231208
+SUMMARY:$3\,313.12
+DESCRIPTION:税前股息总额: $3\,313.12\n\nIBHF: 127.3954股 × $0.137
+ 157 = $17.47\n  除息 2023-12-01 · 登记 2023-12-04 · 支付 2023-12
+ -07\nIBHG: 21\,809.3968股 × $0.131572 = $2\,869.51\n  除息 2023-12-0
+ 1 · 登记 2023-12-04 · 支付 2023-12-07\nIBHH: 2\,559.3648股 × $0.
+ 081835 = $209.45\n  除息 2023-12-01 · 登记 2023-12-04 · 支付 202
+ 3-12-07\nIBHI: 846.3668股 × $0.123743 = $104.73\n  除息 2023-12-01 
+ · 登记 2023-12-04 · 支付 2023-12-07\nIBHJ: 760.3254股 × $0.14726
+ 0 = $111.97\n  除息 2023-12-01 · 登记 2023-12-04 · 支付 2023-12-
+ 07\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20231220@dividend-calendar
+DTSTAMP:20231220T000000Z
+DTSTART;VALUE=DATE:20231220
+DTEND;VALUE=DATE:20231221
+SUMMARY:$3\,506.40
+DESCRIPTION:税前股息总额: $3\,506.40\n\nIBHF: 127.3954股 × $0.143
+ 575 = $18.29\n  除息 2023-12-14 · 登记 2023-12-15 · 支付 2023-12
+ -20\nIBHG: 21\,809.3968股 × $0.133286 = $2\,906.89\n  除息 2023-12-1
+ 4 · 登记 2023-12-15 · 支付 2023-12-20\nIBHH: 2\,559.3648股 × $0.
+ 141338 = $361.74\n  除息 2023-12-14 · 登记 2023-12-15 · 支付 202
+ 3-12-20\nIBHI: 846.3668股 × $0.117845 = $99.74\n  除息 2023-12-14 ·
+  登记 2023-12-15 · 支付 2023-12-20\nIBHJ: 760.3254股 × $0.157500 
+ = $119.75\n  除息 2023-12-14 · 登记 2023-12-15 · 支付 2023-12-20
+ \n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240207@dividend-calendar
+DTSTAMP:20240207T000000Z
+DTSTART;VALUE=DATE:20240207
+DTEND;VALUE=DATE:20240208
+SUMMARY:$3\,534.94
+DESCRIPTION:税前股息总额: $3\,534.94\n\nIBHF: 127.3954股 × $0.143
+ 855 = $18.33\n  除息 2024-02-01 · 登记 2024-02-02 · 支付 2024-02
+ -07\nIBHG: 21\,809.3968股 × $0.135536 = $2\,955.96\n  除息 2024-02-0
+ 1 · 登记 2024-02-02 · 支付 2024-02-07\nIBHH: 2\,559.3648股 × $0.
+ 130025 = $332.78\n  除息 2024-02-01 · 登记 2024-02-02 · 支付 202
+ 4-02-07\nIBHI: 846.3668股 × $0.131431 = $111.24\n  除息 2024-02-01 
+ · 登记 2024-02-02 · 支付 2024-02-07\nIBHJ: 760.3254股 × $0.15340
+ 2 = $116.64\n  除息 2024-02-01 · 登记 2024-02-02 · 支付 2024-02-
+ 07\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240307@dividend-calendar
+DTSTAMP:20240307T000000Z
+DTSTART;VALUE=DATE:20240307
+DTEND;VALUE=DATE:20240308
+SUMMARY:$3\,436.24
+DESCRIPTION:税前股息总额: $3\,436.24\n\nIBHF: 127.3954股 × $0.140
+ 183 = $17.86\n  除息 2024-03-01 · 登记 2024-03-04 · 支付 2024-03
+ -07\nIBHG: 21\,809.3968股 × $0.131244 = $2\,862.35\n  除息 2024-03-0
+ 1 · 登记 2024-03-04 · 支付 2024-03-07\nIBHH: 2\,559.3648股 × $0.
+ 133875 = $342.63\n  除息 2024-03-01 · 登记 2024-03-04 · 支付 202
+ 4-03-07\nIBHI: 846.3668股 × $0.112550 = $95.26\n  除息 2024-03-01 ·
+  登记 2024-03-04 · 支付 2024-03-07\nIBHJ: 760.3254股 × $0.155375 
+ = $118.14\n  除息 2024-03-01 · 登记 2024-03-04 · 支付 2024-03-07
+ \n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税
+ 前估算，实际到账可能因税务、券商处理和持仓变动而
+ 不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240405@dividend-calendar
+DTSTAMP:20240405T000000Z
+DTSTART;VALUE=DATE:20240405
+DTEND;VALUE=DATE:20240406
+SUMMARY:$3\,729.13
+DESCRIPTION:税前股息总额: $3\,729.13\n\nIBHF: 127.3954股 × $0.139
+ 576 = $17.78\n  除息 2024-04-01 · 登记 2024-04-02 · 支付 2024-04
+ -05\nIBHG: 21\,809.3968股 × $0.142581 = $3\,109.61\n  除息 2024-04-0
+ 1 · 登记 2024-04-02 · 支付 2024-04-05\nIBHH: 2\,559.3648股 × $0.
+ 143406 = $367.03\n  除息 2024-04-01 · 登记 2024-04-02 · 支付 202
+ 4-04-05\nIBHI: 846.3668股 × $0.133287 = $112.81\n  除息 2024-04-01 
+ · 登记 2024-04-02 · 支付 2024-04-05\nIBHJ: 760.3254股 × $0.16032
+ 7 = $121.90\n  除息 2024-04-01 · 登记 2024-04-02 · 支付 2024-04-
+ 05\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240507@dividend-calendar
+DTSTAMP:20240507T000000Z
+DTSTART;VALUE=DATE:20240507
+DTEND;VALUE=DATE:20240508
+SUMMARY:$3\,480.47
+DESCRIPTION:税前股息总额: $3\,480.47\n\nIBHF: 127.3954股 × $0.148
+ 766 = $18.95\n  除息 2024-05-01 · 登记 2024-05-02 · 支付 2024-05
+ -07\nIBHG: 21\,809.3968股 × $0.132447 = $2\,888.59\n  除息 2024-05-0
+ 1 · 登记 2024-05-02 · 支付 2024-05-07\nIBHH: 2\,559.3648股 × $0.
+ 137952 = $353.07\n  除息 2024-05-01 · 登记 2024-05-02 · 支付 202
+ 4-05-07\nIBHI: 846.3668股 × $0.132489 = $112.13\n  除息 2024-05-01 
+ · 登记 2024-05-02 · 支付 2024-05-07\nIBHJ: 760.3254股 × $0.14168
+ 1 = $107.72\n  除息 2024-05-01 · 登记 2024-05-02 · 支付 2024-05-
+ 07\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240607@dividend-calendar
+DTSTAMP:20240607T000000Z
+DTSTART;VALUE=DATE:20240607
+DTEND;VALUE=DATE:20240608
+SUMMARY:$3\,323.58
+DESCRIPTION:税前股息总额: $3\,323.58\n\nIBHF: 127.3954股 × $0.142
+ 352 = $18.13\n  除息 2024-06-03 · 登记 2024-06-03 · 支付 2024-06
+ -07\nIBHG: 21\,809.3968股 × $0.124843 = $2\,722.75\n  除息 2024-06-0
+ 3 · 登记 2024-06-03 · 支付 2024-06-07\nIBHH: 2\,559.3648股 × $0.
+ 137236 = $351.24\n  除息 2024-06-03 · 登记 2024-06-03 · 支付 202
+ 4-06-07\nIBHI: 846.3668股 × $0.133077 = $112.63\n  除息 2024-06-03 
+ · 登记 2024-06-03 · 支付 2024-06-07\nIBHJ: 760.3254股 × $0.15627
+ 7 = $118.82\n  除息 2024-06-03 · 登记 2024-06-03 · 支付 2024-06-
+ 07\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为
+ 税前估算，实际到账可能因税务、券商处理和持仓变动
+ 而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240705@dividend-calendar
+DTSTAMP:20240705T000000Z
+DTSTART;VALUE=DATE:20240705
+DTEND;VALUE=DATE:20240706
+SUMMARY:$3\,544.10
+DESCRIPTION:税前股息总额: $3\,544.10\n\nIBHF: 127.3954股 × $0.137
+ 764 = $17.55\n  除息 2024-07-01 · 登记 2024-07-01 · 支付 2024-07
+ -05\nIBHG: 21\,809.3968股 × $0.125116 = $2\,728.70\n  除息 2024-07-0
+ 1 · 登记 2024-07-01 · 支付 2024-07-05\nIBHH: 2\,559.3648股 × $0.
+ 139896 = $358.04\n  除息 2024-07-01 · 登记 2024-07-01 · 支付 202
+ 4-07-05\nIBHI: 846.3668股 × $0.129200 = $109.35\n  除息 2024-07-01 
+ · 登记 2024-07-01 · 支付 2024-07-05\nIBHJ: 760.3254股 × $0.15702
+ 3 = $119.39\n  除息 2024-07-01 · 登记 2024-07-01 · 支付 2024-07-
+ 05\nIBHK: 1\,232.3071股 × $0.171276 = $211.06\n  除息 2024-07-01 · 
+ 登记 2024-07-01 · 支付 2024-07-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240806@dividend-calendar
+DTSTAMP:20240806T000000Z
+DTSTART;VALUE=DATE:20240806
+DTEND;VALUE=DATE:20240807
+SUMMARY:$3\,563.48
+DESCRIPTION:税前股息总额: $3\,563.48\n\nIBHF: 127.3954股 × $0.136
+ 831 = $17.43\n  除息 2024-08-01 · 登记 2024-08-01 · 支付 2024-08
+ -06\nIBHG: 21\,809.3968股 × $0.129293 = $2\,819.80\n  除息 2024-08-0
+ 1 · 登记 2024-08-01 · 支付 2024-08-06\nIBHH: 2\,559.3648股 × $0.
+ 134646 = $344.61\n  除息 2024-08-01 · 登记 2024-08-01 · 支付 202
+ 4-08-06\nIBHI: 846.3668股 × $0.125056 = $105.84\n  除息 2024-08-01 
+ · 登记 2024-08-01 · 支付 2024-08-06\nIBHJ: 760.3254股 × $0.13714
+ 2 = $104.27\n  除息 2024-08-01 · 登记 2024-08-01 · 支付 2024-08-
+ 06\nIBHK: 1\,232.3071股 × $0.139184 = $171.52\n  除息 2024-08-01 · 
+ 登记 2024-08-01 · 支付 2024-08-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20240906@dividend-calendar
+DTSTAMP:20240906T000000Z
+DTSTART;VALUE=DATE:20240906
+DTEND;VALUE=DATE:20240907
+SUMMARY:$3\,531.46
+DESCRIPTION:税前股息总额: $3\,531.46\n\nIBHF: 127.3954股 × $0.138
+ 983 = $17.71\n  除息 2024-09-03 · 登记 2024-09-03 · 支付 2024-09
+ -06\nIBHG: 21\,809.3968股 × $0.127480 = $2\,780.26\n  除息 2024-09-0
+ 3 · 登记 2024-09-03 · 支付 2024-09-06\nIBHH: 2\,559.3648股 × $0.
+ 133219 = $340.96\n  除息 2024-09-03 · 登记 2024-09-03 · 支付 202
+ 4-09-06\nIBHI: 846.3668股 × $0.130322 = $110.30\n  除息 2024-09-03 
+ · 登记 2024-09-03 · 支付 2024-09-06\nIBHJ: 760.3254股 × $0.14207
+ 1 = $108.02\n  除息 2024-09-03 · 登记 2024-09-03 · 支付 2024-09-
+ 06\nIBHK: 1\,232.3071股 × $0.141375 = $174.22\n  除息 2024-09-03 · 
+ 登记 2024-09-03 · 支付 2024-09-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20241004@dividend-calendar
+DTSTAMP:20241004T000000Z
+DTSTART;VALUE=DATE:20241004
+DTEND;VALUE=DATE:20241005
+SUMMARY:$3\,525.41
+DESCRIPTION:税前股息总额: $3\,525.41\n\nIBHF: 127.3954股 × $0.136
+ 004 = $17.33\n  除息 2024-10-01 · 登记 2024-10-01 · 支付 2024-10
+ -04\nIBHG: 21\,809.3968股 × $0.128414 = $2\,800.63\n  除息 2024-10-0
+ 1 · 登记 2024-10-01 · 支付 2024-10-04\nIBHH: 2\,559.3648股 × $0.
+ 129144 = $330.53\n  除息 2024-10-01 · 登记 2024-10-01 · 支付 202
+ 4-10-04\nIBHI: 846.3668股 × $0.127277 = $107.72\n  除息 2024-10-01 
+ · 登记 2024-10-01 · 支付 2024-10-04\nIBHJ: 760.3254股 × $0.14371
+ 5 = $109.27\n  除息 2024-10-01 · 登记 2024-10-01 · 支付 2024-10-
+ 04\nIBHK: 1\,232.3071股 × $0.129782 = $159.93\n  除息 2024-10-01 · 
+ 登记 2024-10-01 · 支付 2024-10-04\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20241106@dividend-calendar
+DTSTAMP:20241106T000000Z
+DTSTART;VALUE=DATE:20241106
+DTEND;VALUE=DATE:20241107
+SUMMARY:$3\,559.41
+DESCRIPTION:税前股息总额: $3\,559.41\n\nIBHF: 127.3954股 × $0.131
+ 606 = $16.77\n  除息 2024-11-01 · 登记 2024-11-01 · 支付 2024-11
+ -06\nIBHG: 21\,809.3968股 × $0.127181 = $2\,773.74\n  除息 2024-11-0
+ 1 · 登记 2024-11-01 · 支付 2024-11-06\nIBHH: 2\,559.3648股 × $0.
+ 137614 = $352.20\n  除息 2024-11-01 · 登记 2024-11-01 · 支付 202
+ 4-11-06\nIBHI: 846.3668股 × $0.139026 = $117.67\n  除息 2024-11-01 
+ · 登记 2024-11-01 · 支付 2024-11-06\nIBHJ: 760.3254股 × $0.14971
+ 5 = $113.83\n  除息 2024-11-01 · 登记 2024-11-01 · 支付 2024-11-
+ 06\nIBHK: 1\,232.3071股 × $0.150284 = $185.20\n  除息 2024-11-01 · 
+ 登记 2024-11-01 · 支付 2024-11-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20241205@dividend-calendar
+DTSTAMP:20241205T000000Z
+DTSTART;VALUE=DATE:20241205
+DTEND;VALUE=DATE:20241206
+SUMMARY:$3\,553.38
+DESCRIPTION:税前股息总额: $3\,553.38\n\nIBHF: 127.3954股 × $0.133
+ 764 = $17.04\n  除息 2024-12-02 · 登记 2024-12-02 · 支付 2024-12
+ -05\nIBHG: 21\,809.3968股 × $0.127649 = $2\,783.95\n  除息 2024-12-0
+ 2 · 登记 2024-12-02 · 支付 2024-12-05\nIBHH: 2\,559.3648股 × $0.
+ 135383 = $346.49\n  除息 2024-12-02 · 登记 2024-12-02 · 支付 202
+ 4-12-05\nIBHI: 846.3668股 × $0.135105 = $114.35\n  除息 2024-12-02 
+ · 登记 2024-12-02 · 支付 2024-12-05\nIBHJ: 760.3254股 × $0.15203
+ 9 = $115.60\n  除息 2024-12-02 · 登记 2024-12-02 · 支付 2024-12-
+ 05\nIBHK: 1\,232.3071股 × $0.142780 = $175.95\n  除息 2024-12-02 · 
+ 登记 2024-12-02 · 支付 2024-12-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20241223@dividend-calendar
+DTSTAMP:20241223T000000Z
+DTSTART;VALUE=DATE:20241223
+DTEND;VALUE=DATE:20241224
+SUMMARY:$3\,542.21
+DESCRIPTION:税前股息总额: $3\,542.21\n\nIBHF: 127.3954股 × $0.129
+ 749 = $16.53\n  除息 2024-12-18 · 登记 2024-12-18 · 支付 2024-12
+ -23\nIBHG: 21\,809.3968股 × $0.128404 = $2\,800.41\n  除息 2024-12-1
+ 8 · 登记 2024-12-18 · 支付 2024-12-23\nIBHH: 2\,559.3648股 × $0.
+ 127461 = $326.22\n  除息 2024-12-18 · 登记 2024-12-18 · 支付 202
+ 4-12-23\nIBHI: 846.3668股 × $0.133360 = $112.87\n  除息 2024-12-18 
+ · 登记 2024-12-18 · 支付 2024-12-23\nIBHJ: 760.3254股 × $0.14087
+ 8 = $107.11\n  除息 2024-12-18 · 登记 2024-12-18 · 支付 2024-12-
+ 23\nIBHK: 1\,232.3071股 × $0.145310 = $179.07\n  除息 2024-12-18 · 
+ 登记 2024-12-18 · 支付 2024-12-23\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250206@dividend-calendar
+DTSTAMP:20250206T000000Z
+DTSTART;VALUE=DATE:20250206
+DTEND;VALUE=DATE:20250207
+SUMMARY:$3\,333.03
+DESCRIPTION:税前股息总额: $3\,333.03\n\nIBHF: 127.3954股 × $0.127
+ 567 = $16.25\n  除息 2025-02-03 · 登记 2025-02-03 · 支付 2025-02
+ -06\nIBHG: 21\,809.3968股 × $0.117967 = $2\,572.79\n  除息 2025-02-0
+ 3 · 登记 2025-02-03 · 支付 2025-02-06\nIBHH: 2\,559.3648股 × $0.
+ 133039 = $340.50\n  除息 2025-02-03 · 登记 2025-02-03 · 支付 202
+ 5-02-06\nIBHI: 846.3668股 × $0.131829 = $111.58\n  除息 2025-02-03 
+ · 登记 2025-02-03 · 支付 2025-02-06\nIBHJ: 760.3254股 × $0.14890
+ 6 = $113.22\n  除息 2025-02-03 · 登记 2025-02-03 · 支付 2025-02-
+ 06\nIBHK: 1\,232.3071股 × $0.145014 = $178.70\n  除息 2025-02-03 · 
+ 登记 2025-02-03 · 支付 2025-02-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250306@dividend-calendar
+DTSTAMP:20250306T000000Z
+DTSTART;VALUE=DATE:20250306
+DTEND;VALUE=DATE:20250307
+SUMMARY:$3\,419.89
+DESCRIPTION:税前股息总额: $3\,419.89\n\nIBHF: 127.3954股 × $0.124
+ 634 = $15.88\n  除息 2025-03-03 · 登记 2025-03-03 · 支付 2025-03
+ -06\nIBHG: 21\,809.3968股 × $0.123293 = $2\,688.95\n  除息 2025-03-0
+ 3 · 登记 2025-03-03 · 支付 2025-03-06\nIBHH: 2\,559.3648股 × $0.
+ 131086 = $335.50\n  除息 2025-03-03 · 登记 2025-03-03 · 支付 202
+ 5-03-06\nIBHI: 846.3668股 × $0.140195 = $118.66\n  除息 2025-03-03 
+ · 登记 2025-03-03 · 支付 2025-03-06\nIBHJ: 760.3254股 × $0.14534
+ 7 = $110.51\n  除息 2025-03-03 · 登记 2025-03-03 · 支付 2025-03-
+ 06\nIBHK: 1\,232.3071股 × $0.122046 = $150.40\n  除息 2025-03-03 · 
+ 登记 2025-03-03 · 支付 2025-03-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250404@dividend-calendar
+DTSTAMP:20250404T000000Z
+DTSTART;VALUE=DATE:20250404
+DTEND;VALUE=DATE:20250405
+SUMMARY:$3\,413.82
+DESCRIPTION:税前股息总额: $3\,413.82\n\nIBHF: 127.3954股 × $0.128
+ 746 = $16.40\n  除息 2025-04-01 · 登记 2025-04-01 · 支付 2025-04
+ -04\nIBHG: 21\,809.3968股 × $0.123233 = $2\,687.64\n  除息 2025-04-0
+ 1 · 登记 2025-04-01 · 支付 2025-04-04\nIBHH: 2\,559.3648股 × $0.
+ 125168 = $320.35\n  除息 2025-04-01 · 登记 2025-04-01 · 支付 202
+ 5-04-04\nIBHI: 846.3668股 × $0.130710 = $110.63\n  除息 2025-04-01 
+ · 登记 2025-04-01 · 支付 2025-04-04\nIBHJ: 760.3254股 × $0.14802
+ 1 = $112.54\n  除息 2025-04-01 · 登记 2025-04-01 · 支付 2025-04-
+ 04\nIBHK: 1\,232.3071股 × $0.134915 = $166.26\n  除息 2025-04-01 · 
+ 登记 2025-04-01 · 支付 2025-04-04\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250506@dividend-calendar
+DTSTAMP:20250506T000000Z
+DTSTART;VALUE=DATE:20250506
+DTEND;VALUE=DATE:20250507
+SUMMARY:$3\,490.29
+DESCRIPTION:税前股息总额: $3\,490.29\n\nIBHF: 127.3954股 × $0.129
+ 588 = $16.51\n  除息 2025-05-01 · 登记 2025-05-01 · 支付 2025-05
+ -06\nIBHG: 21\,809.3968股 × $0.124377 = $2\,712.59\n  除息 2025-05-0
+ 1 · 登记 2025-05-01 · 支付 2025-05-06\nIBHH: 2\,559.3648股 × $0.
+ 134345 = $343.84\n  除息 2025-05-01 · 登记 2025-05-01 · 支付 202
+ 5-05-06\nIBHI: 846.3668股 × $0.142912 = $120.96\n  除息 2025-05-01 
+ · 登记 2025-05-01 · 支付 2025-05-06\nIBHJ: 760.3254股 × $0.15396
+ 3 = $117.06\n  除息 2025-05-01 · 登记 2025-05-01 · 支付 2025-05-
+ 06\nIBHK: 1\,232.3071股 × $0.145532 = $179.34\n  除息 2025-05-01 · 
+ 登记 2025-05-01 · 支付 2025-05-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250605@dividend-calendar
+DTSTAMP:20250605T000000Z
+DTSTART;VALUE=DATE:20250605
+DTEND;VALUE=DATE:20250606
+SUMMARY:$3\,409.10
+DESCRIPTION:税前股息总额: $3\,409.10\n\nIBHF: 127.3954股 × $0.128
+ 902 = $16.42\n  除息 2025-06-02 · 登记 2025-06-02 · 支付 2025-06
+ -05\nIBHG: 21\,809.3968股 × $0.120085 = $2\,618.98\n  除息 2025-06-0
+ 2 · 登记 2025-06-02 · 支付 2025-06-05\nIBHH: 2\,559.3648股 × $0.
+ 132019 = $337.88\n  除息 2025-06-02 · 登记 2025-06-02 · 支付 202
+ 5-06-05\nIBHI: 846.3668股 × $0.138464 = $117.19\n  除息 2025-06-02 
+ · 登记 2025-06-02 · 支付 2025-06-05\nIBHJ: 760.3254股 × $0.15075
+ 2 = $114.62\n  除息 2025-06-02 · 登记 2025-06-02 · 支付 2025-06-
+ 05\nIBHK: 1\,232.3071股 × $0.165544 = $204.00\n  除息 2025-06-02 · 
+ 登记 2025-06-02 · 支付 2025-06-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250707@dividend-calendar
+DTSTAMP:20250707T000000Z
+DTSTART;VALUE=DATE:20250707
+DTEND;VALUE=DATE:20250708
+SUMMARY:$3\,331.47
+DESCRIPTION:税前股息总额: $3\,331.47\n\nIBHF: 127.3954股 × $0.130
+ 017 = $16.56\n  除息 2025-07-01 · 登记 2025-07-01 · 支付 2025-07
+ -07\nIBHG: 21\,809.3968股 × $0.117890 = $2\,571.11\n  除息 2025-07-0
+ 1 · 登记 2025-07-01 · 支付 2025-07-07\nIBHH: 2\,559.3648股 × $0.
+ 130490 = $333.97\n  除息 2025-07-01 · 登记 2025-07-01 · 支付 202
+ 5-07-07\nIBHI: 846.3668股 × $0.137649 = $116.50\n  除息 2025-07-01 
+ · 登记 2025-07-01 · 支付 2025-07-07\nIBHJ: 760.3254股 × $0.14778
+ 8 = $112.37\n  除息 2025-07-01 · 登记 2025-07-01 · 支付 2025-07-
+ 07\nIBHK: 1\,232.3071股 × $0.146845 = $180.96\n  除息 2025-07-01 · 
+ 登记 2025-07-01 · 支付 2025-07-07\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250806@dividend-calendar
+DTSTAMP:20250806T000000Z
+DTSTART;VALUE=DATE:20250806
+DTEND;VALUE=DATE:20250807
+SUMMARY:$3\,329.17
+DESCRIPTION:税前股息总额: $3\,329.17\n\nIBHF: 127.3954股 × $0.130
+ 605 = $16.64\n  除息 2025-08-01 · 登记 2025-08-01 · 支付 2025-08
+ -06\nIBHG: 21\,809.3968股 × $0.119183 = $2\,599.31\n  除息 2025-08-0
+ 1 · 登记 2025-08-01 · 支付 2025-08-06\nIBHH: 2\,559.3648股 × $0.
+ 127310 = $325.83\n  除息 2025-08-01 · 登记 2025-08-01 · 支付 202
+ 5-08-06\nIBHI: 846.3668股 × $0.135457 = $114.65\n  除息 2025-08-01 
+ · 登记 2025-08-01 · 支付 2025-08-06\nIBHJ: 760.3254股 × $0.14573
+ 6 = $110.81\n  除息 2025-08-01 · 登记 2025-08-01 · 支付 2025-08-
+ 06\nIBHK: 1\,232.3071股 × $0.131410 = $161.94\n  除息 2025-08-01 · 
+ 登记 2025-08-01 · 支付 2025-08-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20250905@dividend-calendar
+DTSTAMP:20250905T000000Z
+DTSTART;VALUE=DATE:20250905
+DTEND;VALUE=DATE:20250906
+SUMMARY:$3\,309.74
+DESCRIPTION:税前股息总额: $3\,309.74\n\nIBHF: 127.3954股 × $0.132
+ 827 = $16.92\n  除息 2025-09-02 · 登记 2025-09-02 · 支付 2025-09
+ -05\nIBHG: 21\,809.3968股 × $0.118055 = $2\,574.71\n  除息 2025-09-0
+ 2 · 登记 2025-09-02 · 支付 2025-09-05\nIBHH: 2\,559.3648股 × $0.
+ 127335 = $325.90\n  除息 2025-09-02 · 登记 2025-09-02 · 支付 202
+ 5-09-05\nIBHI: 846.3668股 × $0.130222 = $110.22\n  除息 2025-09-02 
+ · 登记 2025-09-02 · 支付 2025-09-05\nIBHJ: 760.3254股 × $0.15060
+ 9 = $114.51\n  除息 2025-09-02 · 登记 2025-09-02 · 支付 2025-09-
+ 05\nIBHK: 1\,232.3071股 × $0.135911 = $167.48\n  除息 2025-09-02 · 
+ 登记 2025-09-02 · 支付 2025-09-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20251006@dividend-calendar
+DTSTAMP:20251006T000000Z
+DTSTART;VALUE=DATE:20251006
+DTEND;VALUE=DATE:20251007
+SUMMARY:$3\,228.37
+DESCRIPTION:税前股息总额: $3\,228.37\n\nIBHF: 127.3954股 × $0.126
+ 316 = $16.09\n  除息 2025-10-01 · 登记 2025-10-01 · 支付 2025-10
+ -06\nIBHG: 21\,809.3968股 × $0.115368 = $2\,516.11\n  除息 2025-10-0
+ 1 · 登记 2025-10-01 · 支付 2025-10-06\nIBHH: 2\,559.3648股 × $0.
+ 122335 = $313.10\n  除息 2025-10-01 · 登记 2025-10-01 · 支付 202
+ 5-10-06\nIBHI: 846.3668股 × $0.128672 = $108.90\n  除息 2025-10-01 
+ · 登记 2025-10-01 · 支付 2025-10-06\nIBHJ: 760.3254股 × $0.14646
+ 5 = $111.36\n  除息 2025-10-01 · 登记 2025-10-01 · 支付 2025-10-
+ 06\nIBHK: 1\,232.3071股 × $0.132115 = $162.81\n  除息 2025-10-01 · 
+ 登记 2025-10-01 · 支付 2025-10-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20251106@dividend-calendar
+DTSTAMP:20251106T000000Z
+DTSTART;VALUE=DATE:20251106
+DTEND;VALUE=DATE:20251107
+SUMMARY:$3\,233.19
+DESCRIPTION:税前股息总额: $3\,233.19\n\nIBHF: 127.3954股 × $0.128
+ 243 = $16.34\n  除息 2025-11-03 · 登记 2025-11-03 · 支付 2025-11
+ -06\nIBHG: 21\,809.3968股 × $0.115465 = $2\,518.22\n  除息 2025-11-0
+ 3 · 登记 2025-11-03 · 支付 2025-11-06\nIBHH: 2\,559.3648股 × $0.
+ 119725 = $306.42\n  除息 2025-11-03 · 登记 2025-11-03 · 支付 202
+ 5-11-06\nIBHI: 846.3668股 × $0.129194 = $109.35\n  除息 2025-11-03 
+ · 登记 2025-11-03 · 支付 2025-11-06\nIBHJ: 760.3254股 × $0.14637
+ 5 = $111.29\n  除息 2025-11-03 · 登记 2025-11-03 · 支付 2025-11-
+ 06\nIBHK: 1\,232.3071股 × $0.139226 = $171.57\n  除息 2025-11-03 · 
+ 登记 2025-11-03 · 支付 2025-11-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20251204@dividend-calendar
+DTSTAMP:20251204T000000Z
+DTSTART;VALUE=DATE:20251204
+DTEND;VALUE=DATE:20251205
+SUMMARY:$3\,002.04
+DESCRIPTION:税前股息总额: $3\,002.04\n\nIBHF: 127.3954股 × $0.146
+ 845 = $18.71\n  除息 2025-12-01 · 登记 2025-12-01 · 支付 2025-12
+ -04\nIBHG: 21\,809.3968股 × $0.105253 = $2\,295.50\n  除息 2025-12-0
+ 1 · 登记 2025-12-01 · 支付 2025-12-04\nIBHH: 2\,559.3648股 × $0.
+ 118080 = $302.21\n  除息 2025-12-01 · 登记 2025-12-01 · 支付 202
+ 5-12-04\nIBHI: 846.3668股 × $0.127395 = $107.82\n  除息 2025-12-01 
+ · 登记 2025-12-01 · 支付 2025-12-04\nIBHJ: 760.3254股 × $0.13843
+ 5 = $105.26\n  除息 2025-12-01 · 登记 2025-12-01 · 支付 2025-12-
+ 04\nIBHK: 1\,232.3071股 × $0.140012 = $172.54\n  除息 2025-12-01 · 
+ 登记 2025-12-01 · 支付 2025-12-04\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20251224@dividend-calendar
+DTSTAMP:20251224T000000Z
+DTSTART;VALUE=DATE:20251224
+DTEND;VALUE=DATE:20251225
+SUMMARY:$3\,178.68
+DESCRIPTION:税前股息总额: $3\,178.68\n\nIBHF: 127.3954股 × $0.120
+ 056 = $15.29\n  除息 2025-12-19 · 登记 2025-12-19 · 支付 2025-12
+ -24\nIBHG: 21\,809.3968股 × $0.113576 = $2\,477.02\n  除息 2025-12-1
+ 9 · 登记 2025-12-19 · 支付 2025-12-24\nIBHH: 2\,559.3648股 × $0.
+ 111604 = $285.64\n  除息 2025-12-19 · 登记 2025-12-19 · 支付 202
+ 5-12-24\nIBHI: 846.3668股 × $0.130636 = $110.57\n  除息 2025-12-19 
+ · 登记 2025-12-19 · 支付 2025-12-24\nIBHJ: 760.3254股 × $0.14511
+ 6 = $110.34\n  除息 2025-12-19 · 登记 2025-12-19 · 支付 2025-12-
+ 24\nIBHK: 1\,232.3071股 × $0.145926 = $179.83\n  除息 2025-12-19 · 
+ 登记 2025-12-19 · 支付 2025-12-24\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260205@dividend-calendar
+DTSTAMP:20260205T000000Z
+DTSTART;VALUE=DATE:20260205
+DTEND;VALUE=DATE:20260206
+SUMMARY:$3\,159.32
+DESCRIPTION:税前股息总额: $3\,159.32\n\nIBHF: 127.3954股 × $0.116
+ 934 = $14.90\n  除息 2026-02-02 · 登记 2026-02-02 · 支付 2026-02
+ -05\nIBHG: 21\,809.3968股 × $0.111409 = $2\,429.76\n  除息 2026-02-0
+ 2 · 登记 2026-02-02 · 支付 2026-02-05\nIBHH: 2\,559.3648股 × $0.
+ 125778 = $321.91\n  除息 2026-02-02 · 登记 2026-02-02 · 支付 202
+ 6-02-05\nIBHI: 846.3668股 × $0.133740 = $113.19\n  除息 2026-02-02 
+ · 登记 2026-02-02 · 支付 2026-02-05\nIBHJ: 760.3254股 × $0.14724
+ 8 = $111.96\n  除息 2026-02-02 · 登记 2026-02-02 · 支付 2026-02-
+ 05\nIBHK: 1\,232.3071股 × $0.136007 = $167.60\n  除息 2026-02-02 · 
+ 登记 2026-02-02 · 支付 2026-02-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260305@dividend-calendar
+DTSTAMP:20260305T000000Z
+DTSTART;VALUE=DATE:20260305
+DTEND;VALUE=DATE:20260306
+SUMMARY:$2\,872.91
+DESCRIPTION:税前股息总额: $2\,872.91\n\nIBHF: 127.3954股 × $0.113
+ 051 = $14.40\n  除息 2026-03-02 · 登记 2026-03-02 · 支付 2026-03
+ -05\nIBHG: 21\,809.3968股 × $0.098999 = $2\,159.11\n  除息 2026-03-0
+ 2 · 登记 2026-03-02 · 支付 2026-03-05\nIBHH: 2\,559.3648股 × $0.
+ 120774 = $309.10\n  除息 2026-03-02 · 登记 2026-03-02 · 支付 202
+ 6-03-05\nIBHI: 846.3668股 × $0.128021 = $108.35\n  除息 2026-03-02 
+ · 登记 2026-03-02 · 支付 2026-03-05\nIBHJ: 760.3254股 × $0.14693
+ 3 = $111.72\n  除息 2026-03-02 · 登记 2026-03-02 · 支付 2026-03-
+ 05\nIBHK: 1\,232.3071股 × $0.138134 = $170.22\n  除息 2026-03-02 · 
+ 登记 2026-03-02 · 支付 2026-03-05\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260407@dividend-calendar
+DTSTAMP:20260407T000000Z
+DTSTART;VALUE=DATE:20260407
+DTEND;VALUE=DATE:20260408
+SUMMARY:$3\,091.05
+DESCRIPTION:税前股息总额: $3\,091.05\n\nIBHF: 127.3954股 × $0.115
+ 329 = $14.69\n  除息 2026-04-01 · 登记 2026-04-01 · 支付 2026-04
+ -07\nIBHG: 21\,809.3968股 × $0.108635 = $2\,369.26\n  除息 2026-04-0
+ 1 · 登记 2026-04-01 · 支付 2026-04-07\nIBHH: 2\,559.3648股 × $0.
+ 122832 = $314.37\n  除息 2026-04-01 · 登记 2026-04-01 · 支付 202
+ 6-04-07\nIBHI: 846.3668股 × $0.132947 = $112.52\n  除息 2026-04-01 
+ · 登记 2026-04-01 · 支付 2026-04-07\nIBHJ: 760.3254股 × $0.14683
+ 8 = $111.64\n  除息 2026-04-01 · 登记 2026-04-01 · 支付 2026-04-
+ 07\nIBHK: 1\,232.3071股 × $0.136779 = $168.55\n  除息 2026-04-01 · 
+ 登记 2026-04-01 · 支付 2026-04-07\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260506@dividend-calendar
+DTSTAMP:20260506T000000Z
+DTSTART;VALUE=DATE:20260506
+DTEND;VALUE=DATE:20260507
+SUMMARY:$3\,171.54
+DESCRIPTION:税前股息总额: $3\,171.54\n\nIBHF: 127.3954股 × $0.110
+ 818 = $14.12\n  除息 2026-05-01 · 登记 2026-05-01 · 支付 2026-05
+ -06\nIBHG: 21\,809.3968股 × $0.112552 = $2\,454.69\n  除息 2026-05-0
+ 1 · 登记 2026-05-01 · 支付 2026-05-06\nIBHH: 2\,559.3648股 × $0.
+ 124708 = $319.17\n  除息 2026-05-01 · 登记 2026-05-01 · 支付 202
+ 6-05-06\nIBHI: 846.3668股 × $0.122344 = $103.55\n  除息 2026-05-01 
+ · 登记 2026-05-01 · 支付 2026-05-06\nIBHJ: 760.3254股 × $0.14566
+ 9 = $110.76\n  除息 2026-05-01 · 登记 2026-05-01 · 支付 2026-05-
+ 06\nIBHK: 1\,232.3071股 × $0.137350 = $169.26\n  除息 2026-05-01 · 
+ 登记 2026-05-01 · 支付 2026-05-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260604@dividend-calendar
+DTSTAMP:20260604T000000Z
+DTSTART;VALUE=DATE:20260604
+DTEND;VALUE=DATE:20260605
+SUMMARY:$2\,908.38
+DESCRIPTION:税前股息总额: $2\,908.38\n\nIBHF: 127.3954股 × $0.107
+ 819 = $13.74\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 2026-06
+ -04\nIBHG: 21\,809.3968股 × $0.100993 = $2\,202.60\n  除息 2026-06-0
+ 1 · 登记 2026-06-01 · 支付 2026-06-04\nIBHH: 2\,559.3648股 × $0.
+ 118244 = $302.63\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 202
+ 6-06-04\nIBHI: 846.3668股 × $0.125933 = $106.59\n  除息 2026-06-01 
+ · 登记 2026-06-01 · 支付 2026-06-04\nIBHJ: 760.3254股 × $0.14805
+ 2 = $112.57\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 2026-06-
+ 04\nIBHK: 1\,232.3071股 × $0.138168 = $170.27\n  除息 2026-06-01 · 
+ 登记 2026-06-01 · 支付 2026-06-04\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260707@dividend-calendar
+DTSTAMP:20260707T000000Z
+DTSTART;VALUE=DATE:20260707
+DTEND;VALUE=DATE:20260708
+SUMMARY:$3\,067.27
+DESCRIPTION:税前股息总额: $3\,067.27\n\nIBHF: 127.3954股 × $0.082
+ 506 = $10.51\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 2026-07
+ -07\nIBHG: 21\,809.3968股 × $0.108434 = $2\,364.88\n  除息 2026-07-0
+ 1 · 登记 2026-07-01 · 支付 2026-07-07\nIBHH: 2\,559.3648股 × $0.
+ 120832 = $309.25\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 202
+ 6-07-07\nIBHI: 846.3668股 × $0.126070 = $106.70\n  除息 2026-07-01 
+ · 登记 2026-07-01 · 支付 2026-07-07\nIBHJ: 760.3254股 × $0.14525
+ 7 = $110.44\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 2026-07-
+ 07\nIBHK: 1\,232.3071股 × $0.134288 = $165.48\n  除息 2026-07-01 · 
+ 登记 2026-07-01 · 支付 2026-07-07\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20260806@dividend-calendar
+DTSTAMP:20260806T000000Z
+DTSTART;VALUE=DATE:20260806
+DTEND;VALUE=DATE:20260807
+SUMMARY:$3\,051.70
+DESCRIPTION:税前股息总额: $3\,051.70\n\nIBHF: 127.3954股 × $0.088
+ 297 = $11.25\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 2026-08
+ -06\nIBHG: 21\,809.3968股 × $0.107213 = $2\,338.25\n  除息 2026-08-0
+ 3 · 登记 2026-08-03 · 支付 2026-08-06\nIBHH: 2\,559.3648股 × $0.
+ 120436 = $308.24\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 202
+ 6-08-06\nIBHI: 846.3668股 × $0.130135 = $110.14\n  除息 2026-08-03 
+ · 登记 2026-08-03 · 支付 2026-08-06\nIBHJ: 760.3254股 × $0.14666
+ 3 = $111.51\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 2026-08-
+ 06\nIBHK: 1\,232.3071股 × $0.139828 = $172.31\n  除息 2026-08-03 · 
+ 登记 2026-08-03 · 支付 2026-08-06\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260904@dividend-calendar
 DTSTAMP:20260904T000000Z
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260905
 SUMMARY:$2\,975.51
-DESCRIPTION:税前股息总额: $2\,975.51\n\nIBHF: 127.3954股 × $0.079295 = $10.10\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHG: 21\,809.3968股 × $0.103851 = $2\,264.93\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHH: 2\,559.3648股 × $0.118087 = $302.23\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHI: 846.3668股 × $0.128101 = $108.42\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHJ: 760.3254股 × $0.145049 = $110.28\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHK: 1\,232.3071股 × $0.145700 = $179.55\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\n\n数据源: iShares / BlackRock 官方 fundDownload API\n金额为税前估算，实际到账可能因税务、券商处理和持仓变动而不同。
+DESCRIPTION:税前股息总额: $2\,975.51\n\nIBHF: 127.3954股 × $0.079
+ 295 = $10.10\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09
+ -04\nIBHG: 21\,809.3968股 × $0.103851 = $2\,264.93\n  除息 2026-09-0
+ 1 · 登记 2026-09-01 · 支付 2026-09-04\nIBHH: 2\,559.3648股 × $0.
+ 118087 = $302.23\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 202
+ 6-09-04\nIBHI: 846.3668股 × $0.128101 = $108.42\n  除息 2026-09-01 
+ · 登记 2026-09-01 · 支付 2026-09-04\nIBHJ: 760.3254股 × $0.14504
+ 9 = $110.28\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-
+ 04\nIBHK: 1\,232.3071股 × $0.145700 = $179.55\n  除息 2026-09-01 · 
+ 登记 2026-09-01 · 支付 2026-09-04\n\n数据源: iShares / BlackRock
+  官方 fundDownload API\n金额为税前估算，实际到账可能因
+ 税务、券商处理和持仓变动而不同。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
