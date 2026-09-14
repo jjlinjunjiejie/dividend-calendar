@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import defaultdict
 from decimal import Decimal
 from pathlib import Path
 from typing import Any, Match
@@ -17,6 +18,7 @@ README_FILE = ROOT / "README.md"
 POSITIONS_START = "<!-- POSITIONS:START -->"
 POSITIONS_END = "<!-- POSITIONS:END -->"
 AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
+DIVIDEND_AMOUNT_PATTERN = r"(?:=|→ 本次)\s*\$(?P<amount>\d[\d\\,]*(?:\.\d+)?)"
 
 
 def calendar_title_amount(match: Match[str]) -> str:
@@ -30,24 +32,46 @@ def shares_label(value: Any) -> str:
     return format(Decimal(str(value)), "f").rstrip("0").rstrip(".")
 
 
+def dividend_amount(part: str) -> Decimal | None:
+    """Extract the cash dividend for one ticker line from the generated memo."""
+    match = re.search(DIVIDEND_AMOUNT_PATTERN, part)
+    if not match:
+        return None
+    raw = match.group("amount").replace("\\,", "").replace(",", "")
+    return Decimal(raw)
+
+
 def compact_description(line: str, positions: dict[str, Any]) -> str:
-    """Keep only the tickers included in this dividend event and their share counts."""
+    """Show each ticker, configured shares, and its dividend for this pay date."""
     payload = line.removeprefix("DESCRIPTION:")
     tickers: list[str] = []
+    amounts: dict[str, Decimal] = defaultdict(Decimal)
+
     for part in payload.split("\\n"):
-        match = re.match(r"([A-Za-z0-9.-]+):", part)
-        if not match:
+        ticker_match = re.match(r"([A-Za-z0-9.-]+):", part)
+        if not ticker_match:
             continue
-        ticker = match.group(1)
-        if ticker in positions and ticker not in tickers:
+        ticker = ticker_match.group(1)
+        if ticker not in positions:
+            continue
+        if ticker not in tickers:
             tickers.append(ticker)
 
-    details = [f"{ticker} {shares_label(positions[ticker]['shares'])}股" for ticker in tickers]
+        amount = dividend_amount(part)
+        if amount is not None:
+            amounts[ticker] += amount
+
+    details: list[str] = []
+    for ticker in tickers:
+        shares = shares_label(positions[ticker]["shares"])
+        amount = int(amounts[ticker])
+        details.append(f"{ticker} {shares}股 股息 {amount}")
+
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
 
 def normalize_calendar(calendar_text: str, positions: dict[str, Any]) -> str:
-    """Normalize calendar titles and reduce event memo text to holdings only."""
+    """Normalize titles and reduce each daily event memo to ticker dividend details."""
     logical_lines: list[str] = []
     for line in calendar_text.splitlines():
         if line.startswith(" ") and logical_lines:
@@ -99,7 +123,7 @@ def main() -> None:
     calendar_text = update_calendar.OUTPUT_FILE.read_text(encoding="utf-8")
     normalized = normalize_calendar(calendar_text, positions)
     update_calendar.OUTPUT_FILE.write_text(normalized, encoding="utf-8", newline="")
-    print("Normalized calendar titles, simplified event memos, and synced README positions.")
+    print("Normalized calendar titles, merged daily dividend memos, and synced README positions.")
 
 
 if __name__ == "__main__":
