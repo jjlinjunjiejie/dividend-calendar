@@ -281,6 +281,14 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]], positions: 
             f"{ticker}｜{truncate(decimal(positions[ticker]['shares'])):,.1f}股｜${truncate(amount * NET_FACTOR):,.1f}"
             for ticker, amount in sorted(amounts.items())
         ]
+        # Amount estimates can still have an official payment date. Only
+        # unresolved date projections need the expected-payment suffix.
+        projected_date = any(
+            not entry.get("date_status", "").startswith("官方支付日")
+            for entry in estimates.values()
+        )
+        tax_note = f"预扣税{((1 - NET_FACTOR) * 100).normalize():f}%"
+        details.append(tax_note + ("｜预计本日发放" if projected_date else ""))
         lines.extend(["BEGIN:VEVENT", f"UID:dividend-{d.strftime('%Y%m%d')}@dividend-calendar",
                       f"DTSTAMP:{stamp}", f"LAST-MODIFIED:{stamp}", "SEQUENCE:0",
                       f"DTSTART;VALUE=DATE:{d.strftime('%Y%m%d')}",

@@ -19,7 +19,7 @@ The calendar prefers official iShares / BlackRock distribution data for the iSha
 
 The calendar shows the next 24 months of dividend events. Official iShares payment dates are used when available; months beyond the currently published official schedule are projected using the monthly cadence, including two December payments and no regular January payment. QQQ/VOO future payment dates are projected from their recent quarterly payment pattern.
 
-Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as plain integer digits with no dollar sign or thousands separator. The memo contains only one line per ticker in the format `IBHG｜21,809.3股｜$2,014.3`. Monthly estimates prefer NAV and SEC yield; quarterly estimates use validated trailing cash distributions directly.
+Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as plain integer digits with no dollar sign or thousands separator. The memo lists one line per ticker in the format `IBHG｜21,809.3股｜$2,014.3`, followed by `预扣税10%`. When any included payment date is projected, the final line is `预扣税10%｜预计本日发放`. An official date needs no certainty label, even if the amount is estimated. Monthly estimates prefer NAV and SEC yield; quarterly estimates use validated trailing cash distributions directly.
 
 Calendar titles are truncated to whole USD amounts without rounding. Memo share counts and dividend amounts are truncated to one decimal place without rounding. Memo dividend amounts keep the `$` symbol and thousands separators.
 
@@ -78,7 +78,7 @@ extend its seven-day lifetime. Cache eviction can remove this last resort. If al
 online dividend providers and the valid cache fail, the update fails and leaves the
 existing calendar and README intact.
 
-The memo deliberately keeps the compact ticker/share/after-tax-amount format.
+The memo keeps the compact ticker/share/after-tax-amount format plus a final tax/date-certainty note.
 Source failures, provider selections, cache usage, and schedule fallback status
 are recorded in `.cache/dividend-calendar/source-status.json`, also uploaded as the
 `dividend-source-status` workflow artifact (retained for seven days).

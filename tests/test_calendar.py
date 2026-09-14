@@ -73,7 +73,19 @@ class CalendarTests(unittest.TestCase):
                      render(scheduled=schedule(DEC1)),
                      render({DEC1: [actual(DEC1, cached=True)]})]:
             description = next(line for line in c.unfold(text) if line.startswith('DESCRIPTION:'))
-            self.assertEqual(description, 'DESCRIPTION:IBHG｜100.0股｜$90.0')
+            self.assertEqual(description, 'DESCRIPTION:IBHG｜100.0股｜$90.0\\n预扣税10%')
+
+    def test_payment_certainty_footer_uses_date_not_amount_status(self):
+        for label, expected in [('官方支付日（缓存）', '预扣税10%'),
+                                ('推算支付日', '预扣税10%｜预计本日发放')]:
+            with self.subTest(label=label):
+                scheduled = schedule(DEC1)
+                scheduled[DEC1]['IBHG']['date_status'] = label
+                text = render(scheduled=scheduled)
+                description = next(line for line in c.unfold(text) if line.startswith('DESCRIPTION:'))
+                self.assertEqual(description.split('\\n')[-1], expected)
+                actual_text = render({DEC1: [actual(DEC1)]}, scheduled)
+                self.assertNotIn('预计本日发放', '\n'.join(c.unfold(actual_text)))
 
     def test_round_only_at_final_display(self):
         text = '\n'.join(c.unfold(render({DEC1: [actual(DEC1, amount='111.111')]})))
