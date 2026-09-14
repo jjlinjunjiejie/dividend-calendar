@@ -22,11 +22,9 @@ ROOT = Path(__file__).resolve().parent
 POSITIONS_FILE = ROOT / "positions.json"
 OUTPUT_FILE = ROOT / "dividends.ics"
 
-# Calendar window policy:
-# - Keep the 3 full calendar months before the current month, plus the current month.
-# - Keep the current month through the same calendar month one year later.
-# Example for Sep 2026: keep actual history from Jun 1, 2026 onward and scheduled
-# future pay dates through Sep 30, 2027. On Oct 1, June rolls off automatically.
+# Calendar window:
+# - Keep the 3 full calendar months before the current month, plus current month.
+# - Show current month through the same calendar month one year later.
 HISTORY_MONTHS = 3
 FUTURE_MONTHS = 12
 LOCAL_TIMEZONE = ZoneInfo("Asia/Tokyo")
@@ -37,6 +35,11 @@ USER_AGENT = (
 )
 API_PATH = "/varnish-api/blk-one01-product-data/product-data/api/v2/get-product-data"
 API_HOSTS = ("https://www.ishares.com", "https://www.blackrock.com")
+SCREENER_URL = (
+    "https://www.ishares.com/us/product-screener/product-screener-v3.1.jsn"
+    "?dcrPath=/templatedata/config/product-screener-v3/data/en/us-ishares/"
+    "ishares-product-screener-backend-config&siteEntryPassthrough=true"
+)
 DISTRIBUTION_SCHEDULE_URL = (
     "https://www.ishares.com/us/literature/shareholder-letters/"
     "isharesandblackrocketfsdistributionschedule.pdf"
@@ -88,6 +91,10 @@ def fetch_json(portfolio_id: int) -> dict[str, Any]:
     raise RuntimeError(f"Unable to fetch iShares data for portfolio {portfolio_id}: {'; '.join(errors)}")
 
 
+def fetch_screener() -> dict[str, Any]:
+    return json.loads(request_bytes(SCREENER_URL, "application/json", attempts=3).decode("utf-8-sig"))
+
+
 def data_points(payload: dict[str, Any]) -> dict[str, Any]:
     return (
         payload.get("componentsByNameMap", {})
@@ -103,6 +110,15 @@ def column(points: dict[str, Any], name: str) -> list[Any]:
     return value if isinstance(value, list) else []
 
 
+def scalar(value: Any) -> Any:
+    """Read an iShares screener scalar, preferring raw (.r) over display (.d)."""
+    if isinstance(value, dict):
+        if value.get("r") not in (None, "", "-"):
+            return value.get("r")
+        return value.get("d")
+    return value
+
+
 def parse_date(value: Any) -> date | None:
     if value in (None, "", "-"):
         return None
@@ -116,11 +132,12 @@ def parse_date(value: Any) -> date | None:
 
 
 def parse_number(value: Any) -> float | None:
+    value = scalar(value)
     if value in (None, "", "-"):
         return None
     if isinstance(value, (int, float)):
         return float(value)
-    text = str(value).strip().replace("$", "").replace(",", "")
+    text = str(value).strip().replace("$", "").replace(",", "").replace("%", "")
     if text.startswith("(") and text.endswith(")"):
         text = "-" + text[1:-1]
     try:
@@ -174,6 +191,79 @@ def distributions_for(ticker: str, portfolio_id: int, shares: float) -> list[dic
     return rows
 
 
+def market_metrics(
+    positions: dict[str, Any],
+    rows_by_ticker: dict[str, list[dict[str, Any]]],
+    today: date,
+) -> dict[str, dict[str, Any]]:
+    """
+    Estimate a monthly cash distribution from current position market value and yield.
+
+    Preferred yield = 30-day SEC yield (forward-looking for bond ETFs).
+    Fallback = 12-month trailing yield from the iShares screener.
+    Final fallback = realized distributions over the last 365 days / current NAV.
+    Position market value is approximated as shares × current NAV.
+    """
+    screener = fetch_screener()
+    by_ticker: dict[str, dict[str, Any]] = {}
+    for raw in screener.values():
+        if not isinstance(raw, dict):
+            continue
+        ticker = str(scalar(raw.get("localExchangeTicker")) or "").strip().upper()
+        if ticker:
+            by_ticker[ticker] = raw
+
+    result: dict[str, dict[str, Any]] = {}
+    for ticker, info in positions.items():
+        product = by_ticker.get(ticker.upper())
+        if not product:
+            raise RuntimeError(f"{ticker}: not found in iShares product screener")
+
+        nav = parse_number(product.get("navAmount"))
+        sec_yield = parse_number(product.get("thirtyDaySecYield"))
+        trailing_yield = parse_number(product.get("twelveMonTrlYield"))
+        if nav is None or nav <= 0:
+            raise RuntimeError(f"{ticker}: current NAV unavailable in iShares product screener")
+
+        yield_pct: float | None = None
+        yield_source = ""
+        if sec_yield is not None and sec_yield > 0:
+            yield_pct = sec_yield
+            yield_source = "30日SEC收益率"
+        elif trailing_yield is not None and trailing_yield > 0:
+            yield_pct = trailing_yield
+            yield_source = "12个月股息率"
+        else:
+            trailing_start = today - timedelta(days=365)
+            per_share_12m = sum(
+                float(r["per_share"])
+                for r in rows_by_ticker.get(ticker, [])
+                if trailing_start <= r["payable_date"] <= today
+            )
+            if per_share_12m > 0:
+                yield_pct = per_share_12m / nav * 100.0
+                yield_source = "近12个月实际分配率"
+
+        if yield_pct is None or yield_pct <= 0:
+            raise RuntimeError(f"{ticker}: no usable dividend/yield metric available")
+
+        shares = float(info["shares"])
+        market_value = shares * nav
+        annual_income = market_value * yield_pct / 100.0
+        monthly_amount = annual_income / 12.0
+        monthly_per_share = nav * yield_pct / 100.0 / 12.0
+
+        result[ticker] = {
+            "nav": nav,
+            "yield_pct": yield_pct,
+            "yield_source": yield_source,
+            "market_value": market_value,
+            "monthly_amount": monthly_amount,
+            "monthly_per_share": monthly_per_share,
+        }
+    return result
+
+
 def escape_text(value: str) -> str:
     return (
         value.replace("\\", "\\\\")
@@ -212,17 +302,14 @@ def fmt_date(value: date | None) -> str:
 
 
 def add_months_month_start(value: date, months: int) -> date:
-    """Move a first-of-month date by a whole number of months."""
     absolute = value.year * 12 + (value.month - 1) + months
     year, month0 = divmod(absolute, 12)
     return date(year, month0 + 1, 1)
 
 
 def calendar_window(today: date) -> tuple[date, date, date]:
-    """Return history start, current-month start, and exclusive future end."""
     current_month = date(today.year, today.month, 1)
     history_start = add_months_month_start(current_month, -HISTORY_MONTHS)
-    # Exclusive end: first day of the month after the same month next year.
     future_end = add_months_month_start(current_month, FUTURE_MONTHS + 1)
     return history_start, current_month, future_end
 
@@ -232,8 +319,6 @@ def official_monthly_pay_dates(window_start: date, window_end: date) -> list[dat
     pdf = request_bytes(DISTRIBUTION_SCHEDULE_URL, "application/pdf")
     reader = PdfReader(io.BytesIO(pdf))
 
-    # The monthly bond-fund page contains all six tracked tickers. Restrict parsing to
-    # that page so weekly/quarterly schedules elsewhere in the PDF cannot leak in.
     monthly_text = ""
     for page in reader.pages:
         text = page.extract_text() or ""
@@ -244,10 +329,12 @@ def official_monthly_pay_dates(window_start: date, window_end: date) -> list[dat
         raise RuntimeError("Could not locate the iShares monthly-distribution page in the schedule PDF")
 
     pay_dates: set[date] = set()
-    # Extract every PAY DATE row. The same page carries the 2026/2027/2028 monthly
-    # rows, including any explicitly scheduled year-end/potential-income pay dates.
     normalized = re.sub(r"[ \t]+", " ", monthly_text)
-    for match in re.finditer(r"PAY DATE:\s*(.*?)(?=(?:DECLARATION DATE:|EX-DATE/RECORD DATE:|PAY DATE:|$))", normalized, re.S):
+    for match in re.finditer(
+        r"PAY DATE:\s*(.*?)(?=(?:DECLARATION DATE:|EX-DATE/RECORD DATE:|PAY DATE:|$))",
+        normalized,
+        re.S,
+    ):
         block = match.group(1)
         for token in DATE_TOKEN_RE.findall(block):
             parsed = parse_date(token)
@@ -255,7 +342,6 @@ def official_monthly_pay_dates(window_start: date, window_end: date) -> list[dat
                 pay_dates.add(parsed)
 
     if not pay_dates:
-        # Some PDF extractors preserve rows more reliably line-by-line.
         for line in monthly_text.splitlines():
             if "PAY DATE:" not in line:
                 continue
@@ -278,9 +364,14 @@ def active_tickers_for_date(positions: dict[str, Any], payable: date) -> list[st
     return sorted(active)
 
 
+def month_key(value: date) -> tuple[int, int]:
+    return value.year, value.month
+
+
 def build_calendar(
     events_by_date: dict[date, list[dict[str, Any]]],
     positions: dict[str, Any],
+    metrics: dict[str, dict[str, Any]],
     scheduled_dates: list[date],
     history_start: date,
     current_month: date,
@@ -293,7 +384,7 @@ def build_calendar(
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         "X-WR-CALNAME:ETF 股息",
-        "X-WR-CALDESC:保留过去3个完整日历月 + 当前月，并显示当前月至未来12个月的iShares官方计划支付日；已公布金额自动更新",
+        "X-WR-CALDESC:保留过去3个完整日历月 + 当前月；未来12个月按当前市值与股息率估算，正式公布后自动替换为实际金额",
         "REFRESH-INTERVAL;VALUE=DURATION:PT6H",
         "X-PUBLISHED-TTL:PT6H",
     ]
@@ -302,15 +393,32 @@ def build_calendar(
         lines.extend(fold_line(line))
 
     actual_dates = {d for d in events_by_date if history_start <= d < future_end}
-    placeholder_dates = {d for d in scheduled_dates if current_month <= d < future_end}
-    all_dates = sorted(actual_dates | placeholder_dates)
+    scheduled_set = {d for d in scheduled_dates if current_month <= d < future_end}
+    all_dates = sorted(actual_dates | scheduled_set)
+
+    actual_by_month_ticker: dict[tuple[int, int], dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for payable, rows in events_by_date.items():
+        if not (current_month <= payable < future_end):
+            continue
+        key = month_key(payable)
+        for row in rows:
+            actual_by_month_ticker[key][row["ticker"]] += float(row["amount"])
+
+    unknown_dates_by_month: dict[tuple[int, int], list[date]] = defaultdict(list)
+    for payable in scheduled_set:
+        if not events_by_date.get(payable):
+            unknown_dates_by_month[month_key(payable)].append(payable)
+    for dates in unknown_dates_by_month.values():
+        dates.sort()
+
+    now_stamp = datetime.now(LOCAL_TIMEZONE).astimezone(ZoneInfo("UTC")).strftime("%Y%m%dT%H%M%SZ")
 
     for payable in all_dates:
         rows = sorted(events_by_date.get(payable, []), key=lambda r: r["ticker"])
         if rows:
             total_amount = sum(r["amount"] for r in rows)
             title = f"${total_amount:,.2f}"
-            detail_lines = [f"税前股息总额: ${total_amount:,.2f}", ""]
+            detail_lines = [f"已公布税前股息总额: ${total_amount:,.2f}", ""]
             for r in rows:
                 detail_lines.append(
                     f"{r['ticker']}: {r['shares']:,.4f}股 × ${r['per_share']:.6f} = ${r['amount']:,.2f}"
@@ -322,28 +430,50 @@ def build_calendar(
                 [
                     "",
                     "数据源: iShares / BlackRock 官方 fundDownload API",
-                    "金额为税前估算，实际到账可能因税务、券商处理和持仓变动而不同。",
+                    "金额按当前持股数量计算；实际到账可能因税务、券商处理和持仓变动而不同。",
                 ]
             )
         else:
             tickers = active_tickers_for_date(positions, payable)
             if not tickers:
                 continue
-            title = "$待公布"
+            key = month_key(payable)
+            unknown_count = max(1, len(unknown_dates_by_month.get(key, [payable])))
+
+            estimate_rows: list[tuple[str, float]] = []
+            total_estimate = 0.0
+            for ticker in tickers:
+                m = metrics[ticker]
+                monthly_target = float(m["monthly_amount"])
+                announced_this_month = actual_by_month_ticker[key].get(ticker, 0.0)
+                remaining = max(monthly_target - announced_this_month, 0.0)
+                event_estimate = remaining / unknown_count
+                estimate_rows.append((ticker, event_estimate))
+                total_estimate += event_estimate
+
+            title = f"≈${total_estimate:,.2f}"
             detail_lines = [
-                "股息金额尚未公布。",
+                f"预估税前股息总额: ≈${total_estimate:,.2f}",
                 f"iShares 官方计划支付日: {payable.isoformat()}",
                 "",
-                "预计仍在存续的当前持仓:",
+                "估算方法: 当前持仓市值(NAV×股数) × 当前股息率 ÷ 12。",
+                "债券ETF优先使用30日SEC收益率；缺失时使用12个月股息率。",
+                "同一月份若有多个尚未公布的支付日，则将该月剩余预估金额平均分配。",
+                "",
             ]
-            for ticker in tickers:
+            for ticker, amount in estimate_rows:
                 shares = float(positions[ticker]["shares"])
-                detail_lines.append(f"{ticker}: {shares:,.4f}股 — 每股分配待公布")
+                m = metrics[ticker]
+                detail_lines.append(
+                    f"{ticker}: {shares:,.4f}股 · NAV ${m['nav']:.2f} · "
+                    f"市值≈${m['market_value']:,.2f} · {m['yield_source']} {m['yield_pct']:.2f}% "
+                    f"→ 本次≈${amount:,.2f}"
+                )
             detail_lines.extend(
                 [
                     "",
-                    "数据源: iShares / BlackRock 官方 Fund Distributions Schedule",
-                    "当 iShares 正式宣告分配金额后，本事件会自动更新为 $金额。",
+                    "数据源: iShares / BlackRock 官方产品数据与 Fund Distributions Schedule",
+                    "这是预估值；当 iShares 正式公布每股分配后，会自动替换为实际金额。",
                 ]
             )
 
@@ -351,7 +481,7 @@ def build_calendar(
         event = [
             "BEGIN:VEVENT",
             f"UID:dividend-{payable.strftime('%Y%m%d')}@dividend-calendar",
-            f"DTSTAMP:{datetime.now(LOCAL_TIMEZONE).astimezone(ZoneInfo('UTC')).strftime('%Y%m%dT%H%M%SZ')}",
+            f"DTSTAMP:{now_stamp}",
             f"DTSTART;VALUE=DATE:{payable.strftime('%Y%m%d')}",
             f"DTEND;VALUE=DATE:{next_day.strftime('%Y%m%d')}",
             f"SUMMARY:{escape_text(title)}",
@@ -374,10 +504,12 @@ def main() -> None:
     history_start, current_month, future_end = calendar_window(today_local)
 
     grouped: dict[date, list[dict[str, Any]]] = defaultdict(list)
+    rows_by_ticker: dict[str, list[dict[str, Any]]] = {}
     failures: list[str] = []
     for ticker, info in positions.items():
         try:
             rows = distributions_for(ticker, int(info["portfolio_id"]), float(info["shares"]))
+            rows_by_ticker[ticker] = rows
             for row in rows:
                 payable = row["payable_date"]
                 if history_start <= payable < future_end:
@@ -389,10 +521,19 @@ def main() -> None:
     if failures:
         raise RuntimeError("One or more funds failed; calendar not replaced. " + " | ".join(failures))
 
+    metrics = market_metrics(positions, rows_by_ticker, today_local)
+    for ticker in sorted(metrics):
+        m = metrics[ticker]
+        print(
+            f"{ticker}: NAV=${m['nav']:.2f}, market_value≈${m['market_value']:,.2f}, "
+            f"{m['yield_source']}={m['yield_pct']:.2f}%, monthly_est≈${m['monthly_amount']:,.2f}"
+        )
+
     scheduled_dates = official_monthly_pay_dates(current_month, future_end)
     calendar = build_calendar(
         grouped,
         positions,
+        metrics,
         scheduled_dates,
         history_start,
         current_month,
@@ -403,11 +544,11 @@ def main() -> None:
     temp.replace(OUTPUT_FILE)
 
     actual_count = sum(1 for d in grouped if history_start <= d < future_end)
-    placeholder_count = sum(1 for d in scheduled_dates if d not in grouped)
+    estimate_count = sum(1 for d in scheduled_dates if d not in grouped)
     print(
         f"Wrote {OUTPUT_FILE.name}; history_start={history_start.isoformat()}, "
         f"future_end_exclusive={future_end.isoformat()}, actual_dates={actual_count}, "
-        f"scheduled_placeholders={placeholder_count}, Tokyo date={today_local.isoformat()}"
+        f"estimated_future_dates={estimate_count}, Tokyo date={today_local.isoformat()}"
     )
 
 
