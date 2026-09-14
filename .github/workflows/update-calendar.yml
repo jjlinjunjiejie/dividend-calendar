@@ -1,0 +1,48 @@
+name: Update dividend calendar
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "positions.json"
+      - "update_calendar.py"
+      - ".github/workflows/update-calendar.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dividend-calendar-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch iShares distributions and build calendar
+        run: python update_calendar.py
+
+      - name: Commit calendar when data changed
+        shell: bash
+        run: |
+          if git diff --quiet -- dividends.ics; then
+            echo "No dividend changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dividends.ics
+          git commit -m "Update dividend calendar"
+          git push
