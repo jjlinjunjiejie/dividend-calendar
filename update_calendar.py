@@ -12,10 +12,19 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
 POSITIONS_FILE = ROOT / "positions.json"
 OUTPUT_FILE = ROOT / "dividends.ics"
+
+# Calendar retention policy:
+# - Never show anything before 2026-07-01.
+# - Keep a rolling 3 calendar-month window. For example, during Sep 2026 the
+#   calendar starts at Jul 1; during Oct it starts at Aug 1, so July disappears.
+INITIAL_START_DATE = date(2026, 7, 1)
+RETENTION_MONTHS = 3
+LOCAL_TIMEZONE = ZoneInfo("Asia/Tokyo")
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -183,7 +192,21 @@ def fmt_date(value: date | None) -> str:
     return value.isoformat() if value else "-"
 
 
-def build_calendar(events_by_date: dict[date, list[dict[str, Any]]]) -> str:
+def add_months_month_start(value: date, months: int) -> date:
+    """Move a first-of-month date by a whole number of months."""
+    absolute = value.year * 12 + (value.month - 1) + months
+    year, month0 = divmod(absolute, 12)
+    return date(year, month0 + 1, 1)
+
+
+def calendar_cutoff(today: date) -> date:
+    """Return the first date retained in the rolling 3-calendar-month window."""
+    current_month = date(today.year, today.month, 1)
+    rolling_start = add_months_month_start(current_month, -(RETENTION_MONTHS - 1))
+    return max(INITIAL_START_DATE, rolling_start)
+
+
+def build_calendar(events_by_date: dict[date, list[dict[str, Any]]], cutoff: date) -> str:
     header = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
@@ -191,7 +214,7 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]]) -> str:
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         "X-WR-CALNAME:ETF 股息",
-        "X-WR-CALDESC:IBHF/IBHG/IBHH/IBHI/IBHJ/IBHK 持仓税前股息；按 iShares 官方数据自动更新",
+        "X-WR-CALDESC:IBHF/IBHG/IBHH/IBHI/IBHJ/IBHK 持仓税前股息；按 iShares 官方数据自动更新；仅保留最近3个日历月",
         "REFRESH-INTERVAL;VALUE=DURATION:PT6H",
         "X-PUBLISHED-TTL:PT6H",
     ]
@@ -200,6 +223,8 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]]) -> str:
         lines.extend(fold_line(line))
 
     for payable in sorted(events_by_date):
+        if payable < cutoff:
+            continue
         rows = sorted(events_by_date[payable], key=lambda r: r["ticker"])
         total_amount = sum(r["amount"] for r in rows)
         title = f"${total_amount:,.2f}"
@@ -258,11 +283,17 @@ def main() -> None:
     if not grouped:
         raise RuntimeError("No distribution records returned; calendar not replaced.")
 
-    calendar = build_calendar(grouped)
+    today_local = datetime.now(LOCAL_TIMEZONE).date()
+    cutoff = calendar_cutoff(today_local)
+    retained_dates = [d for d in grouped if d >= cutoff]
+    calendar = build_calendar(grouped, cutoff)
     temp = OUTPUT_FILE.with_suffix(".ics.tmp")
     temp.write_text(calendar, encoding="utf-8", newline="")
     temp.replace(OUTPUT_FILE)
-    print(f"Wrote {OUTPUT_FILE.name} with {len(grouped)} payment-date events")
+    print(
+        f"Wrote {OUTPUT_FILE.name} with {len(retained_dates)} payment-date events; "
+        f"cutoff={cutoff.isoformat()} (Tokyo date {today_local.isoformat()})"
+    )
 
 
 if __name__ == "__main__":
