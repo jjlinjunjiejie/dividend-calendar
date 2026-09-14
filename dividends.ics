@@ -10,504 +10,378 @@ REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:dividend-20260604@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260604
 DTEND;VALUE=DATE:20260605
-SUMMARY:$2\,908.38
-DESCRIPTION:已公布税前股息总额: $2\,908.38\n\nIBHF: 127.3954股 
- × $0.107819 = $13.74\n  除息 2026-06-01 · 登记 2026-06-01 · 支
- 付 2026-06-04\nIBHG: 21\,809.3968股 × $0.100993 = $2\,202.60\n  除
- 息 2026-06-01 · 登记 2026-06-01 · 支付 2026-06-04\nIBHH: 2\,559.3
- 648股 × $0.118244 = $302.63\n  除息 2026-06-01 · 登记 2026-06-01 
- · 支付 2026-06-04\nIBHI: 846.3668股 × $0.125933 = $106.59\n  除息
-  2026-06-01 · 登记 2026-06-01 · 支付 2026-06-04\nIBHJ: 760.3254股
-  × $0.148052 = $112.57\n  除息 2026-06-01 · 登记 2026-06-01 · 支
- 付 2026-06-04\nIBHK: 1\,232.3071股 × $0.138168 = $170.27\n  除息 20
- 26-06-01 · 登记 2026-06-01 · 支付 2026-06-04\n\n数据源: iShares
-  / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAnalysis（S
- &P Global Market Intelligence 数据）。\n预估值会随价格、股
- 息率与正式分配数据自动更新。金额均按当前持股数量
- 计算，未计税费。
+SUMMARY:$2\,908
+DESCRIPTION:已公布税前股息总额: $2\,908\n\nIBHF: 127.3954股 × 
+ $0.107819 = $13\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 2026
+ -06-04\nIBHG: 21\,809.3968股 × $0.100993 = $2\,202\n  除息 2026-06-0
+ 1 · 登记 2026-06-01 · 支付 2026-06-04\nIBHH: 2\,559.3648股 × $0.
+ 118244 = $302\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 2026-0
+ 6-04\nIBHI: 846.3668股 × $0.125933 = $106\n  除息 2026-06-01 · 登
+ 记 2026-06-01 · 支付 2026-06-04\nIBHJ: 760.3254股 × $0.148052 = $1
+ 12\n  除息 2026-06-01 · 登记 2026-06-01 · 支付 2026-06-04\nIBHK:
+  1\,232.3071股 × $0.138168 = $170\n  除息 2026-06-01 · 登记 2026-
+ 06-01 · 支付 2026-06-04\n\n数据源: iShares / BlackRock 官方数
+ 据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market Intel
+ ligence 数据）。\n预估值会随价格、股息率与正式分配
+ 数据自动更新。金额均按当前持股数量计算，未计税费
+ 。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260630@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260630
 DTEND;VALUE=DATE:20260701
-SUMMARY:$1\,374.33
-DESCRIPTION:已公布税前股息总额: $1\,374.33\n\nVOO: 700.4031股 
- × $1.962200 = $1\,374.33\n  除息 2026-06-26 · 登记 2026-06-26 · 
- 支付 2026-06-30\n\n数据源: iShares / BlackRock 官方数据；QQQ/V
- OO 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数
- 据）。\n预估值会随价格、股息率与正式分配数据自动
- 更新。金额均按当前持股数量计算，未计税费。
+SUMMARY:$1\,374
+DESCRIPTION:已公布税前股息总额: $1\,374\n\nVOO: 700.4031股 × $
+ 1.962200 = $1\,374\n  除息 2026-06-26 · 登记 2026-06-26 · 支付 2
+ 026-06-30\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
+ 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
+ 。\n预估值会随价格、股息率与正式分配数据自动更新
+ 。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260707@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260707
 DTEND;VALUE=DATE:20260708
-SUMMARY:$3\,067.27
-DESCRIPTION:已公布税前股息总额: $3\,067.27\n\nIBHF: 127.3954股 
- × $0.082506 = $10.51\n  除息 2026-07-01 · 登记 2026-07-01 · 支
- 付 2026-07-07\nIBHG: 21\,809.3968股 × $0.108434 = $2\,364.88\n  除
- 息 2026-07-01 · 登记 2026-07-01 · 支付 2026-07-07\nIBHH: 2\,559.3
- 648股 × $0.120832 = $309.25\n  除息 2026-07-01 · 登记 2026-07-01 
- · 支付 2026-07-07\nIBHI: 846.3668股 × $0.126070 = $106.70\n  除息
-  2026-07-01 · 登记 2026-07-01 · 支付 2026-07-07\nIBHJ: 760.3254股
-  × $0.145257 = $110.44\n  除息 2026-07-01 · 登记 2026-07-01 · 支
- 付 2026-07-07\nIBHK: 1\,232.3071股 × $0.134288 = $165.48\n  除息 20
- 26-07-01 · 登记 2026-07-01 · 支付 2026-07-07\n\n数据源: iShares
-  / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAnalysis（S
- &P Global Market Intelligence 数据）。\n预估值会随价格、股
- 息率与正式分配数据自动更新。金额均按当前持股数量
- 计算，未计税费。
+SUMMARY:$3\,067
+DESCRIPTION:已公布税前股息总额: $3\,067\n\nIBHF: 127.3954股 × 
+ $0.082506 = $10\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 2026
+ -07-07\nIBHG: 21\,809.3968股 × $0.108434 = $2\,364\n  除息 2026-07-0
+ 1 · 登记 2026-07-01 · 支付 2026-07-07\nIBHH: 2\,559.3648股 × $0.
+ 120832 = $309\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 2026-0
+ 7-07\nIBHI: 846.3668股 × $0.126070 = $106\n  除息 2026-07-01 · 登
+ 记 2026-07-01 · 支付 2026-07-07\nIBHJ: 760.3254股 × $0.145257 = $1
+ 10\n  除息 2026-07-01 · 登记 2026-07-01 · 支付 2026-07-07\nIBHK:
+  1\,232.3071股 × $0.134288 = $165\n  除息 2026-07-01 · 登记 2026-
+ 07-01 · 支付 2026-07-07\n\n数据源: iShares / BlackRock 官方数
+ 据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market Intel
+ ligence 数据）。\n预估值会随价格、股息率与正式分配
+ 数据自动更新。金额均按当前持股数量计算，未计税费
+ 。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260710@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260710
 DTEND;VALUE=DATE:20260711
-SUMMARY:$488.59
-DESCRIPTION:已公布税前股息总额: $488.59\n\nQQQ: 600.6061股 × $
- 0.813490 = $488.59\n  除息 2026-06-22 · 登记 2026-06-22 · 支付 2
- 026-07-10\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
- 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
- 。\n预估值会随价格、股息率与正式分配数据自动更新
- 。金额均按当前持股数量计算，未计税费。
+SUMMARY:$488
+DESCRIPTION:已公布税前股息总额: $488\n\nQQQ: 600.6061股 × $0.8
+ 13490 = $488\n  除息 2026-06-22 · 登记 2026-06-22 · 支付 2026-07
+ -10\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数
+ 据使用 StockAnalysis（S&P Global Market Intelligence 数据）。\n
+ 预估值会随价格、股息率与正式分配数据自动更新。金
+ 额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260806@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260806
 DTEND;VALUE=DATE:20260807
-SUMMARY:$3\,051.70
-DESCRIPTION:已公布税前股息总额: $3\,051.70\n\nIBHF: 127.3954股 
- × $0.088297 = $11.25\n  除息 2026-08-03 · 登记 2026-08-03 · 支
- 付 2026-08-06\nIBHG: 21\,809.3968股 × $0.107213 = $2\,338.25\n  除
- 息 2026-08-03 · 登记 2026-08-03 · 支付 2026-08-06\nIBHH: 2\,559.3
- 648股 × $0.120436 = $308.24\n  除息 2026-08-03 · 登记 2026-08-03 
- · 支付 2026-08-06\nIBHI: 846.3668股 × $0.130135 = $110.14\n  除息
-  2026-08-03 · 登记 2026-08-03 · 支付 2026-08-06\nIBHJ: 760.3254股
-  × $0.146663 = $111.51\n  除息 2026-08-03 · 登记 2026-08-03 · 支
- 付 2026-08-06\nIBHK: 1\,232.3071股 × $0.139828 = $172.31\n  除息 20
- 26-08-03 · 登记 2026-08-03 · 支付 2026-08-06\n\n数据源: iShares
-  / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAnalysis（S
- &P Global Market Intelligence 数据）。\n预估值会随价格、股
- 息率与正式分配数据自动更新。金额均按当前持股数量
- 计算，未计税费。
+SUMMARY:$3\,051
+DESCRIPTION:已公布税前股息总额: $3\,051\n\nIBHF: 127.3954股 × 
+ $0.088297 = $11\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 2026
+ -08-06\nIBHG: 21\,809.3968股 × $0.107213 = $2\,338\n  除息 2026-08-0
+ 3 · 登记 2026-08-03 · 支付 2026-08-06\nIBHH: 2\,559.3648股 × $0.
+ 120436 = $308\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 2026-0
+ 8-06\nIBHI: 846.3668股 × $0.130135 = $110\n  除息 2026-08-03 · 登
+ 记 2026-08-03 · 支付 2026-08-06\nIBHJ: 760.3254股 × $0.146663 = $1
+ 11\n  除息 2026-08-03 · 登记 2026-08-03 · 支付 2026-08-06\nIBHK:
+  1\,232.3071股 × $0.139828 = $172\n  除息 2026-08-03 · 登记 2026-
+ 08-03 · 支付 2026-08-06\n\n数据源: iShares / BlackRock 官方数
+ 据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market Intel
+ ligence 数据）。\n预估值会随价格、股息率与正式分配
+ 数据自动更新。金额均按当前持股数量计算，未计税费
+ 。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260904@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260905
-SUMMARY:$2\,975.51
-DESCRIPTION:已公布税前股息总额: $2\,975.51\n\nIBHF: 127.3954股 
- × $0.079295 = $10.10\n  除息 2026-09-01 · 登记 2026-09-01 · 支
- 付 2026-09-04\nIBHG: 21\,809.3968股 × $0.103851 = $2\,264.93\n  除
- 息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHH: 2\,559.3
- 648股 × $0.118087 = $302.23\n  除息 2026-09-01 · 登记 2026-09-01 
- · 支付 2026-09-04\nIBHI: 846.3668股 × $0.128101 = $108.42\n  除息
-  2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHJ: 760.3254股
-  × $0.145049 = $110.28\n  除息 2026-09-01 · 登记 2026-09-01 · 支
- 付 2026-09-04\nIBHK: 1\,232.3071股 × $0.145700 = $179.55\n  除息 20
- 26-09-01 · 登记 2026-09-01 · 支付 2026-09-04\n\n数据源: iShares
-  / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAnalysis（S
- &P Global Market Intelligence 数据）。\n预估值会随价格、股
- 息率与正式分配数据自动更新。金额均按当前持股数量
- 计算，未计税费。
+SUMMARY:$2\,975
+DESCRIPTION:已公布税前股息总额: $2\,975\n\nIBHF: 127.3954股 × 
+ $0.079295 = $10\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026
+ -09-04\nIBHG: 21\,809.3968股 × $0.103851 = $2\,264\n  除息 2026-09-0
+ 1 · 登记 2026-09-01 · 支付 2026-09-04\nIBHH: 2\,559.3648股 × $0.
+ 118087 = $302\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-0
+ 9-04\nIBHI: 846.3668股 × $0.128101 = $108\n  除息 2026-09-01 · 登
+ 记 2026-09-01 · 支付 2026-09-04\nIBHJ: 760.3254股 × $0.145049 = $1
+ 10\n  除息 2026-09-01 · 登记 2026-09-01 · 支付 2026-09-04\nIBHK:
+  1\,232.3071股 × $0.145700 = $179\n  除息 2026-09-01 · 登记 2026-
+ 09-01 · 支付 2026-09-04\n\n数据源: iShares / BlackRock 官方数
+ 据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market Intel
+ ligence 数据）。\n预估值会随价格、股息率与正式分配
+ 数据自动更新。金额均按当前持股数量计算，未计税费
+ 。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261001@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
-SUMMARY:$1\,286.99
-DESCRIPTION:税前股息总额: $1\,286.99（含预估）\n\n预估部分
- :\nVOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个
- 月股息率 1.05% → 本次 $1\,286.99\nQQQ/VOO按近12个月股息率
- 与当前市值估算季度股息；未来支付日按近期季度支付
- 节奏推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO
-  股息数据使用 StockAnalysis（S&P Global Market Intelligence 数
- 据）。\n预估值会随价格、股息率与正式分配数据自动
- 更新。金额均按当前持股数量计算，未计税费。
+SUMMARY:$1\,286
+DESCRIPTION:税前股息总额: $1\,286（含预估）\n\n预估部分:\n
+ VOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个月
+ 股息率 1.05% → 本次 $1\,286\nQQQ/VOO按近12个月股息率与当
+ 前市值估算季度股息；未来支付日按近期季度支付节奏
+ 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
+ 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
+ 。\n预估值会随价格、股息率与正式分配数据自动更新
+ 。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261006@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261007
-SUMMARY:$2\,938.69
-DESCRIPTION:税前股息总额: $2\,938.69（含预估）\n\n预估部分
- :\nIBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收
- 益率 4.09% → 本次 $9.77\nIBHG: 21\,809.3968股 · NAV $21.81 · 
- 市值 $475\,743.33 · 30日SEC收益率 5.65% → 本次 $2\,238.21\nIB
- HH: 2\,559.3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益
- 率 5.83% → 本次 $289.28\nIBHI: 846.3668股 · NAV $23.09 · 市值 
- $19\,546.16 · 30日SEC收益率 6.47% → 本次 $105.35\nIBHJ: 760.325
- 4股 · NAV $26.02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 
- 本次 $112.14\nIBHK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33
-  · 30日SEC收益率 7.13% → 本次 $183.94\niShares 债券ETF按年
- 化收益率折算月度预估。\n\n数据源: iShares / BlackRock 官
- 方数据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market
-  Intelligence 数据）。\n预估值会随价格、股息率与正式
- 分配数据自动更新。金额均按当前持股数量计算，未计
- 税费。
+SUMMARY:$2\,938
+DESCRIPTION:税前股息总额: $2\,938（含预估）\n\n预估部分:\n
+ IBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收益
+ 率 4.09% → 本次 $9\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $
+ 475\,743.33 · 30日SEC收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.
+ 3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% 
+ → 本次 $289\nIBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 
+ · 30日SEC收益率 6.47% → 本次 $105\nIBHJ: 760.3254股 · NAV $26
+ .02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112\nIB
+ HK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益
+ 率 7.13% → 本次 $183\niShares 债券ETF按年化收益率折算月
+ 度预估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 
+ 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数据
+ ）。\n预估值会随价格、股息率与正式分配数据自动更
+ 新。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261030@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
-SUMMARY:$454.96
-DESCRIPTION:税前股息总额: $454.96（含预估）\n\n预估部分:\n
- QQQ: 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月
- 股息率 0.42% → 本次 $454.96\nQQQ/VOO按近12个月股息率与当
- 前市值估算季度股息；未来支付日按近期季度支付节奏
- 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
- 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
- 。\n预估值会随价格、股息率与正式分配数据自动更新
- 。金额均按当前持股数量计算，未计税费。
+SUMMARY:$454
+DESCRIPTION:税前股息总额: $454（含预估）\n\n预估部分:\nQQQ
+ : 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月股
+ 息率 0.42% → 本次 $454\nQQQ/VOO按近12个月股息率与当前市
+ 值估算季度股息；未来支付日按近期季度支付节奏推算
+ 。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数
+ 据使用 StockAnalysis（S&P Global Market Intelligence 数据）。\n
+ 预估值会随价格、股息率与正式分配数据自动更新。金
+ 额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261105@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
-SUMMARY:$2\,938.69
-DESCRIPTION:税前股息总额: $2\,938.69（含预估）\n\n预估部分
- :\nIBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收
- 益率 4.09% → 本次 $9.77\nIBHG: 21\,809.3968股 · NAV $21.81 · 
- 市值 $475\,743.33 · 30日SEC收益率 5.65% → 本次 $2\,238.21\nIB
- HH: 2\,559.3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益
- 率 5.83% → 本次 $289.28\nIBHI: 846.3668股 · NAV $23.09 · 市值 
- $19\,546.16 · 30日SEC收益率 6.47% → 本次 $105.35\nIBHJ: 760.325
- 4股 · NAV $26.02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 
- 本次 $112.14\nIBHK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33
-  · 30日SEC收益率 7.13% → 本次 $183.94\niShares 债券ETF按年
- 化收益率折算月度预估。\n\n数据源: iShares / BlackRock 官
- 方数据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market
-  Intelligence 数据）。\n预估值会随价格、股息率与正式
- 分配数据自动更新。金额均按当前持股数量计算，未计
- 税费。
+SUMMARY:$2\,938
+DESCRIPTION:税前股息总额: $2\,938（含预估）\n\n预估部分:\n
+ IBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收益
+ 率 4.09% → 本次 $9\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $
+ 475\,743.33 · 30日SEC收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.
+ 3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% 
+ → 本次 $289\nIBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 
+ · 30日SEC收益率 6.47% → 本次 $105\nIBHJ: 760.3254股 · NAV $26
+ .02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112\nIB
+ HK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益
+ 率 7.13% → 本次 $183\niShares 债券ETF按年化收益率折算月
+ 度预估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 
+ 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数据
+ ）。\n预估值会随价格、股息率与正式分配数据自动更
+ 新。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261204@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
-SUMMARY:$1\,469.35
-DESCRIPTION:税前股息总额: $1\,469.35（含预估）\n\n预估部分
- :\nIBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收
- 益率 4.09% → 本次 $4.89\nIBHG: 21\,809.3968股 · NAV $21.81 · 
- 市值 $475\,743.33 · 30日SEC收益率 5.65% → 本次 $1\,119.11\nIB
- HH: 2\,559.3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益
- 率 5.83% → 本次 $144.64\nIBHI: 846.3668股 · NAV $23.09 · 市值 
- $19\,546.16 · 30日SEC收益率 6.47% → 本次 $52.68\nIBHJ: 760.3254
- 股 · NAV $26.02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 
- 本次 $56.07\nIBHK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 
- · 30日SEC收益率 7.13% → 本次 $91.97\niShares 债券ETF按年化
- 收益率折算月度预估。\n\n数据源: iShares / BlackRock 官方
- 数据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market In
- telligence 数据）。\n预估值会随价格、股息率与正式分
- 配数据自动更新。金额均按当前持股数量计算，未计税
- 费。
+SUMMARY:$1\,469
+DESCRIPTION:税前股息总额: $1\,469（含预估）\n\n预估部分:\n
+ IBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收益
+ 率 4.09% → 本次 $4\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $
+ 475\,743.33 · 30日SEC收益率 5.65% → 本次 $1\,119\nIBHH: 2\,559.
+ 3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% 
+ → 本次 $144\nIBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 
+ · 30日SEC收益率 6.47% → 本次 $52\nIBHJ: 760.3254股 · NAV $26.
+ 02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 本次 $56\nIBHK
+ : 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益
+ 率 7.13% → 本次 $91\niShares 债券ETF按年化收益率折算月
+ 度预估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 
+ 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数据
+ ）。\n预估值会随价格、股息率与正式分配数据自动更
+ 新。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261223@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261223
 DTEND;VALUE=DATE:20261224
-SUMMARY:$1\,469.35
-DESCRIPTION:税前股息总额: $1\,469.35（含预估）\n\n预估部分
- :\nIBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收
- 益率 4.09% → 本次 $4.89\nIBHG: 21\,809.3968股 · NAV $21.81 · 
- 市值 $475\,743.33 · 30日SEC收益率 5.65% → 本次 $1\,119.11\nIB
- HH: 2\,559.3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益
- 率 5.83% → 本次 $144.64\nIBHI: 846.3668股 · NAV $23.09 · 市值 
- $19\,546.16 · 30日SEC收益率 6.47% → 本次 $52.68\nIBHJ: 760.3254
- 股 · NAV $26.02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 
- 本次 $56.07\nIBHK: 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 
- · 30日SEC收益率 7.13% → 本次 $91.97\niShares 债券ETF按年化
- 收益率折算月度预估。\n\n数据源: iShares / BlackRock 官方
- 数据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market In
- telligence 数据）。\n预估值会随价格、股息率与正式分
- 配数据自动更新。金额均按当前持股数量计算，未计税
- 费。
+SUMMARY:$1\,469
+DESCRIPTION:税前股息总额: $1\,469（含预估）\n\n预估部分:\n
+ IBHF: 127.3954股 · NAV $22.51 · 市值 $2\,868.08 · 30日SEC收益
+ 率 4.09% → 本次 $4\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $
+ 475\,743.33 · 30日SEC收益率 5.65% → 本次 $1\,119\nIBHH: 2\,559.
+ 3648股 · NAV $23.26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% 
+ → 本次 $144\nIBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 
+ · 30日SEC收益率 6.47% → 本次 $52\nIBHJ: 760.3254股 · NAV $26.
+ 02 · 市值 $19\,786.20 · 30日SEC收益率 6.80% → 本次 $56\nIBHK
+ : 1\,232.3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益
+ 率 7.13% → 本次 $91\niShares 债券ETF按年化收益率折算月
+ 度预估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 
+ 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数据
+ ）。\n预估值会随价格、股息率与正式分配数据自动更
+ 新。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261224@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261224
 DTEND;VALUE=DATE:20261225
-SUMMARY:$1\,286.99
-DESCRIPTION:税前股息总额: $1\,286.99（含预估）\n\n预估部分
- :\nVOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个
- 月股息率 1.05% → 本次 $1\,286.99\nQQQ/VOO按近12个月股息率
- 与当前市值估算季度股息；未来支付日按近期季度支付
- 节奏推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO
-  股息数据使用 StockAnalysis（S&P Global Market Intelligence 数
- 据）。\n预估值会随价格、股息率与正式分配数据自动
- 更新。金额均按当前持股数量计算，未计税费。
+SUMMARY:$1\,286
+DESCRIPTION:税前股息总额: $1\,286（含预估）\n\n预估部分:\n
+ VOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个月
+ 股息率 1.05% → 本次 $1\,286\nQQQ/VOO按近12个月股息率与当
+ 前市值估算季度股息；未来支付日按近期季度支付节奏
+ 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
+ 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
+ 。\n预估值会随价格、股息率与正式分配数据自动更新
+ 。金额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261231@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:$454.96
-DESCRIPTION:税前股息总额: $454.96（含预估）\n\n预估部分:\n
- QQQ: 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月
- 股息率 0.42% → 本次 $454.96\nQQQ/VOO按近12个月股息率与当
- 前市值估算季度股息；未来支付日按近期季度支付节奏
- 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
- 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
- 。\n预估值会随价格、股息率与正式分配数据自动更新
- 。金额均按当前持股数量计算，未计税费。
+SUMMARY:$454
+DESCRIPTION:税前股息总额: $454（含预估）\n\n预估部分:\nQQQ
+ : 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月股
+ 息率 0.42% → 本次 $454\nQQQ/VOO按近12个月股息率与当前市
+ 值估算季度股息；未来支付日按近期季度支付节奏推算
+ 。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数
+ 据使用 StockAnalysis（S&P Global Market Intelligence 数据）。\n
+ 预估值会随价格、股息率与正式分配数据自动更新。金
+ 额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270105@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270105
 DTEND;VALUE=DATE:20270106
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270204@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270304@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270326@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270326
 DTEND;VALUE=DATE:20270327
-SUMMARY:$454.96
-DESCRIPTION:税前股息总额: $454.96（含预估）\n\n预估部分:\n
- QQQ: 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月
- 股息率 0.42% → 本次 $454.96\nQQQ/VOO按近12个月股息率与当
- 前市值估算季度股息；未来支付日按近期季度支付节奏
- 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
- 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
- 。\n预估值会随价格、股息率与正式分配数据自动更新
- 。金额均按当前持股数量计算，未计税费。
+SUMMARY:$454
+DESCRIPTION:税前股息总额: $454（含预估）\n\n预估部分:\nQQQ
+ : 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月股
+ 息率 0.42% → 本次 $454\nQQQ/VOO按近12个月股息率与当前市
+ 值估算季度股息；未来支付日按近期季度支付节奏推算
+ 。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数
+ 据使用 StockAnalysis（S&P Global Market Intelligence 数据）。\n
+ 预估值会随价格、股息率与正式分配数据自动更新。金
+ 额均按当前持股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270331@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270331
 DTEND;VALUE=DATE:20270401
-SUMMARY:$1\,286.99
-DESCRIPTION:税前股息总额: $1\,286.99（含预估）\n\n预估部分
- :\nVOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个
- 月股息率 1.05% → 本次 $1\,286.99\nQQQ/VOO按近12个月股息率
- 与当前市值估算季度股息；未来支付日按近期季度支付
- 节奏推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO
-  股息数据使用 StockAnalysis（S&P Global Market Intelligence 数
- 据）。\n预估值会随价格、股息率与正式分配数据自动
- 更新。金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270406@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270406
-DTEND;VALUE=DATE:20270407
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270506@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270506
-DTEND;VALUE=DATE:20270507
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270604@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270604
-DTEND;VALUE=DATE:20270605
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270630@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270630
-DTEND;VALUE=DATE:20270701
-SUMMARY:$1\,286.99
-DESCRIPTION:税前股息总额: $1\,286.99（含预估）\n\n预估部分
- :\nVOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个
- 月股息率 1.05% → 本次 $1\,286.99\nQQQ/VOO按近12个月股息率
- 与当前市值估算季度股息；未来支付日按近期季度支付
- 节奏推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO
-  股息数据使用 StockAnalysis（S&P Global Market Intelligence 数
- 据）。\n预估值会随价格、股息率与正式分配数据自动
- 更新。金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270707@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270707
-DTEND;VALUE=DATE:20270708
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270709@dividend-calendar
-DTSTAMP:20260914T052658Z
-DTSTART;VALUE=DATE:20270709
-DTEND;VALUE=DATE:20270710
-SUMMARY:$454.96
-DESCRIPTION:税前股息总额: $454.96（含预估）\n\n预估部分:\n
- QQQ: 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月
- 股息率 0.42% → 本次 $454.96\nQQQ/VOO按近12个月股息率与当
+SUMMARY:$1\,286
+DESCRIPTION:税前股息总额: $1\,286（含预估）\n\n预估部分:\n
+ VOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个月
+ 股息率 1.05% → 本次 $1\,286\nQQQ/VOO按近12个月股息率与当
  前市值估算季度股息；未来支付日按近期季度支付节奏
  推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
  息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
@@ -517,46 +391,168 @@ CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:dividend-20270406@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270406
+DTEND;VALUE=DATE:20270407
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20270506@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270507
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20270604@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270604
+DTEND;VALUE=DATE:20270605
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20270630@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270630
+DTEND;VALUE=DATE:20270701
+SUMMARY:$1\,286
+DESCRIPTION:税前股息总额: $1\,286（含预估）\n\n预估部分:\n
+ VOO: 700.4031股 · 现价 $700.00 · 市值 $490\,282.17 · 近12个月
+ 股息率 1.05% → 本次 $1\,286\nQQQ/VOO按近12个月股息率与当
+ 前市值估算季度股息；未来支付日按近期季度支付节奏
+ 推算。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股
+ 息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）
+ 。\n预估值会随价格、股息率与正式分配数据自动更新
+ 。金额均按当前持股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20270707@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270707
+DTEND;VALUE=DATE:20270708
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dividend-20270709@dividend-calendar
+DTSTAMP:20260914T053548Z
+DTSTART;VALUE=DATE:20270709
+DTEND;VALUE=DATE:20270710
+SUMMARY:$454
+DESCRIPTION:税前股息总额: $454（含预估）\n\n预估部分:\nQQQ
+ : 600.6061股 · 现价 $721.43 · 市值 $433\,294.40 · 近12个月股
+ 息率 0.42% → 本次 $454\nQQQ/VOO按近12个月股息率与当前市
+ 值估算季度股息；未来支付日按近期季度支付节奏推算
+ 。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数
+ 据使用 StockAnalysis（S&P Global Market Intelligence 数据）。\n
+ 预估值会随价格、股息率与正式分配数据自动更新。金
+ 额均按当前持股数量计算，未计税费。
+CATEGORIES:股息,Dividend
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:dividend-20270805@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270805
 DTEND;VALUE=DATE:20270806
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270907@dividend-calendar
-DTSTAMP:20260914T052658Z
+DTSTAMP:20260914T053548Z
 DTSTART;VALUE=DATE:20270907
 DTEND;VALUE=DATE:20270908
-SUMMARY:$2\,928.92
-DESCRIPTION:税前股息总额: $2\,928.92（含预估）\n\n预估部分
- :\nIBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SE
- C收益率 5.65% → 本次 $2\,238.21\nIBHH: 2\,559.3648股 · NAV $23.
- 26 · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289.28\n
- IBHI: 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益
- 率 6.47% → 本次 $105.35\nIBHJ: 760.3254股 · NAV $26.02 · 市值 
- $19\,786.20 · 30日SEC收益率 6.80% → 本次 $112.14\nIBHK: 1\,232.
- 3071股 · NAV $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% 
- → 本次 $183.94\niShares 债券ETF按年化收益率折算月度预
- 估。\n\n数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息
- 数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。
- \n预估值会随价格、股息率与正式分配数据自动更新。
- 金额均按当前持股数量计算，未计税费。
+SUMMARY:$2\,928
+DESCRIPTION:税前股息总额: $2\,928（含预估）\n\n预估部分:\n
+ IBHG: 21\,809.3968股 · NAV $21.81 · 市值 $475\,743.33 · 30日SEC
+ 收益率 5.65% → 本次 $2\,238\nIBHH: 2\,559.3648股 · NAV $23.26 
+ · 市值 $59\,519.43 · 30日SEC收益率 5.83% → 本次 $289\nIBHI: 
+ 846.3668股 · NAV $23.09 · 市值 $19\,546.16 · 30日SEC收益率 6.4
+ 7% → 本次 $105\nIBHJ: 760.3254股 · NAV $26.02 · 市值 $19\,786.2
+ 0 · 30日SEC收益率 6.80% → 本次 $112\nIBHK: 1\,232.3071股 · NA
+ V $25.11 · 市值 $30\,944.33 · 30日SEC收益率 7.13% → 本次 $18
+ 3\niShares 债券ETF按年化收益率折算月度预估。\n\n数据源
+ : iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAna
+ lysis（S&P Global Market Intelligence 数据）。\n预估值会随价
+ 格、股息率与正式分配数据自动更新。金额均按当前持
+ 股数量计算，未计税费。
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
