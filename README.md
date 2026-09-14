@@ -17,9 +17,9 @@ Apple Calendar subscription feed for the following portfolio positions:
 
 The calendar prefers official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO, with validated fallback providers described below. Events are grouped by payable date. If multiple holdings pay on the same date, their dividends are combined into one calendar event.
 
-The calendar shows the next 24 months of dividend events. Official iShares payment dates are used when available; months beyond the currently published official schedule are projected using the monthly cadence, including two December payments and no regular January payment. QQQ/VOO future payment dates are projected from their recent quarterly payment pattern.
+The calendar shows the next 24 months of dividend events. Official iShares payment dates are used when available; months beyond the currently published official schedule are projected using the monthly cadence, including two December payments and no regular January payment. VOO payment dates prefer Vanguard's official annual schedule, while QQQ payment dates prefer official Invesco QQQ distribution announcements; unpublished quarters fall back to the recent validated quarterly payment pattern.
 
-Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as plain integer digits with no dollar sign or thousands separator. The memo lists one line per ticker in the format `IBHG｜21,809.3股｜$2,014.3`, followed by `预扣税10%`. When any included payment date is projected, the final line is `预扣税10%｜预计本日发放`. An official date needs no certainty label, even if the amount is estimated. Monthly estimates prefer NAV and SEC yield; quarterly estimates use validated trailing cash distributions directly.
+Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as whole digits with no dollar sign or thousands separator. If any included payment date is still projected, the title is prefixed with `◇`, for example `◇1157`; official or actual payment dates keep the plain numeric title. The memo lists one line per ticker in the format `IBHG｜21,809.3股｜$2,014.3`, followed by `预扣税10%`. When any included payment date is projected, the final line is `预扣税10%｜预计本日发放`. An official date needs no certainty label, even if the amount is estimated. Monthly estimates prefer NAV and SEC yield; quarterly estimates use validated trailing cash distributions directly.
 
 Calendar titles are truncated to whole USD amounts without rounding. Memo share counts and dividend amounts are truncated to one decimal place without rounding. Memo dividend amounts keep the `$` symbol and thousands separators.
 
@@ -59,6 +59,8 @@ calculated with `Decimal`; rounding is deferred until the final display.
 | iShares distributions | iShares product API | BlackRock API → StockAnalysis → Nasdaq → DividendHistory | Verified snapshot, at most 7 days old |
 | QQQ / VOO distributions | StockAnalysis | Nasdaq → DividendHistory | Verified snapshot, at most 7 days old |
 | Regular iShares payment dates | iShares PDF | BlackRock PDF | Verified PDF dates cached for at most 7 days; otherwise explicitly projected dates |
+| VOO payment dates | Vanguard annual distribution schedule | Verified issuer schedule cache | Recent validated quarterly pattern, explicitly projected |
+| QQQ payment dates | Invesco QQQ official distribution announcements | Verified issuer announcement cache | Recent validated quarterly pattern, explicitly projected |
 | iShares NAV and yield | iShares screener | BlackRock screener | Estimate directly from validated trailing cash distributions |
 
 DividendHistory forecasts marked unconfirmed/estimated are excluded. Nasdaq may return no history for some ETFs, including VOO during live verification; DividendHistory supplies a further independent fallback.

@@ -294,11 +294,12 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]], positions: 
         )
         tax_note = f"预扣税{((1 - NET_FACTOR) * 100).normalize():f}%"
         details.append(tax_note + ("｜预计本日发放" if projected_date else ""))
+        title = f"{'◇' if projected_date else ''}{int(gross * NET_FACTOR)}"
         lines.extend(["BEGIN:VEVENT", f"UID:dividend-{d.strftime('%Y%m%d')}@dividend-calendar",
                       f"DTSTAMP:{stamp}", f"LAST-MODIFIED:{stamp}", "SEQUENCE:0",
                       f"DTSTART;VALUE=DATE:{d.strftime('%Y%m%d')}",
                       f"DTEND;VALUE=DATE:{(d + timedelta(days=1)).strftime('%Y%m%d')}",
-                      f"SUMMARY:{int(gross * NET_FACTOR)}", f"DESCRIPTION:{escape_text(chr(10).join(details))}",
+                      f"SUMMARY:{title}", f"DESCRIPTION:{escape_text(chr(10).join(details))}",
                       "CATEGORIES:股息,Dividend", "TRANSP:TRANSPARENT", "END:VEVENT"])
     return encode_lines(lines + ["END:VCALENDAR"])
 
