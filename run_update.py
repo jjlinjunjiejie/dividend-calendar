@@ -20,12 +20,20 @@ POSITIONS_END = "<!-- POSITIONS:END -->"
 AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
 DIVIDEND_AMOUNT_PATTERN = r"(?:=|→ 本次)\s*\$(?P<amount>\d[\d\\,]*(?:\.\d+)?)"
 ONE_DECIMAL = Decimal("0.1")
+WITHHOLDING_RATE = Decimal("0.10")
+NET_FACTOR = Decimal("1") - WITHHOLDING_RATE
+
+
+def after_withholding(value: Any) -> Decimal:
+    """Apply the configured withholding tax to a gross dividend amount."""
+    return Decimal(str(value)) * NET_FACTOR
 
 
 def calendar_title_amount(match: Match[str]) -> str:
-    """Format a calendar title amount as plain integer digits only."""
+    """Show the after-tax calendar title as plain integer digits only."""
     raw = match.group("amount").replace("\\,", "").replace(",", "")
-    return str(int(Decimal(raw)))
+    net_amount = after_withholding(Decimal(raw))
+    return str(int(net_amount))
 
 
 def truncate_one_decimal(value: Any) -> Decimal:
@@ -39,7 +47,7 @@ def shares_label(value: Any) -> str:
 
 
 def dividend_amount(part: str) -> Decimal | None:
-    """Extract the cash dividend for one ticker line from the generated memo."""
+    """Extract the gross cash dividend for one ticker line from the generated memo."""
     match = re.search(DIVIDEND_AMOUNT_PATTERN, part)
     if not match:
         return None
@@ -48,7 +56,7 @@ def dividend_amount(part: str) -> Decimal | None:
 
 
 def compact_description(line: str, positions: dict[str, Any]) -> str:
-    """Show each ticker, configured shares, and its dividend for this pay date."""
+    """Show each ticker, configured shares, and after-tax dividend for this pay date."""
     payload = line.removeprefix("DESCRIPTION:")
     tickers: list[str] = []
     amounts: dict[str, Decimal] = defaultdict(Decimal)
@@ -70,14 +78,14 @@ def compact_description(line: str, positions: dict[str, Any]) -> str:
     details: list[str] = []
     for ticker in tickers:
         shares = shares_label(positions[ticker]["shares"])
-        amount = truncate_one_decimal(amounts[ticker])
+        amount = truncate_one_decimal(after_withholding(amounts[ticker]))
         details.append(f"{ticker}｜持股 {shares} 股｜股息 ${amount:,.1f}")
 
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
 
 def normalize_calendar(calendar_text: str, positions: dict[str, Any]) -> str:
-    """Normalize titles and reduce each daily event memo to ticker dividend details."""
+    """Apply after-tax display formatting to titles and compact daily event memos."""
     logical_lines: list[str] = []
     for line in calendar_text.splitlines():
         if line.startswith(" ") and logical_lines:
@@ -129,7 +137,7 @@ def main() -> None:
     calendar_text = update_calendar.OUTPUT_FILE.read_text(encoding="utf-8")
     normalized = normalize_calendar(calendar_text, positions)
     update_calendar.OUTPUT_FILE.write_text(normalized, encoding="utf-8", newline="")
-    print("Normalized calendar titles, merged daily dividend memos, and synced README positions.")
+    print("Applied 10% withholding tax to displayed dividends, normalized calendar titles, merged daily dividend memos, and synced README positions.")
 
 
 if __name__ == "__main__":
