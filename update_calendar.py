@@ -192,7 +192,8 @@ def projected_monthly_dates(reference: list[date], start: date, end: date) -> li
 
 
 def make_schedule(positions: dict[str, Any], rows: dict[str, list[dict[str, Any]]],
-                  official: list[date], official_label: str, start: date, end: date
+                  official: list[date], official_label: str, start: date, end: date,
+                  equity_official: dict[str, dict] | None = None
                   ) -> dict[date, dict[str, dict[str, Any]]]:
     schedule: dict[date, dict[str, dict[str, Any]]] = defaultdict(dict)
     for ticker, info in positions.items():
@@ -218,8 +219,12 @@ def make_schedule(positions: dict[str, Any], rows: dict[str, list[dict[str, Any]
                 for quarter, row in patterns.items():
                     pay, ex = row["payable_date"], row["ex_date"]
                     d = previous_business_day_if_weekend(safe_date(year + pay.year - ex.year, pay.month, pay.day))
+                    label = "推算支付日"
+                    published = (equity_official or {}).get(ticker, {}).get((year, quarter))
+                    if published:
+                        d, label = published["payable_date"], published["date_status"]
                     if start <= d < end:
-                        schedule[d][ticker] = {"cycle": (year, quarter), "date_status": "推算支付日"}
+                        schedule[d][ticker] = {"cycle": (year, quarter), "date_status": label}
     return schedule
 
 
@@ -322,7 +327,9 @@ def generate_calendar(config: dict[str, Any], sources: DividendSources | None = 
         monthly_tickers = [t for t, i in positions.items() if i.get("source", "ishares") == "ishares"]
         official, label = sources.schedule() if monthly_tickers else ([], "推算支付日")
         metrics = market_metrics(positions, rows_by_ticker, sources.screener(monthly_tickers), today)
-        schedule = make_schedule(positions, rows_by_ticker, official, label, current_month, future_end)
+        equity_official = {t: sources.equity_schedule(t) for t in positions if t not in monthly_tickers}
+        schedule = make_schedule(positions, rows_by_ticker, official, label, current_month, future_end,
+                                 equity_official)
         text = build_calendar(grouped, positions, metrics, schedule, history_start, current_month, future_end, sources.now)
         sources.save()
         sources.status["success"] = True

@@ -11,6 +11,7 @@ on:
       - "update_calendar.py"
       - "run_update.py"
       - "data_sources.py"
+      - "equity_schedules.py"
       - "requirements.txt"
       - "tests/**"
       - ".github/workflows/update-calendar.yml"

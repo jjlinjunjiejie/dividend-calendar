@@ -368,6 +368,41 @@ class DividendSources:
             self.status["sources"]["schedule"] = {"projected": True, "failures": errors}
             return [], "推算支付日"
 
+    def equity_schedule(self, ticker: str) -> dict[tuple[int, int], dict[str, Any]]:
+        from equity_schedules import fetch_dates, validate_dates
+
+        result = {}
+        if ticker not in ("QQQ", "VOO"):
+            return result
+        years = [self.now.year]
+        if ticker == "VOO" and self.now.month >= 9:
+            years.append(self.now.year + 1)
+        for year in years:
+            key = f"{ticker}-schedule-{year}"
+            old = self.cache.get(key, {})
+            try:
+                rows = fetch_dates(ticker, year, (self.now.month - 1) // 3 + 1)
+                self.cache[key] = {"fetched_at": self.now.isoformat(), "rows": rows}
+                label = "官方支付日"
+                self.status["sources"][key] = {"cached": False, "rows": rows}
+            except Exception as exc:
+                try:
+                    if not self.fresh(old):
+                        raise SourceError("Expired equity schedule cache")
+                    rows = validate_dates(old["rows"], year)
+                    label = "官方支付日（缓存）"
+                    self.status["sources"][key] = {"cached": True, "rows": rows,
+                        "fetched_at": old["fetched_at"], "failure": str(exc)}
+                    self.warn(f"{key}: using verified cache; {exc}")
+                except (KeyError, TypeError, ValueError, SourceError):
+                    self.status["sources"][key] = {"projected": True, "failure": str(exc)}
+                    self.warn(f"{key}: official dates unavailable; retaining projected dates; {exc}")
+                    continue
+            for row in rows:
+                result[tuple(row["cycle"])] = {"payable_date": parse_date(row["payable_date"]),
+                                               "date_status": label}
+        return result
+
     def screener(self, tickers: list[str]) -> dict[str, dict[str, Any]]:
         if not tickers:
             return {}
