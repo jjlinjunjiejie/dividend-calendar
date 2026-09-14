@@ -17,6 +17,8 @@ Apple Calendar subscription feed for the following portfolio positions:
 
 The calendar uses official iShares / BlackRock distribution data for the iShares positions and StockAnalysis dividend data for QQQ/VOO. Events are grouped by payable date. If multiple holdings pay on the same date, their dividends are combined into one calendar event.
 
+The calendar shows the next 24 months of dividend events. Official iShares payment dates are used when available; months beyond the currently published official schedule are projected from the recent monthly payment pattern. QQQ/VOO future payment dates are projected from their recent quarterly payment pattern.
+
 Displayed dividend amounts apply a 10% withholding tax, so the calendar shows 90% of the estimated or announced gross dividend. Event titles show the combined after-tax amount as plain integer digits with no dollar sign or thousands separator. The memo shows each ticker, the current share count, and its after-tax dividend amount.
 
 Calendar titles are truncated to whole USD amounts without rounding. Memo share counts and dividend amounts are truncated to one decimal place without rounding. Memo dividend amounts keep the `$` symbol and thousands separators.
