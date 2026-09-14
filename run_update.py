@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 from collections import defaultdict
+from datetime import date
 from decimal import Decimal, ROUND_DOWN
 from pathlib import Path
 from typing import Any, Match
@@ -22,6 +23,8 @@ DIVIDEND_AMOUNT_PATTERN = r"(?:=|→ 本次)\s*\$(?P<amount>\d[\d\\,]*(?:\.\d+)?
 ONE_DECIMAL = Decimal("0.1")
 WITHHOLDING_RATE = Decimal("0.10")
 NET_FACTOR = Decimal("1") - WITHHOLDING_RATE
+FUTURE_MONTHS = 24
+ORIGINAL_ISHARES_PAY_DATES = update_calendar.official_ishares_pay_dates
 
 
 def after_withholding(value: Any) -> Decimal:
@@ -53,6 +56,29 @@ def dividend_amount(part: str) -> Decimal | None:
         return None
     raw = match.group("amount").replace("\\,", "").replace(",", "")
     return Decimal(raw)
+
+
+def extended_ishares_pay_dates(window_start: date, window_end: date) -> list[date]:
+    """Use official dates first, then project monthly dates beyond official coverage."""
+    official = ORIGINAL_ISHARES_PAY_DATES(window_start, window_end)
+    if not official:
+        return official
+
+    dates = set(official)
+    recent_days = sorted(d.day for d in official[-6:])
+    reference_day = recent_days[len(recent_days) // 2]
+    last_official_month = date(official[-1].year, official[-1].month, 1)
+    cursor = update_calendar.add_months_month_start(last_official_month, 1)
+
+    while cursor < window_end:
+        projected = update_calendar.previous_business_day_if_weekend(
+            update_calendar.safe_date(cursor.year, cursor.month, reference_day)
+        )
+        if window_start <= projected < window_end:
+            dates.add(projected)
+        cursor = update_calendar.add_months_month_start(cursor, 1)
+
+    return sorted(dates)
 
 
 def compact_description(line: str, positions: dict[str, Any]) -> str:
@@ -100,6 +126,8 @@ def normalize_calendar(calendar_text: str, positions: dict[str, Any]) -> str:
             line = re.sub(AMOUNT_PATTERN, calendar_title_amount, line, count=1)
         elif line.startswith("DESCRIPTION:"):
             line = compact_description(line, positions)
+        elif line.startswith("X-WR-CALDESC:"):
+            line = line.replace("未来12个月", "未来24个月")
 
         output.extend(update_calendar.fold_line(line))
 
@@ -133,12 +161,14 @@ def main() -> None:
     positions: dict[str, Any] = config["positions"]
 
     sync_readme(positions)
+    update_calendar.FUTURE_MONTHS = FUTURE_MONTHS
+    update_calendar.official_ishares_pay_dates = extended_ishares_pay_dates
     update_calendar.main()
 
     calendar_text = update_calendar.OUTPUT_FILE.read_text(encoding="utf-8")
     normalized = normalize_calendar(calendar_text, positions)
     update_calendar.OUTPUT_FILE.write_text(normalized, encoding="utf-8", newline="")
-    print("Applied 10% withholding tax to displayed dividends, normalized calendar titles, merged daily dividend memos, and synced README positions.")
+    print("Applied 10% withholding tax to displayed dividends, extended the calendar to 24 future months, normalized calendar titles, merged daily dividend memos, and synced README positions.")
 
 
 if __name__ == "__main__":
