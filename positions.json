@@ -1,0 +1,11 @@
+{
+  "currency": "USD",
+  "positions": {
+    "IBHF": {"shares": 127.3954, "portfolio_id": 316512},
+    "IBHG": {"shares": 21809.3968, "portfolio_id": 319422},
+    "IBHH": {"shares": 2559.3648, "portfolio_id": 326459},
+    "IBHI": {"shares": 846.3668, "portfolio_id": 326462},
+    "IBHJ": {"shares": 760.3254, "portfolio_id": 332287},
+    "IBHK": {"shares": 1232.3071, "portfolio_id": 337468}
+  }
+}
