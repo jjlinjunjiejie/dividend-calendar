@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
+from bs4 import BeautifulSoup
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent
@@ -56,6 +57,7 @@ def request_bytes(url: str, accept: str, attempts: int = 3) -> bytes:
                 "User-Agent": USER_AGENT,
                 "Accept": accept,
                 "Accept-Language": "en-US,en;q=0.8",
+                "Cache-Control": "no-cache",
             },
         )
         try:
@@ -105,27 +107,6 @@ def fetch_ishares_screener() -> dict[str, Any]:
     return request_json(ISHARES_SCREENER_URL, attempts=3)
 
 
-def yahoo_chart(ticker: str) -> dict[str, Any]:
-    encoded = urllib.parse.quote(ticker.upper())
-    params = urllib.parse.urlencode(
-        {
-            "range": "2y",
-            "interval": "1d",
-            "events": "div,splits",
-            "includeAdjustedClose": "true",
-        }
-    )
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{encoded}?{params}"
-    payload = request_json(url, attempts=3)
-    chart = payload.get("chart", {})
-    if chart.get("error"):
-        raise RuntimeError(f"Yahoo Finance error for {ticker}: {chart['error']}")
-    result = chart.get("result") or []
-    if not result:
-        raise RuntimeError(f"Yahoo Finance returned no chart data for {ticker}")
-    return result[0]
-
-
 def scalar(value: Any) -> Any:
     if isinstance(value, dict):
         if value.get("r") not in (None, "", "-"):
@@ -153,7 +134,14 @@ def parse_date(value: Any) -> date | None:
     if value in (None, "", "-"):
         return None
     text = str(int(value)) if isinstance(value, (int, float)) else str(value).strip()
-    for fmt in ("%Y%m%d", "%Y-%m-%d", "%b %d, %Y", "%B %d, %Y", "%d-%b-%y"):
+    for fmt in (
+        "%Y%m%d",
+        "%Y-%m-%d",
+        "%b %d, %Y",
+        "%B %d, %Y",
+        "%d-%b-%y",
+        "%m/%d/%Y",
+    ):
         try:
             return datetime.strptime(text, fmt).date()
         except ValueError:
@@ -209,7 +197,6 @@ def ishares_distributions_for(
                 "ticker": ticker,
                 "shares": shares,
                 "source": "ishares",
-                "date_type": "支付日",
                 "ex_date": ex_date,
                 "record_date": record,
                 "payable_date": payable,
@@ -220,55 +207,82 @@ def ishares_distributions_for(
     return rows
 
 
-def yahoo_distributions_for(
-    ticker: str, shares: float, chart: dict[str, Any]
-) -> list[dict[str, Any]]:
-    dividends = chart.get("events", {}).get("dividends", {}) or {}
+def stockanalysis_data(
+    ticker: str, shares: float
+) -> tuple[list[dict[str, Any]], dict[str, float]]:
+    """Read QQQ/VOO price, yield and dividend history from StockAnalysis."""
+    url = f"https://stockanalysis.com/etf/{ticker.lower()}/dividend/"
+    html = request_bytes(url, "text/html,application/xhtml+xml", attempts=3).decode(
+        "utf-8", errors="replace"
+    )
+    soup = BeautifulSoup(html, "html.parser")
+    page_text = " ".join(soup.stripped_strings)
+
+    yield_match = re.search(r"Dividend Yield\s+([0-9]+(?:\.[0-9]+)?)%", page_text, re.I)
+    annual_match = re.search(r"Annual Dividend\s+\$([0-9]+(?:\.[0-9]+)?)", page_text, re.I)
+    price_match = re.search(
+        r"Real-Time Price\s*(?:·|\u00b7)?\s*USD\s+([0-9,]+(?:\.[0-9]+)?)",
+        page_text,
+        re.I,
+    )
+
+    yield_pct = float(yield_match.group(1)) if yield_match else None
+    annual_dividend = float(annual_match.group(1)) if annual_match else None
+    price = parse_number(price_match.group(1)) if price_match else None
+
     rows: list[dict[str, Any]] = []
-    for event in dividends.values():
-        amount = parse_number(event.get("amount"))
-        timestamp = event.get("date")
-        if amount is None or not timestamp:
+    for tr in soup.find_all("tr"):
+        cells = [c.get_text(" ", strip=True) for c in tr.find_all(["td", "th"])]
+        if len(cells) < 4:
             continue
-        event_date = datetime.fromtimestamp(int(timestamp), UTC).date()
+        ex_date = parse_date(cells[0])
+        amount = parse_number(cells[1])
+        record_date = parse_date(cells[2])
+        pay_date = parse_date(cells[3])
+        if ex_date is None or amount is None or pay_date is None:
+            continue
         rows.append(
             {
                 "ticker": ticker,
                 "shares": shares,
-                "source": "yahoo",
-                "date_type": "除息日",
-                "ex_date": event_date,
-                "record_date": None,
-                "payable_date": event_date,
+                "source": "stockanalysis",
+                "ex_date": ex_date,
+                "record_date": record_date,
+                "payable_date": pay_date,
                 "per_share": amount,
                 "amount": shares * amount,
             }
         )
+
     rows.sort(key=lambda r: r["payable_date"])
-    return rows
+    if not rows:
+        raise RuntimeError(f"{ticker}: dividend history table not found on StockAnalysis")
 
+    latest_four = rows[-4:]
+    trailing_from_rows = sum(float(r["per_share"]) for r in latest_four)
+    if annual_dividend is None or annual_dividend <= 0:
+        annual_dividend = trailing_from_rows
 
-def yahoo_current_price(chart: dict[str, Any]) -> float | None:
-    meta = chart.get("meta", {})
-    price = parse_number(meta.get("regularMarketPrice"))
-    if price and price > 0:
-        return price
-    closes = (
-        chart.get("indicators", {})
-        .get("quote", [{}])[0]
-        .get("close", [])
-    )
-    for value in reversed(closes):
-        parsed = parse_number(value)
-        if parsed and parsed > 0:
-            return parsed
-    return None
+    if price is None or price <= 0:
+        if yield_pct is not None and yield_pct > 0 and annual_dividend > 0:
+            price = annual_dividend / (yield_pct / 100.0)
+        else:
+            raise RuntimeError(f"{ticker}: current price unavailable")
+
+    if yield_pct is None or yield_pct <= 0:
+        yield_pct = annual_dividend / price * 100.0
+
+    return rows, {
+        "price": float(price),
+        "yield_pct": float(yield_pct),
+        "annual_dividend": float(annual_dividend),
+    }
 
 
 def market_metrics(
     positions: dict[str, Any],
     rows_by_ticker: dict[str, list[dict[str, Any]]],
-    yahoo_charts: dict[str, dict[str, Any]],
+    stockanalysis_metrics: dict[str, dict[str, float]],
     today: date,
 ) -> dict[str, dict[str, Any]]:
     ishares_products: dict[str, dict[str, Any]] = {}
@@ -317,18 +331,9 @@ def market_metrics(
             price_label = "NAV"
             frequency = 12
         else:
-            chart = yahoo_charts[ticker]
-            price = yahoo_current_price(chart)
-            if price is None or price <= 0:
-                raise RuntimeError(f"{ticker}: current market price unavailable")
-            per_share_12m = sum(
-                float(r["per_share"])
-                for r in rows_by_ticker.get(ticker, [])
-                if trailing_start <= r["payable_date"] <= today
-            )
-            if per_share_12m <= 0:
-                raise RuntimeError(f"{ticker}: no trailing dividend history")
-            yield_pct = per_share_12m / price * 100.0
+            raw = stockanalysis_metrics[ticker]
+            price = float(raw["price"])
+            yield_pct = float(raw["yield_pct"])
             yield_source = "近12个月股息率"
             price_label = "现价"
             frequency = int(info.get("frequency", 4))
@@ -415,18 +420,12 @@ def previous_business_day_if_weekend(value: date) -> date:
 def projected_equity_dates(
     rows: list[dict[str, Any]], window_start: date, window_end: date
 ) -> list[date]:
-    """Project quarterly dividend dates from the latest observed ex-dividend pattern."""
+    """Project future quarterly payment dates from the latest payment-date pattern."""
     historical = sorted({r["payable_date"] for r in rows})
     if len(historical) < 4:
         raise RuntimeError("Not enough dividend history to project quarterly dates")
 
-    latest_by_month: dict[int, date] = {}
-    for d in historical[-12:]:
-        latest_by_month[d.month] = d
-    patterns = sorted(latest_by_month.values(), key=lambda d: d.month)
-    if len(patterns) > 4:
-        patterns = sorted(historical[-4:], key=lambda d: d.month)
-
+    patterns = historical[-4:]
     projected: set[date] = set()
     for year in range(window_start.year - 1, window_end.year + 2):
         for pattern in patterns:
@@ -582,18 +581,12 @@ def build_calendar(
             detail_lines = [f"已公布税前股息总额: ${total_amount:,.2f}", ""]
 
         for r in actual_rows:
-            if r["source"] == "ishares":
-                detail_lines.append(
-                    f"{r['ticker']}: {r['shares']:,.4f}股 × ${r['per_share']:.6f} = ${r['amount']:,.2f}"
-                )
-                detail_lines.append(
-                    f"  除息 {fmt_date(r['ex_date'])} · 登记 {fmt_date(r['record_date'])} · 支付 {fmt_date(r['payable_date'])}"
-                )
-            else:
-                detail_lines.append(
-                    f"{r['ticker']}: {r['shares']:,.4f}股 × ${r['per_share']:.6f} = ${r['amount']:,.2f}（已公布）"
-                )
-                detail_lines.append(f"  除息日 {fmt_date(r['ex_date'])}")
+            detail_lines.append(
+                f"{r['ticker']}: {r['shares']:,.4f}股 × ${r['per_share']:.6f} = ${r['amount']:,.2f}"
+            )
+            detail_lines.append(
+                f"  除息 {fmt_date(r['ex_date'])} · 登记 {fmt_date(r['record_date'])} · 支付 {fmt_date(r['payable_date'])}"
+            )
 
         if estimate_rows:
             if actual_rows:
@@ -610,12 +603,12 @@ def build_calendar(
             if any(metrics[t]["source"] == "ishares" for t, _ in estimate_rows):
                 detail_lines.append("iShares 债券ETF按年化收益率折算月度预估。")
             if any(metrics[t]["source"] != "ishares" for t, _ in estimate_rows):
-                detail_lines.append("QQQ/VOO按近12个月股息率与当前市值估算季度股息；未来日期按近期季度除息节奏推算。")
+                detail_lines.append("QQQ/VOO按近12个月股息率与当前市值估算季度股息；未来支付日按近期季度支付节奏推算。")
 
         detail_lines.extend(
             [
                 "",
-                "数据源: iShares / BlackRock 官方数据；QQQ/VOO 市价与股息历史使用 Yahoo Finance。",
+                "数据源: iShares / BlackRock 官方数据；QQQ/VOO 股息数据使用 StockAnalysis（S&P Global Market Intelligence 数据）。",
                 "预估值会随价格、股息率与正式分配数据自动更新。金额均按当前持股数量计算，未计税费。",
             ]
         )
@@ -648,7 +641,7 @@ def main() -> None:
 
     grouped: dict[date, list[dict[str, Any]]] = defaultdict(list)
     rows_by_ticker: dict[str, list[dict[str, Any]]] = {}
-    yahoo_charts: dict[str, dict[str, Any]] = {}
+    stock_metrics: dict[str, dict[str, float]] = {}
     failures: list[str] = []
 
     for ticker, info in positions.items():
@@ -660,9 +653,8 @@ def main() -> None:
                     ticker, int(info["portfolio_id"]), shares
                 )
             else:
-                chart = yahoo_chart(ticker)
-                yahoo_charts[ticker] = chart
-                rows = yahoo_distributions_for(ticker, shares, chart)
+                rows, external_metrics = stockanalysis_data(ticker, shares)
+                stock_metrics[ticker] = external_metrics
             rows_by_ticker[ticker] = rows
             for row in rows:
                 d = row["payable_date"]
@@ -677,7 +669,7 @@ def main() -> None:
             "One or more funds failed; calendar not replaced. " + " | ".join(failures)
         )
 
-    metrics = market_metrics(positions, rows_by_ticker, yahoo_charts, today_local)
+    metrics = market_metrics(positions, rows_by_ticker, stock_metrics, today_local)
     for ticker in sorted(metrics):
         m = metrics[ticker]
         print(
@@ -687,12 +679,7 @@ def main() -> None:
 
     scheduled_tickers: dict[date, set[str]] = defaultdict(set)
 
-    ishares_positions = {
-        t: info
-        for t, info in positions.items()
-        if info.get("source", "ishares") == "ishares"
-    }
-    if ishares_positions:
+    if any(info.get("source", "ishares") == "ishares" for info in positions.values()):
         for d in official_ishares_pay_dates(current_month, future_end):
             for ticker in active_ishares_tickers(positions, d):
                 scheduled_tickers[d].add(ticker)
@@ -705,7 +692,7 @@ def main() -> None:
         )
         for d in projected:
             scheduled_tickers[d].add(ticker)
-        print(f"{ticker}: projected future dividend dates = {len(projected)}")
+        print(f"{ticker}: projected future payment dates = {len(projected)}")
 
     calendar_text = build_calendar(
         grouped,
