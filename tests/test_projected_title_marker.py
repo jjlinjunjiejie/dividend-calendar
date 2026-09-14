@@ -17,13 +17,13 @@ class ProjectedTitleMarkerTests(unittest.TestCase):
 
     def test_projected_payment_date_prefixes_title_with_diamond(self):
         text = '\n'.join(c.unfold(self.render_scheduled('推算支付日')))
-        self.assertIn('SUMMARY:◇90', text)
+        self.assertIn('SUMMARY:⋄90', text)
         self.assertIn('预扣税10%｜预计本日发放', text)
 
     def test_official_payment_date_keeps_plain_numeric_title(self):
         text = '\n'.join(c.unfold(self.render_scheduled('官方支付日')))
         self.assertIn('SUMMARY:90', text)
-        self.assertNotIn('SUMMARY:◇', text)
+        self.assertNotIn('SUMMARY:⋄', text)
         self.assertNotIn('预计本日发放', text)
 
     def test_actual_distribution_keeps_plain_numeric_title(self):
@@ -36,7 +36,7 @@ class ProjectedTitleMarkerTests(unittest.TestCase):
             actual, positions, metrics, {}, date(2026, 9, 1), date(2026, 9, 1), date(2027, 1, 1),
             datetime(2026, 9, 14, tzinfo=timezone.utc))))
         self.assertIn('SUMMARY:90', text)
-        self.assertNotIn('SUMMARY:◇', text)
+        self.assertNotIn('SUMMARY:⋄', text)
 
 
 if __name__ == '__main__':
