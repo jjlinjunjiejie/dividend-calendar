@@ -53,7 +53,7 @@ class CalendarTests(unittest.TestCase):
         text = render({DEC1: [actual(DEC1)]}, schedule(DEC1, DEC2))
         self.assertEqual(text.count('BEGIN:VEVENT'), 2)
         self.assertEqual(text.count('SUMMARY:90\r\n'), 2)
-        self.assertIn('预估金额', '\n'.join(c.unfold(text)))
+        self.assertIn('DTSTART;VALUE=DATE:20261223', text)
 
     def test_actual_moved_pay_date_consumes_only_its_cycle(self):
         moved = date(2026, 12, 7)
@@ -68,20 +68,17 @@ class CalendarTests(unittest.TestCase):
         self.assertEqual(text.count('BEGIN:VEVENT'), 3)
         self.assertIn('DTSTART;VALUE=DATE:20270105', text)
 
-    def test_actual_estimate_and_cache_status_are_visible(self):
-        actual_text = '\n'.join(c.unfold(render({DEC1: [actual(DEC1)]})))
-        estimate = '\n'.join(c.unfold(render(scheduled=schedule(DEC1))))
-        cached = '\n'.join(c.unfold(render({DEC1: [actual(DEC1, cached=True)]})))
-        self.assertIn('已公布', actual_text)
-        self.assertIn('预估金额', estimate)
-        self.assertIn('官方支付日', estimate)
-        self.assertIn('已公布（缓存）', cached)
-        self.assertIn('来源 iShares', actual_text)
+    def test_actual_estimate_and_cache_use_compact_memo(self):
+        for text in [render({DEC1: [actual(DEC1)]}),
+                     render(scheduled=schedule(DEC1)),
+                     render({DEC1: [actual(DEC1, cached=True)]})]:
+            description = next(line for line in c.unfold(text) if line.startswith('DESCRIPTION:'))
+            self.assertEqual(description, 'DESCRIPTION:IBHG｜100.0股｜$90.0')
 
     def test_round_only_at_final_display(self):
         text = '\n'.join(c.unfold(render({DEC1: [actual(DEC1, amount='111.111')]})))
         self.assertIn('SUMMARY:99', text)
-        self.assertIn('股息 $99.9', text)
+        self.assertIn('｜$99.9', text)
 
     def test_unchanged_events_are_byte_identical(self):
         old = render({DEC1: [actual(DEC1)]})
@@ -364,9 +361,10 @@ class IntegrationTests(unittest.TestCase):
             with patch.object(s,'request_bytes',side_effect=s.SourceError('offline')):
                 text = c.generate_calendar({'positions':POS},s.DividendSources(root,NOW+timedelta(days=1)))
                 logical = '\n'.join(c.unfold(text))
-                self.assertIn('已公布（缓存）',logical)
-                self.assertIn('预估金额（缓存依据）',logical)
-                self.assertIn('推算支付日',logical)
+                self.assertIn('DESCRIPTION:IBHG｜100.0股｜$',logical)
+                status = json.loads((root/'source-status.json').read_text())
+                self.assertTrue(status['sources']['IBHG']['cached'])
+                self.assertTrue(status['sources']['schedule']['projected'])
                 self.assertEqual(cached_bytes,(root/'last-good.json').read_bytes())
                 with self.assertRaises(s.SourceError):
                     c.generate_calendar({'positions':POS},s.DividendSources(root,NOW+timedelta(days=8)))

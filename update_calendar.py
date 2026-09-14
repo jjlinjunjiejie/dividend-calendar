@@ -255,7 +255,7 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]], positions: 
     stamp = (now or datetime.now(timezone.utc)).astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Dividend Calendar//Portfolio//CN",
              "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "X-WR-CALNAME:ETF 股息",
-             f"X-WR-CALDESC:过去3个完整日历月+当前月；未来{FUTURE_MONTHS}个月；金额与日期状态见备注；按当前持股计算",
+             f"X-WR-CALDESC:过去3个完整日历月+当前月；未来{FUTURE_MONTHS}个月；含预估；税后90%；按当前持股计算",
              "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H"]
     actual_cycles = defaultdict(set)
     for rows in events_by_date.values():
@@ -272,20 +272,15 @@ def build_calendar(events_by_date: dict[date, list[dict[str, Any]]], positions: 
         gross += sum((metrics[t]["event_amount"] for t in estimates), Decimal(0))
         if gross <= 0:
             continue
-        details = []
+        amounts: dict[str, Decimal] = defaultdict(Decimal)
         for row in actual:
-            ticker = row["ticker"]
-            net = truncate(decimal(row["amount"]) * NET_FACTOR)
-            state = "已公布（缓存）" if row.get("cached") else "已公布"
-            details.append(f"{ticker}｜持股 {truncate(decimal(positions[ticker]['shares'])):,.1f} 股｜股息 ${net:,.1f}｜{state}｜来源 {row['provider']}")
-            details.append(f"除息 {row['ex_date'].isoformat()}｜支付 {d.isoformat()}")
-        for ticker, entry in estimates.items():
-            metric = metrics[ticker]
-            net = truncate(metric["event_amount"] * NET_FACTOR)
-            cached = "（缓存依据）" if metric.get("cached") else ""
-            details.append(f"{ticker}｜持股 {truncate(decimal(positions[ticker]['shares'])):,.1f} 股｜股息 ${net:,.1f}｜预估金额{cached}｜{entry['date_status']}")
-            details.append(f"依据 {metric['method']}｜来源 {metric['provider']}")
-        details.append("备注：预扣税率 10%；金额按当前持股计算")
+            amounts[row["ticker"]] += decimal(row["amount"])
+        for ticker in estimates:
+            amounts[ticker] += metrics[ticker]["event_amount"]
+        details = [
+            f"{ticker}｜{truncate(decimal(positions[ticker]['shares'])):,.1f}股｜${truncate(amount * NET_FACTOR):,.1f}"
+            for ticker, amount in sorted(amounts.items())
+        ]
         lines.extend(["BEGIN:VEVENT", f"UID:dividend-{d.strftime('%Y%m%d')}@dividend-calendar",
                       f"DTSTAMP:{stamp}", f"LAST-MODIFIED:{stamp}", "SEQUENCE:0",
                       f"DTSTART;VALUE=DATE:{d.strftime('%Y%m%d')}",
