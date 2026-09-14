@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 import re
 from collections import defaultdict
-from decimal import Decimal
+from decimal import Decimal, ROUND_DOWN
 from pathlib import Path
 from typing import Any, Match
 
@@ -19,6 +19,7 @@ POSITIONS_START = "<!-- POSITIONS:START -->"
 POSITIONS_END = "<!-- POSITIONS:END -->"
 AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
 DIVIDEND_AMOUNT_PATTERN = r"(?:=|→ 本次)\s*\$(?P<amount>\d[\d\\,]*(?:\.\d+)?)"
+ONE_DECIMAL = Decimal("0.1")
 
 
 def calendar_title_amount(match: Match[str]) -> str:
@@ -27,9 +28,14 @@ def calendar_title_amount(match: Match[str]) -> str:
     return str(int(Decimal(raw)))
 
 
+def truncate_one_decimal(value: Any) -> Decimal:
+    """Truncate a numeric value to one decimal place without rounding."""
+    return Decimal(str(value)).quantize(ONE_DECIMAL, rounding=ROUND_DOWN)
+
+
 def shares_label(value: Any) -> str:
-    """Render configured shares compactly without adding thousands separators."""
-    return format(Decimal(str(value)), "f").rstrip("0").rstrip(".")
+    """Render configured shares with exactly one decimal place."""
+    return format(truncate_one_decimal(value), ".1f")
 
 
 def dividend_amount(part: str) -> Decimal | None:
@@ -64,8 +70,8 @@ def compact_description(line: str, positions: dict[str, Any]) -> str:
     details: list[str] = []
     for ticker in tickers:
         shares = shares_label(positions[ticker]["shares"])
-        amount = int(amounts[ticker])
-        details.append(f"{ticker} {shares}股 股息 ${amount:,}")
+        amount = truncate_one_decimal(amounts[ticker])
+        details.append(f"{ticker} {shares}股 股息 ${amount:,.1f}")
 
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
