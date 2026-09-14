@@ -19,21 +19,35 @@ POSITIONS_END = "<!-- POSITIONS:END -->"
 AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
 
 
-def whole_dollar(match: Match[str]) -> str:
-    """Format a positive dollar amount by truncating, never rounding."""
-    raw = match.group("amount").replace("\\,", "").replace(",", "")
-    value = int(Decimal(raw))
-    return f"${value:,}".replace(",", "\\,")
-
-
 def calendar_title_amount(match: Match[str]) -> str:
     """Format a calendar title amount as plain integer digits only."""
     raw = match.group("amount").replace("\\,", "").replace(",", "")
     return str(int(Decimal(raw)))
 
 
-def truncate_dividend_amounts(calendar_text: str) -> str:
-    """Truncate displayed dividend cash amounts while preserving price precision."""
+def shares_label(value: Any) -> str:
+    """Render configured shares compactly without adding thousands separators."""
+    return format(Decimal(str(value)), "f").rstrip("0").rstrip(".")
+
+
+def compact_description(line: str, positions: dict[str, Any]) -> str:
+    """Keep only the tickers included in this dividend event and their share counts."""
+    payload = line.removeprefix("DESCRIPTION:")
+    tickers: list[str] = []
+    for part in payload.split("\\n"):
+        match = re.match(r"([A-Za-z0-9.-]+):", part)
+        if not match:
+            continue
+        ticker = match.group(1)
+        if ticker in positions and ticker not in tickers:
+            tickers.append(ticker)
+
+    details = [f"{ticker} {shares_label(positions[ticker]['shares'])}股" for ticker in tickers]
+    return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
+
+
+def normalize_calendar(calendar_text: str, positions: dict[str, Any]) -> str:
+    """Normalize calendar titles and reduce event memo text to holdings only."""
     logical_lines: list[str] = []
     for line in calendar_text.splitlines():
         if line.startswith(" ") and logical_lines:
@@ -46,14 +60,7 @@ def truncate_dividend_amounts(calendar_text: str) -> str:
         if line.startswith("SUMMARY:"):
             line = re.sub(AMOUNT_PATTERN, calendar_title_amount, line, count=1)
         elif line.startswith("DESCRIPTION:"):
-            line = re.sub(
-                rf"(?<=税前股息总额: ){AMOUNT_PATTERN}", whole_dollar, line
-            )
-            line = re.sub(
-                rf"(?<=已公布税前股息总额: ){AMOUNT_PATTERN}", whole_dollar, line
-            )
-            line = re.sub(rf"(?<== ){AMOUNT_PATTERN}", whole_dollar, line)
-            line = re.sub(rf"(?<=→ 本次 ){AMOUNT_PATTERN}", whole_dollar, line)
+            line = compact_description(line, positions)
 
         output.extend(update_calendar.fold_line(line))
 
@@ -90,9 +97,9 @@ def main() -> None:
     update_calendar.main()
 
     calendar_text = update_calendar.OUTPUT_FILE.read_text(encoding="utf-8")
-    normalized = truncate_dividend_amounts(calendar_text)
+    normalized = normalize_calendar(calendar_text, positions)
     update_calendar.OUTPUT_FILE.write_text(normalized, encoding="utf-8", newline="")
-    print("Truncated displayed dividend amounts to whole dollars and synced README positions.")
+    print("Normalized calendar titles, simplified event memos, and synced README positions.")
 
 
 if __name__ == "__main__":
