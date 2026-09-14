@@ -1,11 +1,13 @@
 {
   "currency": "USD",
   "positions": {
-    "IBHF": {"shares": 127.3954, "portfolio_id": 316512},
-    "IBHG": {"shares": 21809.3968, "portfolio_id": 319422},
-    "IBHH": {"shares": 2559.3648, "portfolio_id": 326459},
-    "IBHI": {"shares": 846.3668, "portfolio_id": 326462},
-    "IBHJ": {"shares": 760.3254, "portfolio_id": 332287},
-    "IBHK": {"shares": 1232.3071, "portfolio_id": 337468}
+    "IBHF": {"shares": 127.3954, "portfolio_id": 316512, "source": "ishares", "maturity_year": 2026},
+    "IBHG": {"shares": 21809.3968, "portfolio_id": 319422, "source": "ishares", "maturity_year": 2027},
+    "IBHH": {"shares": 2559.3648, "portfolio_id": 326459, "source": "ishares", "maturity_year": 2028},
+    "IBHI": {"shares": 846.3668, "portfolio_id": 326462, "source": "ishares", "maturity_year": 2029},
+    "IBHJ": {"shares": 760.3254, "portfolio_id": 332287, "source": "ishares", "maturity_year": 2030},
+    "IBHK": {"shares": 1232.3071, "portfolio_id": 337468, "source": "ishares", "maturity_year": 2031},
+    "QQQ": {"shares": 600.6061, "source": "yahoo", "frequency": 4},
+    "VOO": {"shares": 700.4031, "source": "yahoo", "frequency": 4}
   }
 }
