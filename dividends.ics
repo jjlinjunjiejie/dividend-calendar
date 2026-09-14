@@ -4,605 +4,853 @@ PRODID:-//Dividend Calendar//Portfolio//CN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:ETF 股息
-X-WR-CALDESC:过去3个完整日历月+当前月；未来24个月按当
- 前市值与股息率预估；正式公布后自动替换实际金额
+X-WR-CALDESC:过去3个完整日历月+当前月；未来24个月；金
+ 额与日期状态见备注；按当前持股计算
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:dividend-20260604@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260604
 DTEND;VALUE=DATE:20260605
 SUMMARY:2617
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $12.3\nIBHG｜持股 21\,809
- .3 股｜股息 $1\,982.3\nIBHH｜持股 2\,559.3 股｜股息 $272.3\nI
- BHI｜持股 846.3 股｜股息 $95.9\nIBHJ｜持股 760.3 股｜股息 
- $101.3\nIBHK｜持股 1\,232.3 股｜股息 $153.2\n备注：预扣税
- 率 10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $12.3｜已公布｜来源 i
+ Shares\n除息 2026-06-01｜支付 2026-06-04\nIBHG｜持股 21\,809.3 
+ 股｜股息 $1\,982.3｜已公布｜来源 iShares\n除息 2026-06-01
+ ｜支付 2026-06-04\nIBHH｜持股 2\,559.3 股｜股息 $272.3｜已
+ 公布｜来源 iShares\n除息 2026-06-01｜支付 2026-06-04\nIBHI｜
+ 持股 846.3 股｜股息 $95.9｜已公布｜来源 iShares\n除息 202
+ 6-06-01｜支付 2026-06-04\nIBHJ｜持股 760.3 股｜股息 $101.3｜
+ 已公布｜来源 iShares\n除息 2026-06-01｜支付 2026-06-04\nIBHK
+ ｜持股 1\,232.3 股｜股息 $153.2｜已公布｜来源 iShares\n除
+ 息 2026-06-01｜支付 2026-06-04\n备注：预扣税率 10%；金额
+ 按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260630@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260630
 DTEND;VALUE=DATE:20260701
 SUMMARY:1236
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,236.8\n备注：预扣税
- 率 10%
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,236.8｜已公布｜来
+ 源 StockAnalysis\n除息 2026-06-26｜支付 2026-06-30\n备注：预
+ 扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260707@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260707
 DTEND;VALUE=DATE:20260708
 SUMMARY:2760
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $9.4\nIBHG｜持股 21\,809.
- 3 股｜股息 $2\,128.3\nIBHH｜持股 2\,559.3 股｜股息 $278.3\nIB
- HI｜持股 846.3 股｜股息 $96.0\nIBHJ｜持股 760.3 股｜股息 $
- 99.3\nIBHK｜持股 1\,232.3 股｜股息 $148.9\n备注：预扣税率 
- 10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $9.4｜已公布｜来源 iS
+ hares\n除息 2026-07-01｜支付 2026-07-07\nIBHG｜持股 21\,809.3 
+ 股｜股息 $2\,128.3｜已公布｜来源 iShares\n除息 2026-07-01
+ ｜支付 2026-07-07\nIBHH｜持股 2\,559.3 股｜股息 $278.3｜已
+ 公布｜来源 iShares\n除息 2026-07-01｜支付 2026-07-07\nIBHI｜
+ 持股 846.3 股｜股息 $96.0｜已公布｜来源 iShares\n除息 202
+ 6-07-01｜支付 2026-07-07\nIBHJ｜持股 760.3 股｜股息 $99.3｜
+ 已公布｜来源 iShares\n除息 2026-07-01｜支付 2026-07-07\nIBHK
+ ｜持股 1\,232.3 股｜股息 $148.9｜已公布｜来源 iShares\n除
+ 息 2026-07-01｜支付 2026-07-07\n备注：预扣税率 10%；金额
+ 按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260710@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260710
 DTEND;VALUE=DATE:20260711
 SUMMARY:439
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $439.7\n备注：预扣税率
-  10%
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $439.7｜已公布｜来源 S
+ tockAnalysis\n除息 2026-06-22｜支付 2026-07-10\n备注：预扣税
+ 率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260806@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260806
 DTEND;VALUE=DATE:20260807
 SUMMARY:2746
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $10.1\nIBHG｜持股 21\,809
- .3 股｜股息 $2\,104.4\nIBHH｜持股 2\,559.3 股｜股息 $277.4\nI
- BHI｜持股 846.3 股｜股息 $99.1\nIBHJ｜持股 760.3 股｜股息 
- $100.3\nIBHK｜持股 1\,232.3 股｜股息 $155.0\n备注：预扣税
- 率 10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $10.1｜已公布｜来源 i
+ Shares\n除息 2026-08-03｜支付 2026-08-06\nIBHG｜持股 21\,809.3 
+ 股｜股息 $2\,104.4｜已公布｜来源 iShares\n除息 2026-08-03
+ ｜支付 2026-08-06\nIBHH｜持股 2\,559.3 股｜股息 $277.4｜已
+ 公布｜来源 iShares\n除息 2026-08-03｜支付 2026-08-06\nIBHI｜
+ 持股 846.3 股｜股息 $99.1｜已公布｜来源 iShares\n除息 202
+ 6-08-03｜支付 2026-08-06\nIBHJ｜持股 760.3 股｜股息 $100.3｜
+ 已公布｜来源 iShares\n除息 2026-08-03｜支付 2026-08-06\nIBHK
+ ｜持股 1\,232.3 股｜股息 $155.0｜已公布｜来源 iShares\n除
+ 息 2026-08-03｜支付 2026-08-06\n备注：预扣税率 10%；金额
+ 按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20260904@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20260904
 DTEND;VALUE=DATE:20260905
 SUMMARY:2677
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $9.0\nIBHG｜持股 21\,809.
- 3 股｜股息 $2\,038.4\nIBHH｜持股 2\,559.3 股｜股息 $272.0\nIB
- HI｜持股 846.3 股｜股息 $97.5\nIBHJ｜持股 760.3 股｜股息 $
- 99.2\nIBHK｜持股 1\,232.3 股｜股息 $161.5\n备注：预扣税率 
- 10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $9.0｜已公布｜来源 iS
+ hares\n除息 2026-09-01｜支付 2026-09-04\nIBHG｜持股 21\,809.3 
+ 股｜股息 $2\,038.4｜已公布｜来源 iShares\n除息 2026-09-01
+ ｜支付 2026-09-04\nIBHH｜持股 2\,559.3 股｜股息 $272.0｜已
+ 公布｜来源 iShares\n除息 2026-09-01｜支付 2026-09-04\nIBHI｜
+ 持股 846.3 股｜股息 $97.5｜已公布｜来源 iShares\n除息 202
+ 6-09-01｜支付 2026-09-04\nIBHJ｜持股 760.3 股｜股息 $99.2｜
+ 已公布｜来源 iShares\n除息 2026-09-01｜支付 2026-09-04\nIBHK
+ ｜持股 1\,232.3 股｜股息 $161.5｜已公布｜来源 iShares\n除
+ 息 2026-09-01｜支付 2026-09-04\n备注：预扣税率 10%；金额
+ 按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261001@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261006@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261006
 DTEND;VALUE=DATE:20261007
 SUMMARY:2644
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7\nIBHG｜持股 21\,809.
- 3 股｜股息 $2\,014.3\nIBHH｜持股 2\,559.3 股｜股息 $260.3\nIB
- HI｜持股 846.3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $
- 100.9\nIBHK｜持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率
-  10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHG｜持股 21\,
+ 809.3 股｜股息 $2\,014.3｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHH｜持股 2\,559.3 股｜股息 $2
+ 60.3｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源
+  iShares\nIBHI｜持股 846.3 股｜股息 $94.8｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHJ｜持股 760.
+ 3 股｜股息 $100.9｜预估金额｜官方支付日\n依据 30日SEC
+ 收益率｜来源 iShares\nIBHK｜持股 1\,232.3 股｜股息 $165.5
+ ｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iSh
+ ares\n备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261030@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261031
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261105@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261105
 DTEND;VALUE=DATE:20261106
 SUMMARY:2644
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7\nIBHG｜持股 21\,809.
- 3 股｜股息 $2\,014.3\nIBHH｜持股 2\,559.3 股｜股息 $260.3\nIB
- HI｜持股 846.3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $
- 100.9\nIBHK｜持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率
-  10%
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHG｜持股 21\,
+ 809.3 股｜股息 $2\,014.3｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHH｜持股 2\,559.3 股｜股息 $2
+ 60.3｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源
+  iShares\nIBHI｜持股 846.3 股｜股息 $94.8｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHJ｜持股 760.
+ 3 股｜股息 $100.9｜预估金额｜官方支付日\n依据 30日SEC
+ 收益率｜来源 iShares\nIBHK｜持股 1\,232.3 股｜股息 $165.5
+ ｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iSh
+ ares\n备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261204@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261204
 DTEND;VALUE=DATE:20261205
-SUMMARY:1322
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $4.4\nIBHG｜持股 21\,809.
- 3 股｜股息 $1\,007.1\nIBHH｜持股 2\,559.3 股｜股息 $130.1\nIB
- HI｜持股 846.3 股｜股息 $47.4\nIBHJ｜持股 760.3 股｜股息 $
- 50.4\nIBHK｜持股 1\,232.3 股｜股息 $82.7\n备注：预扣税率 1
- 0%
+SUMMARY:2644
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHG｜持股 21\,
+ 809.3 股｜股息 $2\,014.3｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHH｜持股 2\,559.3 股｜股息 $2
+ 60.3｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源
+  iShares\nIBHI｜持股 846.3 股｜股息 $94.8｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHJ｜持股 760.
+ 3 股｜股息 $100.9｜预估金额｜官方支付日\n依据 30日SEC
+ 收益率｜来源 iShares\nIBHK｜持股 1\,232.3 股｜股息 $165.5
+ ｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iSh
+ ares\n备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261223@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261223
 DTEND;VALUE=DATE:20261224
-SUMMARY:1322
-DESCRIPTION:IBHF｜持股 127.3 股｜股息 $4.4\nIBHG｜持股 21\,809.
- 3 股｜股息 $1\,007.1\nIBHH｜持股 2\,559.3 股｜股息 $130.1\nIB
- HI｜持股 846.3 股｜股息 $47.4\nIBHJ｜持股 760.3 股｜股息 $
- 50.4\nIBHK｜持股 1\,232.3 股｜股息 $82.7\n备注：预扣税率 1
- 0%
+SUMMARY:2644
+DESCRIPTION:IBHF｜持股 127.3 股｜股息 $8.7｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHG｜持股 21\,
+ 809.3 股｜股息 $2\,014.3｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHH｜持股 2\,559.3 股｜股息 $2
+ 60.3｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源
+  iShares\nIBHI｜持股 846.3 股｜股息 $94.8｜预估金额｜官方
+ 支付日\n依据 30日SEC收益率｜来源 iShares\nIBHJ｜持股 760.
+ 3 股｜股息 $100.9｜预估金额｜官方支付日\n依据 30日SEC
+ 收益率｜来源 iShares\nIBHK｜持股 1\,232.3 股｜股息 $165.5
+ ｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iSh
+ ares\n备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261224@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261224
 DTEND;VALUE=DATE:20261225
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20261231@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20270105@dividend-calendar
-DTSTAMP:20260914T060421Z
-DTSTART;VALUE=DATE:20270105
-DTEND;VALUE=DATE:20270106
-SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270204@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270204
 DTEND;VALUE=DATE:20270205
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270304@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270304
 DTEND;VALUE=DATE:20270305
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270326@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270326
 DTEND;VALUE=DATE:20270327
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270331@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270331
 DTEND;VALUE=DATE:20270401
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270406@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270406
 DTEND;VALUE=DATE:20270407
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270506@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270506
 DTEND;VALUE=DATE:20270507
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270604@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270604
 DTEND;VALUE=DATE:20270605
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270630@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270630
 DTEND;VALUE=DATE:20270701
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270707@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270707
 DTEND;VALUE=DATE:20270708
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270709@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270709
 DTEND;VALUE=DATE:20270710
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270805@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270805
 DTEND;VALUE=DATE:20270806
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20270907@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20270907
 DTEND;VALUE=DATE:20270908
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271001@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271002
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271006@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271006
 DTEND;VALUE=DATE:20271007
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271029@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271029
 DTEND;VALUE=DATE:20271030
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271104@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271104
 DTEND;VALUE=DATE:20271105
 SUMMARY:2636
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3\nIBHH｜持股
-  2\,559.3 股｜股息 $260.3\nIBHI｜持股 846.3 股｜股息 $94.8\nI
- BHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜持股 1\,232.3 股｜股
- 息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271206@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271206
 DTEND;VALUE=DATE:20271207
-SUMMARY:1318
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $1\,007.1\nIBHH｜持股
-  2\,559.3 股｜股息 $130.1\nIBHI｜持股 846.3 股｜股息 $47.4\nI
- BHJ｜持股 760.3 股｜股息 $50.4\nIBHK｜持股 1\,232.3 股｜股
- 息 $82.7\n备注：预扣税率 10%
+SUMMARY:2636
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271222@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271222
 DTEND;VALUE=DATE:20271223
-SUMMARY:1318
-DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $1\,007.1\nIBHH｜持股
-  2\,559.3 股｜股息 $130.1\nIBHI｜持股 846.3 股｜股息 $47.4\nI
- BHJ｜持股 760.3 股｜股息 $50.4\nIBHK｜持股 1\,232.3 股｜股
- 息 $82.7\n备注：预扣税率 10%
+SUMMARY:2636
+DESCRIPTION:IBHG｜持股 21\,809.3 股｜股息 $2\,014.3｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHH｜
+ 持股 2\,559.3 股｜股息 $260.3｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\nIBHI｜持股 846.3 股｜股
+ 息 $94.8｜预估金额｜官方支付日\n依据 30日SEC收益率｜
+ 来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.9｜预估金额
+ ｜官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHK｜
+ 持股 1\,232.3 股｜股息 $165.5｜预估金额｜官方支付日\n
+ 依据 30日SEC收益率｜来源 iShares\n备注：预扣税率 10%；
+ 金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271224@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271224
 DTEND;VALUE=DATE:20271225
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20271231@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20271231
 DTEND;VALUE=DATE:20280101
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
-CATEGORIES:股息,Dividend
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-UID:dividend-20280104@dividend-calendar
-DTSTAMP:20260914T060421Z
-DTSTART;VALUE=DATE:20280104
-DTEND;VALUE=DATE:20280105
-SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280204@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280204
 DTEND;VALUE=DATE:20280205
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280306@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280306
 DTEND;VALUE=DATE:20280307
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280327@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280327
 DTEND;VALUE=DATE:20280328
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280331@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280331
 DTEND;VALUE=DATE:20280401
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280406@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280406
 DTEND;VALUE=DATE:20280407
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280504@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280504
 DTEND;VALUE=DATE:20280505
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280606@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280606
 DTEND;VALUE=DATE:20280607
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280630@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280630
 DTEND;VALUE=DATE:20280701
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280707@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280707
 DTEND;VALUE=DATE:20280708
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 官方支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜官方支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜官方支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜官
+ 方支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280710@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280710
 DTEND;VALUE=DATE:20280711
-SUMMARY:409
-DESCRIPTION:QQQ｜持股 600.6 股｜股息 $409.4\n备注：预扣税率
-  10%
+SUMMARY:410
+DESCRIPTION:QQQ｜持股 600.6 股｜股息 $410.0｜预估金额｜推
+ 算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n备
+ 注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280804@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280804
 DTEND;VALUE=DATE:20280805
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 推算支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜推算支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜推算支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜推
+ 算支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280906@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280906
 DTEND;VALUE=DATE:20280907
 SUMMARY:621
-DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3\nIBHI｜持股 846
- .3 股｜股息 $94.8\nIBHJ｜持股 760.3 股｜股息 $100.9\nIBHK｜
- 持股 1\,232.3 股｜股息 $165.5\n备注：预扣税率 10%
+DESCRIPTION:IBHH｜持股 2\,559.3 股｜股息 $260.3｜预估金额｜
+ 推算支付日\n依据 30日SEC收益率｜来源 iShares\nIBHI｜持
+ 股 846.3 股｜股息 $94.8｜预估金额｜推算支付日\n依据 30
+ 日SEC收益率｜来源 iShares\nIBHJ｜持股 760.3 股｜股息 $100.
+ 9｜预估金额｜推算支付日\n依据 30日SEC收益率｜来源 iS
+ hares\nIBHK｜持股 1\,232.3 股｜股息 $165.5｜预估金额｜推
+ 算支付日\n依据 30日SEC收益率｜来源 iShares\n备注：预扣
+ 税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:dividend-20280929@dividend-calendar
-DTSTAMP:20260914T060421Z
+DTSTAMP:20260914T062405Z
+LAST-MODIFIED:20260914T062405Z
+SEQUENCE:1
 DTSTART;VALUE=DATE:20280929
 DTEND;VALUE=DATE:20280930
-SUMMARY:1158
-DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,158.2\n备注：预扣税
- 率 10%
+SUMMARY:1157
+DESCRIPTION:VOO｜持股 700.4 股｜股息 $1\,157.5｜预估金额｜
+ 推算支付日\n依据 近12个月实际分配｜来源 StockAnalysis\n
+ 备注：预扣税率 10%；金额按当前持股计算
 CATEGORIES:股息,Dividend
 TRANSP:TRANSPARENT
 END:VEVENT

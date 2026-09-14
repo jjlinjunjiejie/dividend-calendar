@@ -1,0 +1,4 @@
+# iCalendar folding and CRLF are intentional protocol bytes.
+*.ics -text -whitespace
+# The PDF layout fixture must preserve table column positions.
+tests/fixtures/monthly-layout.txt -whitespace

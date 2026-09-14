@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""Build the dividend calendar and keep generated presentation files in sync."""
-
+"""Build the calendar and synchronize README only after successful validation."""
 from __future__ import annotations
 
 import json
 import re
-from collections import defaultdict
-from datetime import date
-from decimal import Decimal, ROUND_DOWN
+from decimal import Decimal
 from pathlib import Path
-from typing import Any, Match
+from typing import Any
 
 import update_calendar
 
@@ -18,157 +15,31 @@ POSITIONS_FILE = ROOT / "positions.json"
 README_FILE = ROOT / "README.md"
 POSITIONS_START = "<!-- POSITIONS:START -->"
 POSITIONS_END = "<!-- POSITIONS:END -->"
-AMOUNT_PATTERN = r"\$(?P<amount>\d[\d\\,]*\.\d+)"
-DIVIDEND_AMOUNT_PATTERN = r"(?:=|→ 本次)\s*\$(?P<amount>\d[\d\\,]*(?:\.\d+)?)"
-ONE_DECIMAL = Decimal("0.1")
-WITHHOLDING_RATE = Decimal("0.10")
-NET_FACTOR = Decimal("1") - WITHHOLDING_RATE
-FUTURE_MONTHS = 24
-ORIGINAL_ISHARES_PAY_DATES = update_calendar.official_ishares_pay_dates
-
-
-def after_withholding(value: Any) -> Decimal:
-    """Apply the configured withholding tax to a gross dividend amount."""
-    return Decimal(str(value)) * NET_FACTOR
-
-
-def calendar_title_amount(match: Match[str]) -> str:
-    """Show the after-tax calendar title as plain integer digits only."""
-    raw = match.group("amount").replace("\\,", "").replace(",", "")
-    net_amount = after_withholding(Decimal(raw))
-    return str(int(net_amount))
-
-
-def truncate_one_decimal(value: Any) -> Decimal:
-    """Truncate a numeric value to one decimal place without rounding."""
-    return Decimal(str(value)).quantize(ONE_DECIMAL, rounding=ROUND_DOWN)
-
-
-def shares_label(value: Any) -> str:
-    """Render configured shares with one decimal place and thousands separators."""
-    return f"{truncate_one_decimal(value):,.1f}"
-
-
-def dividend_amount(part: str) -> Decimal | None:
-    """Extract the gross cash dividend for one ticker line from the generated memo."""
-    match = re.search(DIVIDEND_AMOUNT_PATTERN, part)
-    if not match:
-        return None
-    raw = match.group("amount").replace("\\,", "").replace(",", "")
-    return Decimal(raw)
-
-
-def extended_ishares_pay_dates(window_start: date, window_end: date) -> list[date]:
-    """Use official dates first, then project monthly dates beyond official coverage."""
-    official = ORIGINAL_ISHARES_PAY_DATES(window_start, window_end)
-    if not official:
-        return official
-
-    dates = set(official)
-    recent_days = sorted(d.day for d in official[-6:])
-    reference_day = recent_days[len(recent_days) // 2]
-    last_official_month = date(official[-1].year, official[-1].month, 1)
-    cursor = update_calendar.add_months_month_start(last_official_month, 1)
-
-    while cursor < window_end:
-        projected = update_calendar.previous_business_day_if_weekend(
-            update_calendar.safe_date(cursor.year, cursor.month, reference_day)
-        )
-        if window_start <= projected < window_end:
-            dates.add(projected)
-        cursor = update_calendar.add_months_month_start(cursor, 1)
-
-    return sorted(dates)
-
-
-def compact_description(line: str, positions: dict[str, Any]) -> str:
-    """Show each ticker, configured shares, and after-tax dividend for this pay date."""
-    payload = line.removeprefix("DESCRIPTION:")
-    tickers: list[str] = []
-    amounts: dict[str, Decimal] = defaultdict(Decimal)
-
-    for part in payload.split("\\n"):
-        ticker_match = re.match(r"([A-Za-z0-9.-]+):", part)
-        if not ticker_match:
-            continue
-        ticker = ticker_match.group(1)
-        if ticker not in positions:
-            continue
-        if ticker not in tickers:
-            tickers.append(ticker)
-
-        amount = dividend_amount(part)
-        if amount is not None:
-            amounts[ticker] += amount
-
-    details: list[str] = []
-    for ticker in tickers:
-        shares = shares_label(positions[ticker]["shares"])
-        amount = truncate_one_decimal(after_withholding(amounts[ticker]))
-        details.append(f"{ticker}｜持股 {shares} 股｜股息 ${amount:,.1f}")
-
-    details.append("备注：预扣税率 10%")
-    return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
-
-
-def normalize_calendar(calendar_text: str, positions: dict[str, Any]) -> str:
-    """Apply after-tax display formatting to titles and compact daily event memos."""
-    logical_lines: list[str] = []
-    for line in calendar_text.splitlines():
-        if line.startswith(" ") and logical_lines:
-            logical_lines[-1] += line[1:]
-        else:
-            logical_lines.append(line)
-
-    output: list[str] = []
-    for line in logical_lines:
-        if line.startswith("SUMMARY:"):
-            line = re.sub(AMOUNT_PATTERN, calendar_title_amount, line, count=1)
-        elif line.startswith("DESCRIPTION:"):
-            line = compact_description(line, positions)
-        elif line.startswith("X-WR-CALDESC:"):
-            line = line.replace("未来12个月", "未来24个月")
-
-        output.extend(update_calendar.fold_line(line))
-
-    return "\r\n".join(output) + "\r\n"
 
 
 def positions_table(positions: dict[str, Any]) -> str:
     lines = [POSITIONS_START, "| Ticker | Shares |", "|---|---:|"]
     for ticker, info in positions.items():
-        shares = float(info["shares"])
-        lines.append(f"| {ticker} | {shares:,.4f} |")
-    lines.append(POSITIONS_END)
-    return "\n".join(lines)
+        lines.append(f"| {ticker} | {Decimal(str(info['shares'])):,.4f} |")
+    return "\n".join(lines + [POSITIONS_END])
 
 
-def sync_readme(positions: dict[str, Any]) -> None:
+def updated_readme(positions: dict[str, Any]) -> str:
     text = README_FILE.read_text(encoding="utf-8")
-    pattern = re.compile(
-        rf"{re.escape(POSITIONS_START)}.*?{re.escape(POSITIONS_END)}", re.S
-    )
-    replacement = positions_table(positions)
-    if not pattern.search(text):
-        raise RuntimeError("README positions markers are missing")
-    updated = pattern.sub(replacement, text, count=1)
-    if updated != text:
-        README_FILE.write_text(updated, encoding="utf-8")
+    pattern = re.compile(rf"{re.escape(POSITIONS_START)}.*?{re.escape(POSITIONS_END)}", re.S)
+    if len(pattern.findall(text)) != 1:
+        raise RuntimeError("README must contain exactly one positions marker pair")
+    return pattern.sub(lambda _: positions_table(positions), text, count=1)
 
 
 def main() -> None:
     config = json.loads(POSITIONS_FILE.read_text(encoding="utf-8"))
-    positions: dict[str, Any] = config["positions"]
-
-    sync_readme(positions)
-    update_calendar.FUTURE_MONTHS = FUTURE_MONTHS
-    update_calendar.official_ishares_pay_dates = extended_ishares_pay_dates
-    update_calendar.main()
-
-    calendar_text = update_calendar.OUTPUT_FILE.read_text(encoding="utf-8")
-    normalized = normalize_calendar(calendar_text, positions)
-    update_calendar.OUTPUT_FILE.write_text(normalized, encoding="utf-8", newline="")
-    print("Applied 10% withholding tax to displayed dividends, extended the calendar to 24 future months, normalized calendar titles, merged daily dividend memos, and synced README positions.")
+    positions = update_calendar.validate_positions(config)
+    readme = updated_readme(positions)
+    calendar = update_calendar.generate_calendar(config)
+    changed = update_calendar.write_calendar(calendar)
+    update_calendar.atomic_write_if_changed(README_FILE, readme)
+    print("Calendar updated and README synchronized." if changed else "No calendar content changes; README synchronized.")
 
 
 if __name__ == "__main__":
