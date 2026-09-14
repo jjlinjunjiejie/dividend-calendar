@@ -34,8 +34,8 @@ def truncate_one_decimal(value: Any) -> Decimal:
 
 
 def shares_label(value: Any) -> str:
-    """Render configured shares with exactly one decimal place."""
-    return format(truncate_one_decimal(value), ".1f")
+    """Render configured shares with one decimal place and thousands separators."""
+    return f"{truncate_one_decimal(value):,.1f}"
 
 
 def dividend_amount(part: str) -> Decimal | None:
@@ -71,7 +71,7 @@ def compact_description(line: str, positions: dict[str, Any]) -> str:
     for ticker in tickers:
         shares = shares_label(positions[ticker]["shares"])
         amount = truncate_one_decimal(amounts[ticker])
-        details.append(f"{ticker} {shares}股 股息 ${amount:,.1f}")
+        details.append(f"{ticker}｜持股 {shares} 股｜股息 ${amount:,.1f}")
 
     return f"DESCRIPTION:{update_calendar.escape_text(chr(10).join(details))}"
 
