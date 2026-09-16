@@ -1,7 +1,6 @@
 {
   "currency": "USD",
   "positions": {
-    "IBHF": {"shares": 127.3954, "portfolio_id": 316512, "source": "ishares", "maturity_year": 2026},
     "IBHG": {"shares": 21809.3968, "portfolio_id": 319422, "source": "ishares", "maturity_year": 2027},
     "IBHH": {"shares": 2559.3648, "portfolio_id": 326459, "source": "ishares", "maturity_year": 2028},
     "IBHI": {"shares": 846.3668, "portfolio_id": 326462, "source": "ishares", "maturity_year": 2029},

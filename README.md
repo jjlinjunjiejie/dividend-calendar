@@ -5,7 +5,6 @@ Apple Calendar subscription feed for the following portfolio positions:
 <!-- POSITIONS:START -->
 | Ticker | Shares |
 |---|---:|
-| IBHF | 127.3954 |
 | IBHG | 21,809.3968 |
 | IBHH | 2,559.3648 |
 | IBHI | 846.3668 |
