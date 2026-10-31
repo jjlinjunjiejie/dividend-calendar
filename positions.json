@@ -1,7 +1,7 @@
 {
   "currency": "USD",
   "positions": {
-    "IBHG": {"shares": 21809.3968, "portfolio_id": 319422, "source": "ishares", "maturity_year": 2027},
+    "IBHG": {"shares": 19759.3, "portfolio_id": 319422, "source": "ishares", "maturity_year": 2027},
     "IBHH": {"shares": 2559.3648, "portfolio_id": 326459, "source": "ishares", "maturity_year": 2028},
     "IBHI": {"shares": 846.3668, "portfolio_id": 326462, "source": "ishares", "maturity_year": 2029},
     "IBHJ": {"shares": 760.3254, "portfolio_id": 332287, "source": "ishares", "maturity_year": 2030},
